@@ -1,4 +1,4 @@
-package seedu.duke;
+package quizmos;
 
 import java.util.Scanner;
 
