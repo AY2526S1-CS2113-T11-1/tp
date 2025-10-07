@@ -2,7 +2,7 @@ package quizmos.common;
 
 public class Messages {
     // common
-    public static final String separator = "____________________________________________________________";
+    public static String separator = "____________________________________________________________";
 
 
     // greeting

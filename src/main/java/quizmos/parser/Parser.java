@@ -6,17 +6,20 @@ import quizmos.command.HelpCommand;
 import quizmos.command.InvalidCommand;
 
 public class Parser {
+    /**
+     * Parse user's raw command and return the Command object
+     *
+     * @param command
+     * @return suitable Command object
+     */
     public static Command parseCommand(String command) {
-        String commandKeyWord = command.split(" ")[0].toLowerCase();
+        String commandKeyWord = command.trim().split(" ")[0].toLowerCase();
         try {
-            switch (commandKeyWord) {
-            case "help":
-                return new HelpCommand();
-            case "exit":
-                return new ExitCommand();
-            default:
-                return new InvalidCommand();
-            }
+            return switch (commandKeyWord) {
+            case "help" -> new HelpCommand();
+            case "exit" -> new ExitCommand();
+            default -> new InvalidCommand();
+            };
         } catch (ArrayIndexOutOfBoundsException e) {
             return new InvalidCommand();
         }
