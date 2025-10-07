@@ -1,7 +1,62 @@
 package quizmos.parser;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
+import quizmos.command.Command;
+import quizmos.command.ExitCommand;
+import quizmos.command.HelpCommand;
+import quizmos.command.InvalidCommand;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 
 class ParserTest {
+    @Test
+    void parseCommand_validCommand_correctCommandType(){
+        // help command
+        Command helpCommand = Parser.parseCommand("help");
+        assertInstanceOf(HelpCommand.class, helpCommand);
+        assertFalse(helpCommand.getIsExit());
 
+        Command untrimHelpCommand = Parser.parseCommand("   help   ");
+        assertInstanceOf(HelpCommand.class, untrimHelpCommand);
+        assertFalse(untrimHelpCommand.getIsExit());
+
+        // exit command
+        Command exitCommand = Parser.parseCommand("exit");
+        assertInstanceOf(ExitCommand.class, exitCommand);
+        assertTrue(exitCommand.getIsExit());
+
+        Command untrimExitCommand = Parser.parseCommand("   exit   ");
+        assertInstanceOf(ExitCommand.class, untrimExitCommand);
+        assertTrue(untrimExitCommand.getIsExit());
+    }
+
+    @Test
+    void parseCommand_invalidCommand_invalidCommandInstance(){
+        // empty string
+        Command emptyCommand = Parser.parseCommand("");
+        assertInstanceOf(InvalidCommand.class, emptyCommand);
+        assertFalse(emptyCommand.getIsExit());
+
+        // string only contains space
+        Command spaceCommand = Parser.parseCommand(" ");
+        assertInstanceOf(InvalidCommand.class, spaceCommand);
+        assertFalse(spaceCommand.getIsExit());
+
+        // invalid alphabet string
+        Command alphabeticCommand = Parser.parseCommand("alphabetic");
+        assertInstanceOf(InvalidCommand.class, alphabeticCommand);
+        assertFalse(alphabeticCommand.getIsExit());
+
+        // invalid numeric string
+        Command numericCommand = Parser.parseCommand("123456");
+        assertInstanceOf(InvalidCommand.class, numericCommand);
+        assertFalse(numericCommand.getIsExit());
+
+        // invalid symbol string
+        Command symbolCommand = Parser.parseCommand("@#$@*(&  #@$_+_+");
+        assertInstanceOf(InvalidCommand.class, symbolCommand);
+        assertFalse(symbolCommand.getIsExit());
+    }
 }
