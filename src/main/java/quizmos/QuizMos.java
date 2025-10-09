@@ -1,34 +1,37 @@
 package quizmos;
 
 import quizmos.command.Command;
+import quizmos.flashcardlist.FlashcardList;
+import quizmos.storage.Storage;
 import quizmos.ui.Ui;
 import quizmos.parser.Parser;
 
-import java.util.Scanner;
-
 public class QuizMos {
-    public QuizMos(){}
+    private FlashcardList flashcards;
+    private Storage storage;
+    private Ui ui;
+
+    public QuizMos() {
+        this.flashcards = new FlashcardList();
+        this.storage = new Storage();
+        this.ui = new Ui();
+    }
 
     /**
      *
      */
-    public static void run(){
-        Ui.greeting();
-        Scanner in = new Scanner(System.in);
-
+    public void run(){
+        ui.greeting();
         boolean isExit = false;
 
         while (!isExit){
-            String command = in.nextLine();
+            String command = ui.readCommand();
             Command c = Parser.parseCommand(command);
-
-            c.execute();
+            c.execute(flashcards, ui, storage);
             isExit = c.getIsExit();
         }
         System.exit(0);
     }
 
-    public static void main(String[] args){
-        QuizMos.run();
-    }
+    public static void main(String[] args) { new QuizMos().run(); }
 }

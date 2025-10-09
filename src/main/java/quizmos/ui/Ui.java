@@ -1,8 +1,22 @@
 package quizmos.ui;
 
 import quizmos.common.Messages;
+import quizmos.flashcard.Flashcard;
+
+import java.util.Scanner;
 
 public class Ui {
+    private final Scanner in = new Scanner(System.in);
+
+    /**
+     * Reads a line of input from the user.
+     *
+     * @return The user's input as a string.
+     */
+    public String readCommand() {
+        return in.nextLine();
+    }
+
     /**
      * Announce the message with UI format
      * @param message
@@ -23,6 +37,16 @@ public class Ui {
 
     public static void goodbye(){
         respond(Messages.goodbyeMessage);
+    }
+
+    public void showFlashcardAdded(Flashcard flashcard) {
+        String response = "Added this flashcard\n" + flashcard;
+        respond(response);
+    }
+
+    public void showFlashcardRemoved(Flashcard flashcard) {
+        String response = "Removed this flashcard\n" + flashcard;
+        respond(response);
     }
 
     public static void invalidCommandRespond(){
