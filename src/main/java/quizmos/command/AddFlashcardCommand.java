@@ -2,7 +2,7 @@ package quizmos.command;
 
 import quizmos.storage.Storage;
 import quizmos.ui.Ui;
-import quizmos.flashcardList.FlashcardList;
+import quizmos.flashcardlist.FlashcardList;
 import quizmos.flashcard.Flashcard;
 
 public class AddFlashcardCommand extends Command {

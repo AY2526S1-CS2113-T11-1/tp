@@ -1,4 +1,4 @@
-package quizmos.flashcardList;
+package quizmos.flashcardlist;
 
 import quizmos.flashcard.Flashcard;
 import java.util.ArrayList;

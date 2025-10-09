@@ -1,6 +1,11 @@
 package quizmos.parser;
 
-import quizmos.command.*;
+import quizmos.command.AddFlashcardCommand;
+import quizmos.command.Command;
+import quizmos.command.ExitCommand;
+import quizmos.command.HelpCommand;
+import quizmos.command.InvalidCommand;
+import quizmos.command.RemoveFlashcardCommand;
 
 public class Parser {
     /**

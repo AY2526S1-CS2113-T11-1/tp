@@ -1,6 +1,6 @@
 package quizmos.command;
 
-import quizmos.flashcardList.FlashcardList;
+import quizmos.flashcardlist.FlashcardList;
 import quizmos.ui.Ui;
 import quizmos.storage.Storage;
 public class ExitCommand extends Command {

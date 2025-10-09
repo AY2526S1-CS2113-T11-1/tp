@@ -1,7 +1,7 @@
 package quizmos;
 
 import quizmos.command.Command;
-import quizmos.flashcardList.FlashcardList;
+import quizmos.flashcardlist.FlashcardList;
 import quizmos.storage.Storage;
 import quizmos.ui.Ui;
 import quizmos.parser.Parser;
