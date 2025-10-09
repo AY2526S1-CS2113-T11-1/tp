@@ -1,4 +1,6 @@
 hello
 help
+add q/Question 1 a/Answer 1
+delete 1
 superidol
 exit

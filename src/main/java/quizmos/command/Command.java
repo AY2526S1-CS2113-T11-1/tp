@@ -1,5 +1,9 @@
 package quizmos.command;
 
+import quizmos.flashcardList.FlashcardList;
+import quizmos.ui.Ui;
+import quizmos.storage.Storage;
+
 public abstract class Command {
     protected boolean isExit = false;
 
@@ -7,5 +11,5 @@ public abstract class Command {
         return isExit;
     }
 
-    public abstract void execute();
+    public abstract void execute(FlashcardList flashcards, Ui ui, Storage storage);
 }
