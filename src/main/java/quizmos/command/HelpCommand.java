@@ -6,7 +6,7 @@ import quizmos.ui.Ui;
 
 public class HelpCommand extends Command {
     @Override
-    public void execute(FlashcardList flashcards, Ui ui, Storage storage) {
+    public void execute(FlashcardList flashcards, Storage storage) {
         Ui.help();
     }
 }

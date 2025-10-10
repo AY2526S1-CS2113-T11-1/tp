@@ -2,7 +2,6 @@ package quizmos.ui;
 
 import quizmos.common.Messages;
 import quizmos.flashcard.Flashcard;
-import quizmos.flashcardlist.FlashcardList;
 
 import java.util.Scanner;
 
@@ -27,6 +26,10 @@ public class Ui {
         System.out.println(message);
         System.out.println(Messages.separator);
     }
+
+    public static void printSeparator(){
+        System.out.println(Messages.separator);
+    }
     
     public static void greeting(){
         respond(Messages.hello + Messages.logo + Messages.beginInstruction);
@@ -40,31 +43,26 @@ public class Ui {
         respond(Messages.goodbyeMessage);
     }
 
-    public void showFlashcardAdded(Flashcard flashcard) {
-        String response = "Added this flashcard\n" + flashcard;
-        respond(response);
-    }
-
-    public void showFlashcardRemoved(Flashcard flashcard) {
-        String response = "Removed this flashcard\n" + flashcard;
-        respond(response);
-    }
-
     public static void invalidCommandRespond(){
         respond(Messages.invalidCommandMessage);
     }
 
-    public void showFlashcards(FlashcardList flashcards) {
-        if (flashcards.size() == 0) {
-            respond("Your task list is empty!");
-            return;
-        }
-        int count = 1;
-        for (Flashcard f : flashcards.getAll()) {
-            respond(count + ". " + f);
-            count++;
-        }
+    // Flashcard
+    public static void showFlashcardAdded(Flashcard flashcard) {
+        String response = "Added this flashcard\n" + flashcard;
+        respond(response);
     }
+
+    public static void showFlashcardRemoved(Flashcard flashcard) {
+        String response = "Removed this flashcard\n" + flashcard;
+        respond(response);
+    }
+
+    // FlashcardList
+    public static void emptyListRespond() {
+        respond(Messages.emptyListMessage);
+    }
+
 
 }
 
