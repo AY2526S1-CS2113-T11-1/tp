@@ -8,7 +8,6 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Storage {
@@ -52,11 +51,15 @@ public class Storage {
         try (Scanner scanner = new Scanner(file)) {
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine().trim();
-                if (line.isEmpty()) continue; // skip empty lines
+                if (line.isEmpty()) {
+                    continue; // skip empty lines
+                }
 
                 // Split on " | " with optional surrounding spaces
                 String[] parts = line.split("\\s*\\|\\s*");
-                if (parts.length < 2) continue; // skip invalid lines
+                if (parts.length < 2) {
+                    continue; // skip invalid lines
+                }
 
                 String question = parts[0].trim();
                 String answer = parts[1].trim();
