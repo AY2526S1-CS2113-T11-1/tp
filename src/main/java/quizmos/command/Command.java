@@ -1,7 +1,6 @@
 package quizmos.command;
 
 import quizmos.flashcardlist.FlashcardList;
-import quizmos.ui.Ui;
 import quizmos.storage.Storage;
 
 import java.io.IOException;
@@ -13,5 +12,5 @@ public abstract class Command {
         return isExit;
     }
 
-    public abstract void execute(FlashcardList flashcards, Ui ui, Storage storage) throws IOException;
+    public abstract void execute(FlashcardList flashcards, Storage storage) throws IOException;
 }

@@ -34,4 +34,7 @@ public class Messages {
 
     // goodbye
     public static String goodbyeMessage = "Bye. Hope to see you again soon!";
+
+    // flashcard list
+    public static String emptyListMessage = "Your task list is empty!";
 }

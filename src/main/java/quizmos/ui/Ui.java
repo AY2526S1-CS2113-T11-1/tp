@@ -2,7 +2,6 @@ package quizmos.ui;
 
 import quizmos.common.Messages;
 import quizmos.flashcard.Flashcard;
-import quizmos.flashcardlist.FlashcardList;
 
 import java.util.Scanner;
 
@@ -25,6 +24,10 @@ public class Ui {
     public static void respond(String message){
         System.out.println(Messages.separator);
         System.out.println(message);
+        System.out.println(Messages.separator);
+    }
+
+    public static void printSeparator(){
         System.out.println(Messages.separator);
     }
     
@@ -50,8 +53,9 @@ public class Ui {
         respond(response);
     }
 
-    public static void invalidCommandRespond(){
-        respond(Messages.invalidCommandMessage);
+    // FlashcardList
+    public static void emptyListRespond() {
+        respond(Messages.emptyListMessage);
     }
 
     public void showFlashcards(FlashcardList flashcards) {

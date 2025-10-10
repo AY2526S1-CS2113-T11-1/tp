@@ -35,11 +35,13 @@ public class QuizMos {
         while (!isExit){
             String command = ui.readCommand();
             Command c = Parser.parseCommand(command);
-            c.execute(flashcards, ui, storage);
+            c.execute(flashcards, storage);
             isExit = c.getIsExit();
         }
         System.exit(0);
     }
 
-    public static void main(String[] args) throws IOException { new QuizMos().run(); }
+    public static void main(String[] args) throws IOException {
+        new QuizMos().run();
+    }
 }

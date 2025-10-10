@@ -12,8 +12,7 @@ public class ExitCommand extends Command {
     }
 
     @Override
-    public void execute(FlashcardList flashcards, Ui ui, Storage storage) throws IOException {
-        ui.goodbye();
-        storage.writeToFile(flashcards);
+    public void execute(FlashcardList flashcards, Storage storage) throws IOException {
+        Ui.goodbye();
     }
 }
