@@ -41,12 +41,12 @@ public class Ui {
     }
 
     public void showFlashcardAdded(Flashcard flashcard) {
-        String response = "Added this flashcard\n" + flashcard;
+        String response = Messages.addedTaskMessage + flashcard;
         respond(response);
     }
 
     public void showFlashcardRemoved(Flashcard flashcard) {
-        String response = "Removed this flashcard\n" + flashcard;
+        String response = Messages.removedTaskMessage + flashcard;
         respond(response);
     }
 
@@ -56,7 +56,7 @@ public class Ui {
 
     public void showFlashcards(FlashcardList flashcards) {
         if (flashcards.size() == 0) {
-            respond("Your task list is empty!");
+            respond(Messages.emptyTaskListMessage);
             return;
         }
         int count = 1;

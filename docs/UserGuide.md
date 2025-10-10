@@ -1,42 +1,68 @@
-# User Guide
+# Quizmos User Guide
 
 ## Introduction
 
-{Give a product intro}
+```
+ ___        _     __  __
+/ _ \ _   _(_)___|  \/  | ___  ___
+| | | | | | | |_  / |\/| |/ _ \/ __|
+| |_| | |_| | |/ /| |  | | (_) \__ \
+\__\_\\__,_|_/___|_|  |_|\___/|___/
+```
 
-## Quick Start
+**QuizMos** is a simple **command-line flashcard manager** that helps you create, review, and organize flashcards for effective studying and memorization.
+
+It allows you to add, list, and remove flashcards—each containing a question and an answer—all directly from your terminal.
+
+QuizMos automatically saves your flashcards to a file, ensuring your collection is preserved and ready every time you run the program.
+
+## Quick Start {not yet completed}
 
 {Give steps to get started quickly}
 
-1. Ensure that you have Java 17 or above installed.
-1. Down the latest version of `Duke` from [here](http://link.to/duke).
+1. {step 1}
+1. {step 2}
 
 ## Features 
 
-{Give detailed description of each feature}
+For now, Quizmos only supports creating basic flashcards with text based questions and answers.
 
-### Adding a todo: `todo`
-Adds a new item to the list of todo items.
+## Usage
 
-Format: `todo n/TODO_NAME d/DEADLINE`
+### Receive help by being shown possible commands
 
-* The `DEADLINE` can be in a natural language format.
-* The `TODO_NAME` cannot contain punctuation.  
+```bash
+help
+```
 
-Example of usage: 
+### View all flashcards
 
-`todo n/Write the rest of the User Guide d/next week`
+```bash
+list
+```
 
-`todo n/Refactor the User Guide to remove passive voice d/13/04/2020`
+### Add a flashcard with a question and answer
 
-## FAQ
+```bash
+add q/QUESTION a/ANSWER
+```
 
-**Q**: How do I transfer my data to another computer? 
+### Delete a flashcard
+
+```bash
+delete 3
+```
+
+
+## FAQ {not yet completed}
+
+**Q**: {question} 
 
 **A**: {your answer here}
 
 ## Command Summary
 
-{Give a 'cheat sheet' of commands here}
-
-* Add todo `todo n/TODO_NAME d/DEADLINE`
+* Receive help `help`
+* Add flashcard `add q/QUESTION a/ANSWER`
+* Remove flashcard `delete #`
+* List flashcards `list`

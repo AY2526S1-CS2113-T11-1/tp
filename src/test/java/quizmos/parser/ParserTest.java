@@ -5,6 +5,8 @@ import quizmos.command.Command;
 import quizmos.command.ExitCommand;
 import quizmos.command.HelpCommand;
 import quizmos.command.InvalidCommand;
+import quizmos.command.AddFlashcardCommand;
+import quizmos.command.RemoveFlashcardCommand;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -30,6 +32,18 @@ class ParserTest {
         Command untrimExitCommand = Parser.parseCommand("   exit   ");
         assertInstanceOf(ExitCommand.class, untrimExitCommand);
         assertTrue(untrimExitCommand.getIsExit());
+    }
+
+    @Test
+    void parseCommand_validAddCommand_returnsAddFlashcardCommand() {
+        Command command = Parser.parseCommand("add q/What is Java? a/A programming language");
+        assertInstanceOf(AddFlashcardCommand.class, command);
+    }
+
+    @Test
+    void parseCommand_validDeleteCommand_returnsRemoveFlashcardCommand() {
+        Command command = Parser.parseCommand("delete 1");
+        assertInstanceOf(RemoveFlashcardCommand.class, command);
     }
 
     @Test
