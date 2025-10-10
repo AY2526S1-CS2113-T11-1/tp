@@ -4,6 +4,8 @@ import quizmos.flashcardlist.FlashcardList;
 import quizmos.ui.Ui;
 import quizmos.storage.Storage;
 
+import java.io.IOException;
+
 public abstract class Command {
     protected boolean isExit = false;
 
@@ -11,5 +13,5 @@ public abstract class Command {
         return isExit;
     }
 
-    public abstract void execute(FlashcardList flashcards, Ui ui, Storage storage);
+    public abstract void execute(FlashcardList flashcards, Ui ui, Storage storage) throws IOException;
 }

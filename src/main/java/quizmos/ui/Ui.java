@@ -2,6 +2,7 @@ package quizmos.ui;
 
 import quizmos.common.Messages;
 import quizmos.flashcard.Flashcard;
+import quizmos.flashcardlist.FlashcardList;
 
 import java.util.Scanner;
 
@@ -53,4 +54,17 @@ public class Ui {
         respond(Messages.invalidCommandMessage);
     }
 
+    public void showFlashcards(FlashcardList flashcards) {
+        if (flashcards.size() == 0) {
+            respond("Your task list is empty!");
+            return;
+        }
+        int count = 1;
+        for (Flashcard f : flashcards.getAll()) {
+            respond(count + ". " + f);
+            count++;
+        }
+    }
+
 }
+

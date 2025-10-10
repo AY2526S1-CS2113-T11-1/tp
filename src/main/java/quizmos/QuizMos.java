@@ -6,6 +6,8 @@ import quizmos.storage.Storage;
 import quizmos.ui.Ui;
 import quizmos.parser.Parser;
 
+import java.io.IOException;
+
 public class QuizMos {
     private FlashcardList flashcards;
     private Storage storage;
@@ -13,14 +15,20 @@ public class QuizMos {
 
     public QuizMos() {
         this.flashcards = new FlashcardList();
-        this.storage = new Storage();
+        this.storage = new Storage("data/QuizMos.txt");
         this.ui = new Ui();
+        try {
+            flashcards = new FlashcardList(storage.load());
+        } catch (Exception e) {
+            e.getMessage();
+            flashcards = new FlashcardList();
+        }
     }
 
     /**
      *
      */
-    public void run(){
+    public void run() throws IOException {
         ui.greeting();
         boolean isExit = false;
 
@@ -33,5 +41,5 @@ public class QuizMos {
         System.exit(0);
     }
 
-    public static void main(String[] args) { new QuizMos().run(); }
+    public static void main(String[] args) throws IOException { new QuizMos().run(); }
 }
