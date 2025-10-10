@@ -30,8 +30,6 @@ public class Messages {
 
     public static String addedTaskMessage = "Added this flashcard\n";
 
-    public static String emptyTaskListMessage = "Your task list is empty!";
-
     // goodbye
     public static String goodbyeMessage = "Bye. Hope to see you again soon!";
 
