@@ -12,18 +12,18 @@ class FlashcardListTest {
     void testAddAndGetFlashcard() {
         FlashcardList list = new FlashcardList();
         Flashcard card = new Flashcard("Q1", "A1");
-        list.add(card);
-        assertEquals(1, list.size());
-        assertEquals(card, list.get(0));
+        list.addFlashcard(card);
+        assertEquals(1, list.getSize());
+        assertEquals(card, list.getFlashcard(0));
     }
 
     @Test
     void testRemoveFlashcard() {
         FlashcardList list = new FlashcardList();
         Flashcard card = new Flashcard("Q1", "A1");
-        list.add(card);
-        list.remove(0);
-        assertEquals(0, list.size());
+        list.addFlashcard(card);
+        list.removeFlashcard(0);
+        assertEquals(0, list.getSize());
     }
 
     @Test
@@ -33,7 +33,7 @@ class FlashcardListTest {
         cards.add(new Flashcard("Q2", "A2"));
         FlashcardList list = new FlashcardList(cards);
 
-        assertEquals(2, list.size());
+        assertEquals(2, list.getSize());
         assertEquals(cards, list.getAll());
     }
 }

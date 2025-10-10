@@ -14,7 +14,7 @@ class RemoveFlashcardCommandTest {
     @Test
     void testExecuteRemovesFlashcard() throws IOException {
         FlashcardList flashcards = new FlashcardList();
-        flashcards.add(new Flashcard("Q1", "A1"));
+        flashcards.addFlashcard(new Flashcard("Q1", "A1"));
 
         Ui ui = new Ui();
         Storage storage = new Storage("data/QuizMos.txt") {
@@ -23,8 +23,8 @@ class RemoveFlashcardCommandTest {
         };
 
         RemoveFlashcardCommand command = new RemoveFlashcardCommand(0);
-        command.execute(flashcards, ui, storage);
+        command.execute(flashcards, storage);
 
-        assertEquals(0, flashcards.size());
+        assertEquals(0, flashcards.getSize());
     }
 }

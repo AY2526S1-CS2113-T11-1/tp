@@ -20,10 +20,10 @@ class AddFlashcardCommandTest {
         };
 
         AddFlashcardCommand command = new AddFlashcardCommand("Q1", "A1");
-        command.execute(flashcards, ui, storage);
+        command.execute(flashcards, storage);
 
-        assertEquals(1, flashcards.size());
-        assertEquals("Q1", flashcards.get(0).getQuestion());
-        assertEquals("A1", flashcards.get(0).getAnswer());
+        assertEquals(1, flashcards.getSize());
+        assertEquals("Q1", flashcards.getFlashcard(0).getQuestion());
+        assertEquals("A1", flashcards.getFlashcard(0).getAnswer());
     }
 }
