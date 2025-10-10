@@ -26,6 +26,10 @@ public class Messages {
     // invalid command
     public static String invalidCommandMessage = "Invalid command! Try `help` for more information";
 
+    public static String removedTaskMessage = "Removed this flashcard\n";
+
+    public static String addedTaskMessage = "Added this flashcard\n";
+
     // goodbye
     public static String goodbyeMessage = "Bye. Hope to see you again soon!";
 

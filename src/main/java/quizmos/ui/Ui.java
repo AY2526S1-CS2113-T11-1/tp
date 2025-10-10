@@ -42,19 +42,18 @@ public class Ui {
     public static void goodbye(){
         respond(Messages.goodbyeMessage);
     }
-
+    
     public static void invalidCommandRespond(){
         respond(Messages.invalidCommandMessage);
     }
 
-    // Flashcard
     public static void showFlashcardAdded(Flashcard flashcard) {
-        String response = "Added this flashcard\n" + flashcard;
+        String response = Messages.addedTaskMessage + flashcard;
         respond(response);
     }
 
     public static void showFlashcardRemoved(Flashcard flashcard) {
-        String response = "Removed this flashcard\n" + flashcard;
+        String response = Messages.removedTaskMessage + flashcard;
         respond(response);
     }
 
@@ -62,7 +61,4 @@ public class Ui {
     public static void emptyListRespond() {
         respond(Messages.emptyListMessage);
     }
-
-
 }
-
