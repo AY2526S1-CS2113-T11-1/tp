@@ -2,7 +2,6 @@ package quizmos.command;
 
 import quizmos.flashcardlist.FlashcardList;
 import quizmos.storage.Storage;
-import quizmos.ui.Ui;
 
 import java.io.IOException;
 
@@ -21,14 +20,12 @@ public class ListCommand extends Command {
      * Shows all tasks if the task list is not empty.
      * Throws TwinException if the task list is empty.
      *
-     * @param ui         UI instance to interact with the user
      * @param storage    Storage instance (not used for this command)
      * @param flashcards containing all flashcards
      */
 
     @Override
-    public void execute(FlashcardList flashcards, Ui ui, Storage storage) throws IOException {
-        ui.showFlashcards(flashcards);
-
+    public void execute(FlashcardList flashcards, Storage storage) throws IOException {
+        flashcards.showList();
     }
 }

@@ -1,8 +1,8 @@
 package quizmos.flashcard;
 
 public class Flashcard {
-    String question;
-    String answer;
+    private String question;
+    private String answer;
 
     public Flashcard(String question, String answer) {
         this.question = question;

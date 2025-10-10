@@ -16,11 +16,10 @@ public class AddFlashcardCommand extends Command {
         this.answer = answer;
     }
     @Override
-    public void execute(FlashcardList flashcards, Ui ui, Storage storage) throws IOException {
+    public void execute(FlashcardList flashcards, Storage storage) throws IOException {
         Flashcard flashcard = new Flashcard(question, answer);
-        flashcards.add(flashcard);
-        Flashcard addedFlashcard = flashcards.get(flashcards.size() - 1);
-        ui.showFlashcardAdded(addedFlashcard);
+        flashcards.addFlashcard(flashcard);
+        Ui.showFlashcardAdded(flashcard);
         storage.writeToFile(flashcards);
 
     }

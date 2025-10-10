@@ -9,7 +9,7 @@ public class InvalidCommand extends Command{
      * Print the response and suggestion when user typed invalid command
      */
     @Override
-    public void execute(FlashcardList flashcards, Ui ui, Storage storage) {
+    public void execute(FlashcardList flashcards, Storage storage) {
         Ui.invalidCommandRespond();
     }
 }
