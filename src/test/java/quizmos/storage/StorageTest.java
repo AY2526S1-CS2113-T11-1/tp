@@ -56,7 +56,6 @@ class StorageTest {
 
     @Test
     void load_returnsEmptyListWhenFileEmpty() throws Exception {
-        Files.createFile(tempFile);
         ArrayList<Flashcard> flashcards= storage.load();
         assertTrue(flashcards.isEmpty(), "Empty file should return empty list");
     }
