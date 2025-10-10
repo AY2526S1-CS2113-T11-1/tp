@@ -5,6 +5,7 @@ import quizmos.command.Command;
 import quizmos.command.ExitCommand;
 import quizmos.command.HelpCommand;
 import quizmos.command.InvalidCommand;
+import quizmos.command.ListCommand;
 import quizmos.command.RemoveFlashcardCommand;
 
 public class Parser {
@@ -23,6 +24,7 @@ public class Parser {
             return switch (commandKeyword) {
             case "help" -> new HelpCommand();
             case "exit" -> new ExitCommand();
+            case "list" -> new ListCommand();
             case "add" -> {
                 String args = parts[1];
                 int qIndex = args.indexOf("q/");
