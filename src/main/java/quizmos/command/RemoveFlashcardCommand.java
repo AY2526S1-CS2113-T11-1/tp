@@ -15,10 +15,10 @@ public class RemoveFlashcardCommand extends Command {
     }
 
     @Override
-    public void execute(FlashcardList flashcards, Ui ui, Storage storage) throws IOException {
-        Flashcard deletedFlashcard = flashcards.get(index);
-        flashcards.remove(index);
-        ui.showFlashcardRemoved(deletedFlashcard);
+    public void execute(FlashcardList flashcards, Storage storage) throws IOException {
+        Flashcard deletedFlashcard = flashcards.getFlashcard(index);
+        flashcards.removeFlashcard(index);
+        Ui.showFlashcardRemoved(deletedFlashcard);
         storage.writeToFile(flashcards);
     }
 }
