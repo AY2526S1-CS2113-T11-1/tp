@@ -28,7 +28,7 @@ public class Messages {
 
     public static String removedTaskMessage = "Removed this flashcard\n";
 
-    public static String addedTaskMessage = "Removed this flashcard\n";
+    public static String addedTaskMessage = "Added this flashcard\n";
 
     public static String emptyTaskListMessage = "Your task list is empty!";
 
