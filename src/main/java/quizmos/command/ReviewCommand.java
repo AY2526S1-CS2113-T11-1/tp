@@ -3,6 +3,7 @@ package quizmos.command;
 import java.io.IOException;
 import java.util.Scanner;
 
+import quizmos.common.Messages;
 import quizmos.flashcard.Flashcard;
 import quizmos.flashcardlist.FlashcardList;
 import quizmos.storage.Storage;
@@ -18,7 +19,7 @@ public class ReviewCommand extends Command {
             return;
         }
 
-        Ui.respond("Starting flashcard review. Type 'ans' to see the answer, 'next' to continue, or 'exit' to stop.");
+        Ui.respond(Messages.reviewStartMessage);
 
         for (int i = 0; i < flashcards.getSize(); i++) {
             Flashcard card = flashcards.getFlashcard(i);
@@ -29,21 +30,21 @@ public class ReviewCommand extends Command {
 
             boolean answered = false;
             while (!answered) {
-                System.out.print("Your input: ");
+                System.out.print(Messages.reviewPrompt);
                 String input = in.nextLine().trim().toLowerCase();
 
                 switch (input) {
                 case "ans" -> System.out.println("Answer: " + card.getAnswer());
                 case "next" -> answered = true;
                 case "exit" -> {
-                    Ui.respond("Review session ended.");
+                    Ui.respond(Messages.reviewExitMessage);
                     return;
                 }
-                default -> System.out.println("Invalid input. Type 'ans', 'next', or 'exit'.");
+                default -> System.out.println(Messages.reviewInvalidInputMessage);
                 }
             }
         }
 
-        Ui.respond("You've reviewed all flashcards!");
+        Ui.respond(Messages.reviewCompleteMessage);
     }
 }
