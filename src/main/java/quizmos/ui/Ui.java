@@ -1,9 +1,9 @@
 package quizmos.ui;
 
+import java.util.Scanner;
+
 import quizmos.common.Messages;
 import quizmos.flashcard.Flashcard;
-
-import java.util.Scanner;
 
 public class Ui {
     private final Scanner in = new Scanner(System.in);
@@ -14,8 +14,11 @@ public class Ui {
      * @return The user's input as a string.
      */
     public String readCommand() {
+        if (!in.hasNextLine()) {
+            return "exit"; 
+        }
         return in.nextLine();
-    }
+    } 
 
     /**
      * Announce the message with UI format
