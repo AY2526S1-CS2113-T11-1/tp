@@ -33,13 +33,13 @@ public class ReviewCommand extends Command {
                 String input = in.nextLine().trim().toLowerCase();
 
                 switch (input) {
-                    case "ans" -> System.out.println("Answer: " + card.getAnswer());
-                    case "next" -> answered = true;
-                    case "exit" -> {
-                        Ui.respond("Review session ended.");
-                        return;
-                    }
-                    default -> System.out.println("Invalid input. Type 'ans', 'next', or 'exit'.");
+                case "ans" -> System.out.println("Answer: " + card.getAnswer());
+                case "next" -> answered = true;
+                case "exit" -> {
+                    Ui.respond("Review session ended.");
+                    return;
+                }
+                default -> System.out.println("Invalid input. Type 'ans', 'next', or 'exit'.");
                 }
             }
         }
