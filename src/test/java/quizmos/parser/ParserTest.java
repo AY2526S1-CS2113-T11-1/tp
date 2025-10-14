@@ -5,6 +5,7 @@ import quizmos.command.Command;
 import quizmos.command.ExitCommand;
 import quizmos.command.HelpCommand;
 import quizmos.command.InvalidCommand;
+import quizmos.command.InvalidIndexCommand;
 import quizmos.command.AddFlashcardCommand;
 import quizmos.command.RemoveFlashcardCommand;
 
@@ -41,9 +42,43 @@ class ParserTest {
     }
 
     @Test
+    void parseCommand_addCommandMissingArgs_returnsInvalidCommand() {
+        // missing both q/ and a/
+        Command noArgs = Parser.parseCommand("add something random");
+        assertInstanceOf(InvalidCommand.class, noArgs);
+
+        // missing a/
+        Command missingAnswer = Parser.parseCommand("add q/What is Java?");
+        assertInstanceOf(InvalidCommand.class, missingAnswer);
+
+        // missing q/
+        Command missingQuestion = Parser.parseCommand("add a/A programming language");
+        assertInstanceOf(InvalidCommand.class, missingQuestion);
+    }
+
+    @Test
     void parseCommand_validDeleteCommand_returnsRemoveFlashcardCommand() {
         Command command = Parser.parseCommand("delete 1");
         assertInstanceOf(RemoveFlashcardCommand.class, command);
+    }
+
+    @Test
+    void parseCommand_deleteCommandMissingOrInvalidIndex_returnsInvalidIndexCommand() {
+        // missing index
+        Command noIndex = Parser.parseCommand("delete");
+        assertInstanceOf(InvalidIndexCommand.class, noIndex);
+
+        // not a number
+        Command notNumber = Parser.parseCommand("delete abc");
+        assertInstanceOf(InvalidIndexCommand.class, notNumber);
+
+        // negative number
+        Command negativeNumber = Parser.parseCommand("delete -3");
+        assertInstanceOf(RemoveFlashcardCommand.class, negativeNumber);
+
+        // extra spaces
+        Command spacedOut = Parser.parseCommand("delete    ");
+        assertInstanceOf(InvalidIndexCommand.class, spacedOut);
     }
 
     @Test

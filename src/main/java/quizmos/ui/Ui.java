@@ -21,30 +21,34 @@ public class Ui {
      * Announce the message with UI format
      * @param message
      */
-    public static void respond(String message){
+    public static void respond(String message) {
         System.out.println(Messages.separator);
         System.out.println(message);
         System.out.println(Messages.separator);
     }
 
-    public static void printSeparator(){
+    public static void printSeparator() {
         System.out.println(Messages.separator);
     }
     
-    public static void greeting(){
+    public static void greeting() {
         respond(Messages.hello + Messages.logo + Messages.beginInstruction);
     }
 
-    public static void help(){
+    public static void help() {
         respond(Messages.helpMessage);
     }
 
-    public static void goodbye(){
+    public static void goodbye() {
         respond(Messages.goodbyeMessage);
     }
     
-    public static void invalidCommandRespond(){
+    public static void invalidCommandRespond() {
         respond(Messages.invalidCommandMessage);
+    }
+
+    public static void invalidIndexRespond() {
+        respond(Messages.invalidIndexMessage);
     }
 
     public static void showFlashcardAdded(Flashcard flashcard) {
