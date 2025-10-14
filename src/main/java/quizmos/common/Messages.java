@@ -41,8 +41,8 @@ public class Messages {
 
     // review command
     public static String reviewStartMessage =
-    "Starting flashcard review. Type 'ans' to see the answer, "
-    + "'next' to continue, or 'exit' to stop.";
+        "Starting flashcard review. Type 'ans' to see the answer, "
+        + "'next' to continue, or 'exit' to stop.";
     public static String reviewPrompt = "Your input: ";
     public static String reviewExitMessage = "Review session ended.";
     public static String reviewCompleteMessage = "You've reviewed all flashcards!";
