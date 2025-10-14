@@ -43,10 +43,10 @@ public class ReviewCommand extends Command {
             Ui.printSeparator();
 
             boolean answered = false;
-            while (!answered) {
+            while (!answered && in.hasNextLine()) {
                 System.out.print(Messages.reviewPrompt);
                 String input = in.nextLine().trim().toLowerCase();
-
+            
                 switch (input) {
                 case "ans" -> System.out.println("Answer: " + card.getAnswer());
                 case "next" -> answered = true;
@@ -56,7 +56,7 @@ public class ReviewCommand extends Command {
                 }
                 default -> System.out.println(Messages.reviewInvalidInputMessage);
                 }
-            }
+            }       
         }
 
         Ui.respond(Messages.reviewCompleteMessage);
