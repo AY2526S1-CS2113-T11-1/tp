@@ -4,12 +4,12 @@ import quizmos.flashcardlist.FlashcardList;
 import quizmos.storage.Storage;
 import quizmos.ui.Ui;
 
-public class InvalidCommand extends Command {
+public class InvalidIndexCommand extends Command {
     /**
-     * Print the response and suggestion when user typed invalid command
+     * Print the response when user typed invalid index
      */
     @Override
     public void execute(FlashcardList flashcards, Storage storage) {
-        Ui.invalidCommandRespond();
+        Ui.invalidIndexRespond();
     }
 }

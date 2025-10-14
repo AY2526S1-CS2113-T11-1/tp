@@ -17,7 +17,11 @@ public class Flashcard {
         return answer;
     }
 
-    public String toSaveFormat() { return getQuestion() + " | " + getAnswer(); }
+    public String toSaveFormat() {
+        return getQuestion() + " | " + getAnswer();
+    }
 
-    public String toString() { return "Question: " + getQuestion() + " | " + "Answer: " + getAnswer(); }
+    public String toString() {
+        return "Question: " + getQuestion() + " | " + "Answer: " + getAnswer();
+    }
 }
