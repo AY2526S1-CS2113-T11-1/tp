@@ -33,13 +33,15 @@ ____________________________________________________________
 Flashcard 1:
 Question: Question 1
 ____________________________________________________________
-Your input: Answer: Answer 1
+Your input: 
+Answer: Answer 1
 Your input: 
 ____________________________________________________________
 Flashcard 2:
 Question: Question 2
 ____________________________________________________________
-Your input: Answer: Answer 2
+Your input: 
+Answer: Answer 2
 Your input: 
 ____________________________________________________________
 You've reviewed all flashcards!
