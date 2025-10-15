@@ -14,9 +14,6 @@ public class Ui {
      * @return The user's input as a string.
      */
     public String readCommand() {
-        if (!in.hasNextLine()) {
-            return "exit"; 
-        }
         return in.nextLine();
     } 
 
@@ -67,5 +64,5 @@ public class Ui {
     // FlashcardList
     public static void emptyListRespond() {
         respond(Messages.emptyListMessage);
-    }
+    }   
 }

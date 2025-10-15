@@ -1,14 +1,7 @@
 hello
 help
 add q/Question 1 a/Answer 1
-add q/Question 2 a/Answer 2
-review
-ans
-next
-ans
-next
 delete 1
-delete 2
 list
 superidol
 exit
