@@ -1,7 +1,6 @@
 package quizmos.command;
 
 import java.io.IOException;
-import java.util.Scanner;
 
 import quizmos.flashcard.Flashcard;
 import quizmos.flashcardlist.FlashcardList;
