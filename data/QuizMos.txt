@@ -1,3 +1,2 @@
-question1 | answer1
-question3 | answer3
-question0 | answer0
+1 | 1
+2 | 2

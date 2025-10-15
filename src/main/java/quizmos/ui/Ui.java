@@ -6,14 +6,14 @@ import quizmos.common.Messages;
 import quizmos.flashcard.Flashcard;
 
 public class Ui {
-    private final Scanner in = new Scanner(System.in);
+    private static final Scanner in = new Scanner(System.in);
 
     /**
      * Reads a line of input from the user.
      *
      * @return The user's input as a string.
      */
-    public String readCommand() {
+    public static String readCommand() {
         return in.nextLine();
     } 
 

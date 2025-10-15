@@ -1,6 +1,9 @@
 hello
 help
 add q/Question 1 a/Answer 1
+review
+ans
+next
 delete 1
 list
 superidol

@@ -1,7 +1,6 @@
 package quizmos.command;
 
 import java.io.IOException;
-import java.util.Scanner;
 
 import quizmos.common.Messages;
 import quizmos.flashcard.Flashcard;
@@ -16,16 +15,7 @@ import quizmos.ui.Ui;
  * The session can be exited early with the "exit" command.
  */
 public class ReviewCommand extends Command {
-    private final Scanner in = new Scanner(System.in);
-    /**
-     * Executes the review session.
-     * Iterates through the flashcard list, prompting the user to type "ans" to see the answer,
-     * "next" to continue to the next flashcard, or "exit" to stop the session.
-     *
-     * @param flashcards The list of flashcards to review.
-     * @param storage The storage system (not modified during review).
-     * @throws IOException Not expected in this command, but required by interface.
-     */
+
     @Override
     public void execute(FlashcardList flashcards, Storage storage) throws IOException {
         if (flashcards.getSize() == 0) {
@@ -43,10 +33,10 @@ public class ReviewCommand extends Command {
             Ui.printSeparator();
 
             boolean answered = false;
-            while (!answered && in.hasNextLine()) {
-                System.out.print(Messages.reviewPrompt);
-                String input = in.nextLine().trim().toLowerCase();
-            
+            while (!answered) {
+                System.out.print("Your input: ");
+                String input = Ui.readCommand().trim().toLowerCase();
+
                 switch (input) {
                 case "ans" -> System.out.println("Answer: " + card.getAnswer());
                 case "next" -> answered = true;
