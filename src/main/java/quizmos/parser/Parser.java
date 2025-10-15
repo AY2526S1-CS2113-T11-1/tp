@@ -8,6 +8,7 @@ import quizmos.command.InvalidCommand;
 import quizmos.command.InvalidIndexCommand;
 import quizmos.command.ListCommand;
 import quizmos.command.RemoveFlashcardCommand;
+import quizmos.command.ReviewCommand;
 
 public class Parser {
     /**
@@ -52,6 +53,7 @@ public class Parser {
                     yield new InvalidIndexCommand();
                 }
             }
+            case "review" -> new ReviewCommand();
             default -> new InvalidCommand();
             };
         } catch (ArrayIndexOutOfBoundsException e) {

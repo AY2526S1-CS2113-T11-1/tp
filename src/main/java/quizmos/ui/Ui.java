@@ -1,9 +1,9 @@
 package quizmos.ui;
 
+import java.util.Scanner;
+
 import quizmos.common.Messages;
 import quizmos.flashcard.Flashcard;
-
-import java.util.Scanner;
 
 public class Ui {
     private final Scanner in = new Scanner(System.in);
@@ -15,7 +15,7 @@ public class Ui {
      */
     public String readCommand() {
         return in.nextLine();
-    }
+    } 
 
     /**
      * Announce the message with UI format
@@ -64,5 +64,5 @@ public class Ui {
     // FlashcardList
     public static void emptyListRespond() {
         respond(Messages.emptyListMessage);
-    }
+    }   
 }
