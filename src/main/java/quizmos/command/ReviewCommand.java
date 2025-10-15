@@ -2,11 +2,18 @@ package quizmos.command;
 
 import java.io.IOException;
 
+import quizmos.common.Messages;
 import quizmos.flashcard.Flashcard;
 import quizmos.flashcardlist.FlashcardList;
 import quizmos.storage.Storage;
 import quizmos.ui.Ui;
 
+/**
+ * Represents a command that initiates a flashcard review session.
+ * In review mode, each flashcard is shown one at a time, allowing the user
+ * to view the question, reveal the answer, and proceed to the next card.
+ * The session can be exited early with the "exit" command.
+ */
 public class ReviewCommand extends Command {
 
     @Override
@@ -16,7 +23,7 @@ public class ReviewCommand extends Command {
             return;
         }
 
-        Ui.respond("Starting flashcard review. Type 'ans' to see the answer, 'next' to continue, or 'exit' to stop.");
+        Ui.respond(Messages.reviewStartMessage);
 
         for (int i = 0; i < flashcards.getSize(); i++) {
             Flashcard card = flashcards.getFlashcard(i);
@@ -34,14 +41,14 @@ public class ReviewCommand extends Command {
                 case "ans" -> System.out.println("Answer: " + card.getAnswer());
                 case "next" -> answered = true;
                 case "exit" -> {
-                    Ui.respond("Review session ended.");
+                    Ui.respond(Messages.reviewExitMessage);
                     return;
                 }
-                default -> System.out.println("Invalid input. Type 'ans', 'next', or 'exit'.");
+                default -> System.out.println(Messages.reviewInvalidInputMessage);
                 }
-            }
+            }       
         }
 
-        Ui.respond("You've reviewed all flashcards!");
+        Ui.respond(Messages.reviewCompleteMessage);
     }
 }

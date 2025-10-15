@@ -38,4 +38,14 @@ public class Messages {
 
     // flashcard list
     public static String emptyListMessage = "Your task list is empty!";
+
+    // review command
+    public static String reviewStartMessage =
+        "Starting flashcard review. Type 'ans' to see the answer, "
+        + "'next' to continue, or 'exit' to stop.";
+    public static String reviewPrompt = "Your input: ";
+    public static String reviewExitMessage = "Review session ended.";
+    public static String reviewCompleteMessage = "You've reviewed all flashcards!";
+    public static String reviewInvalidInputMessage = "Invalid input. Type 'ans', 'next', or 'exit'.";
+
 }
