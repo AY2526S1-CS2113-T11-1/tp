@@ -9,7 +9,6 @@ import quizmos.storage.Storage;
 import quizmos.ui.Ui;
 
 public class ReviewCommand extends Command {
-    private final Scanner in = new Scanner(System.in);
 
     @Override
     public void execute(FlashcardList flashcards, Storage storage) throws IOException {
@@ -30,7 +29,7 @@ public class ReviewCommand extends Command {
             boolean answered = false;
             while (!answered) {
                 System.out.print("Your input: ");
-                String input = in.nextLine().trim().toLowerCase();
+                String input = Ui.readCommand().trim().toLowerCase();
 
                 switch (input) {
                 case "ans" -> System.out.println("Answer: " + card.getAnswer());

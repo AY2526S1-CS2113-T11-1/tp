@@ -3,24 +3,22 @@ package quizmos;
 import quizmos.command.Command;
 import quizmos.flashcardlist.FlashcardList;
 import quizmos.storage.Storage;
-import quizmos.ui.Ui;
 import quizmos.parser.Parser;
+import quizmos.ui.Ui;
 
 import java.io.IOException;
 
 public class QuizMos {
     private FlashcardList flashcards;
     private Storage storage;
-    private Ui ui;
 
     public QuizMos() {
         this.flashcards = new FlashcardList();
         this.storage = new Storage("data/QuizMos.txt");
-        this.ui = new Ui();
         try {
             flashcards = new FlashcardList(storage.load());
         } catch (Exception e) {
-            e.getMessage();
+            System.out.println(e.getMessage());
             flashcards = new FlashcardList();
         }
     }
@@ -29,11 +27,11 @@ public class QuizMos {
      *
      */
     public void run() throws IOException {
-        ui.greeting();
+        Ui.greeting();
         boolean isExit = false;
 
         while (!isExit){
-            String command = ui.readCommand();
+            String command = Ui.readCommand();
             Command c = Parser.parseCommand(command);
             c.execute(flashcards, storage);
             isExit = c.getIsExit();
