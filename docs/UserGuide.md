@@ -53,7 +53,27 @@ add q/QUESTION a/ANSWER
 delete 3
 ```
 
+### Reviewing flashcards 
 
+To begin the review:
+```bash
+review
+```
+
+To view the answer:
+```bash
+ans
+```
+
+To go to the next flashcard:
+```bash
+next
+```
+
+To exit the review session:
+```bash
+exit
+```
 ## FAQ {not yet completed}
 
 **Q**: {question} 
