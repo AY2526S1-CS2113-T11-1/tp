@@ -7,6 +7,7 @@ import quizmos.command.HelpCommand;
 import quizmos.command.InvalidCommand;
 import quizmos.command.AddFlashcardCommand;
 import quizmos.command.RemoveFlashcardCommand;
+import quizmos.command.SearchFlashcardCommand;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -78,6 +79,26 @@ class ParserTest {
         // extra spaces
         Command spacedOut = Parser.parseCommand("delete    ");
         assertInstanceOf(InvalidCommand.class, spacedOut);
+    }
+
+    @Test
+    void parseCommand_validSearchCommand_returnsSearchFlashcardCommand() {
+        Command command = Parser.parseCommand("search java");
+        assertInstanceOf(SearchFlashcardCommand.class, command);
+
+        Command spacedCommand = Parser.parseCommand("   search   oop   ");
+        assertInstanceOf(SearchFlashcardCommand.class, spacedCommand);
+    }
+
+    @Test
+    void parseCommand_searchCommandMissingKeyword_returnsInvalidCommand() {
+        // no keyword
+        Command noKeyword = Parser.parseCommand("search");
+        assertInstanceOf(InvalidCommand.class, noKeyword);
+
+        // only spaces after search
+        Command onlySpaces = Parser.parseCommand("search     ");
+        assertInstanceOf(InvalidCommand.class, onlySpaces);
     }
 
     @Test

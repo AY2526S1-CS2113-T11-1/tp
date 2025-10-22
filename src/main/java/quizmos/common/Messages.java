@@ -6,7 +6,8 @@ public class Messages {
 
 
     // greeting
-    public static String logo = "  ___        _     __  __\n" +
+    public static String logo =
+            "  ___        _     __  __\n" +
             " / _ \\ _   _(_)___|  \\/  | ___  ___\n" +
             "| | | | | | | |_  / |\\/| |/ _ \\/ __|\n" +
             "| |_| | |_| | |/ /| |  | | (_) \\__ \\\n" +
@@ -20,6 +21,7 @@ public class Messages {
             + "list: show all flashcards\n"
             + "add q/<QUESTION> a/<ANSWER>: add a flashcard with question and answer\n"
             + "delete <INDEX>: delete a flashcard by its index\n"
+            + "search <KEYPHRASE>: show all flashcards containing the keyphrase\n"
             + "review: start a review session\n"
             + "exit: exit the program, MUST run this for file saving";
 
@@ -32,6 +34,8 @@ public class Messages {
     public static String removedTaskMessage = "Removed this flashcard\n";
 
     public static String addedTaskMessage = "Added this flashcard\n";
+
+    public static String noMatchesMessage = "No matches found.";
 
     // goodbye
     public static String goodbyeMessage = "Bye. Hope to see you again soon!";
