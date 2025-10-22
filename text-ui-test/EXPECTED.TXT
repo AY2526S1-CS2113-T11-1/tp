@@ -16,12 +16,27 @@ help: show all commands
 list: show all flashcards
 add q/<QUESTION> a/<ANSWER>: add a flashcard with question and answer
 delete <INDEX>: delete a flashcard by its index
+search <KEYPHRASE>: show all flashcards containing the keyphrase
 review: start a review session
 exit: exit the program, MUST run this for file saving
 ____________________________________________________________
 ____________________________________________________________
 Added this flashcard
 Question: Question 1 | Answer: Answer 1
+____________________________________________________________
+____________________________________________________________
+Added this flashcard
+Question: Question 2 | Answer: Answer 2
+____________________________________________________________
+____________________________________________________________
+1.Question: Question 1 | Answer: Answer 1
+2.Question: Question 2 | Answer: Answer 2
+____________________________________________________________
+____________________________________________________________
+1.Question: Question 1 | Answer: Answer 1
+____________________________________________________________
+____________________________________________________________
+No matches found.
 ____________________________________________________________
 ____________________________________________________________
 Starting flashcard review. Type 'ans' to see the answer, 'next' to continue, or 'exit' to stop.
@@ -32,7 +47,19 @@ Question: Question 1
 ____________________________________________________________
 Your input: Answer: Answer 1
 Your input: ____________________________________________________________
-You've reviewed all flashcards!
+Flashcard 2:
+Question: Question 2
+____________________________________________________________
+Your input: ____________________________________________________________
+Review session ended.
+____________________________________________________________
+____________________________________________________________
+Invalid index! Use a correct integer flashcard index!
+Try `list` to see a list of valid flashcards
+____________________________________________________________
+____________________________________________________________
+Removed this flashcard
+Question: Question 2 | Answer: Answer 2
 ____________________________________________________________
 ____________________________________________________________
 Removed this flashcard

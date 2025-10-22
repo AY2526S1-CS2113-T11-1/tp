@@ -42,6 +42,10 @@ public class Ui {
     public static void goodbye() {
         respond(Messages.goodbyeMessage);
     }
+
+    public static void noMatchesRespond() {
+        respond(Messages.noMatchesMessage);
+    }
     
     public static void invalidCommandRespond() {
         respond(Messages.invalidCommandMessage);
