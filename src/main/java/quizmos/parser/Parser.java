@@ -17,8 +17,6 @@ public class Parser {
      * @param command
      * @return suitable Command object
      */
-    private static final String FLASHCARD_QUESTION_KEY = "q/";
-    private static final String FLASHCARD_ANSWER_KEY = "a/";
     public static Command parseCommand(String command) {
         String trimmed = command.trim();
         String[] parts = trimmed.split(" ", 2);
