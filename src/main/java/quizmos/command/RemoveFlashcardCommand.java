@@ -8,15 +8,21 @@ import quizmos.ui.Ui;
 import java.io.IOException;
 
 public class RemoveFlashcardCommand extends Command {
-    int index;
+    int index = -1; // default index is false
+    private boolean isValid = true;
 
-    public RemoveFlashcardCommand(int index) {
-        this.index = index;
+    public RemoveFlashcardCommand(String arg) {
+        try {
+            int oneBasedIndex = Integer.parseInt(arg.trim());
+            this.index = oneBasedIndex - 1; // convert to zero-based
+        } catch (NumberFormatException | NullPointerException e) {
+            this.isValid = false;
+        }
     }
 
     @Override
     public void execute(FlashcardList flashcards, Storage storage) throws IOException {
-        if (index < 0 || index >= flashcards.getSize()) {
+        if (!isValid || index < 0 || index >= flashcards.getSize()) {
             Ui.invalidIndexRespond();
             return;
         }
