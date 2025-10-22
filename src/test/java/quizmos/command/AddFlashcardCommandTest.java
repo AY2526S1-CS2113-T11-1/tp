@@ -19,7 +19,7 @@ class AddFlashcardCommandTest {
             public void writeToFile(FlashcardList list) { /* skip actual writing */ }
         };
 
-        AddFlashcardCommand command = new AddFlashcardCommand("Q1", "A1");
+        AddFlashcardCommand command = new AddFlashcardCommand(new String[] {"add", "q/Q1 a/A1"});
         command.execute(flashcards, storage);
 
         assertEquals(1, flashcards.getSize());

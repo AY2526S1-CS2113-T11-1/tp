@@ -5,7 +5,6 @@ import quizmos.command.Command;
 import quizmos.command.ExitCommand;
 import quizmos.command.HelpCommand;
 import quizmos.command.InvalidCommand;
-import quizmos.command.InvalidIndexCommand;
 import quizmos.command.AddFlashcardCommand;
 import quizmos.command.RemoveFlashcardCommand;
 
@@ -42,18 +41,18 @@ class ParserTest {
     }
 
     @Test
-    void parseCommand_addCommandMissingArgs_returnsInvalidCommand() {
+    void parseCommand_addCommandMissingArgs_returnsAddFlashcardCommand() {
         // missing both q/ and a/
         Command noArgs = Parser.parseCommand("add something random");
-        assertInstanceOf(InvalidCommand.class, noArgs);
+        assertInstanceOf(AddFlashcardCommand.class, noArgs);
 
         // missing a/
         Command missingAnswer = Parser.parseCommand("add q/What is Java?");
-        assertInstanceOf(InvalidCommand.class, missingAnswer);
+        assertInstanceOf(AddFlashcardCommand.class, missingAnswer);
 
         // missing q/
         Command missingQuestion = Parser.parseCommand("add a/A programming language");
-        assertInstanceOf(InvalidCommand.class, missingQuestion);
+        assertInstanceOf(AddFlashcardCommand.class, missingQuestion);
     }
 
     @Test
@@ -63,14 +62,14 @@ class ParserTest {
     }
 
     @Test
-    void parseCommand_deleteCommandMissingOrInvalidIndex_returnsInvalidIndexCommand() {
+    void parseCommand_deleteCommandMissingOrInvalidIndex_returnsRemoveFlashcardCommand() {
         // missing index
         Command noIndex = Parser.parseCommand("delete");
-        assertInstanceOf(InvalidIndexCommand.class, noIndex);
+        assertInstanceOf(InvalidCommand.class, noIndex);
 
         // not a number
         Command notNumber = Parser.parseCommand("delete abc");
-        assertInstanceOf(InvalidIndexCommand.class, notNumber);
+        assertInstanceOf(RemoveFlashcardCommand.class, notNumber);
 
         // negative number
         Command negativeNumber = Parser.parseCommand("delete -3");
@@ -78,7 +77,7 @@ class ParserTest {
 
         // extra spaces
         Command spacedOut = Parser.parseCommand("delete    ");
-        assertInstanceOf(InvalidIndexCommand.class, spacedOut);
+        assertInstanceOf(InvalidCommand.class, spacedOut);
     }
 
     @Test

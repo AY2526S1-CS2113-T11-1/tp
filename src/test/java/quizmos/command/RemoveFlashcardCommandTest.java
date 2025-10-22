@@ -22,7 +22,7 @@ class RemoveFlashcardCommandTest {
             public void writeToFile(FlashcardList list) { /* no-op */ }
         };
 
-        RemoveFlashcardCommand command = new RemoveFlashcardCommand(0);
+        RemoveFlashcardCommand command = new RemoveFlashcardCommand("1");
         command.execute(flashcards, storage);
 
         assertEquals(0, flashcards.getSize());
