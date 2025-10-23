@@ -26,7 +26,7 @@ public class Storage {
         try {
             File file = new File(filePath);
             File parentDir = file.getParentFile();
-            if (parentDir != null && !parentDir.exists()) {
+            if (!parentDir.exists()) {
                 parentDir.mkdirs(); // create directories if missing
             }
             if (!file.exists()) {
@@ -50,7 +50,8 @@ public class Storage {
 
         try (Scanner scanner = new Scanner(file)) {
             while (scanner.hasNextLine()) {
-                String line = scanner.nextLine().trim();
+                String nextLine = scanner.nextLine();
+                String line = nextLine.trim();
                 if (line.isEmpty()) {
                     continue; // skip empty lines
                 }

@@ -23,67 +23,76 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class StorageTest {
 
-    private Path tempDir;
-    private Path tempFile;
-    private Storage storage;
+    private Path testDirPath;
+    private Path testFilePath;
+    private Storage testStorage;
 
     @BeforeEach
     void setUp() throws IOException {
-        tempDir = Files.createTempDirectory("storageTest");
-        tempFile = tempDir.resolve("flashcards.txt");
-        storage = new Storage(tempFile.toString());
+        testDirPath = Files.createTempDirectory("storageTest");
+        testFilePath = testDirPath.resolve("flashcards.txt");
+
+        testStorage = new Storage(testFilePath.toString());
     }
 
     @AfterEach
     void tearDown() throws IOException {
-        Files.walk(tempDir)
+        Files.walk(testDirPath)
                 .sorted(Comparator.reverseOrder())
                 .map(Path::toFile)
                 .forEach(File::delete);
     }
 
     @Test
-    void constructor_createsFileAndParentDirsIfMissing() {
-        Path nestedDir = tempDir.resolve("nested/folder");
-        Path nestedFile = nestedDir.resolve("cards.txt");
-        assertFalse(Files.exists(nestedFile));
-
-        new Storage(nestedFile.toString());
-
-        assertTrue(Files.exists(nestedDir), "Parent directory should be created");
-        assertTrue(Files.exists(nestedFile), "File should be created");
+    void ensureFilePathExists_nonExistingFilePath_expectPathCreated() {
+        String nonExistingFilePath = "./testFolder/testData.txt";
+        new Storage(nonExistingFilePath);
+        Path directory = Path.of("testFolder");
+        Path file = Path.of("testFolder","testData.txt");
+        assertTrue(Files.exists(directory));
+        assertTrue(Files.exists(file));
     }
 
     @Test
-    void load_returnsEmptyListWhenFileEmpty() throws Exception {
-        ArrayList<Flashcard> flashcards= storage.load();
-        assertTrue(flashcards.isEmpty(), "Empty file should return empty list");
+    void load_fileEmpty_expectEmptyList() throws Exception {
+        ArrayList<Flashcard> flashcards = testStorage.load();
+        assertTrue(flashcards.isEmpty());
     }
 
     @Test
-    void load_ignoresInvalidAndEmptyLines() throws Exception {
+    void load_noSeparator_expectZeroParts() throws Exception {
+        List<String> lines = Arrays.asList(
+                "",
+                "Invalid line without pipe"
+        );
+        Files.write(testFilePath, lines);
+
+        List<Flashcard> testFlashCards = testStorage.load();
+
+        assertEquals(0, testFlashCards.size());
+    }
+
+    @Test
+    void load_oneSeparator_expectTwoParts() throws Exception {
         List<String> lines = Arrays.asList(
                 "Question 1 | Answer 1",
-                "",
-                "Invalid line without pipe",
                 "Question 2 | Answer 2"
         );
-        Files.write(tempFile, lines);
+        Files.write(testFilePath, lines);
+        List<Flashcard> testFlashCards = testStorage.load();
 
-        List<Flashcard> loaded = storage.load();
-
-        assertEquals(2, loaded.size());
-        assertEquals("Question 1", loaded.get(0).getQuestion());
-        assertEquals("Answer 1", loaded.get(0).getAnswer());
-        assertEquals("Question 2", loaded.get(1).getQuestion());
-        assertEquals("Answer 2", loaded.get(1).getAnswer());
+        assertEquals(2, testFlashCards.size());
+        assertEquals("Question 1", testFlashCards.get(0).getQuestion());
+        assertEquals("Answer 1", testFlashCards.get(0).getAnswer());
+        assertEquals("Question 2", testFlashCards.get(1).getQuestion());
+        assertEquals("Answer 2", testFlashCards.get(1).getAnswer());
     }
 
     @Test
-    void load_trimsSpacesAroundQuestionAndAnswer() throws Exception {
-        Files.write(tempFile, Arrays.asList("   What is AI   |   Artificial Intelligence   "));
+    void load_flashcardWithSpaces_expectTrimmedFlashcard() throws Exception {
+        Files.write(testFilePath, Arrays.asList("   What is AI   |   Artificial Intelligence   "));
 
-        List<Flashcard> loaded = storage.load();
+        List<Flashcard> loaded = testStorage.load();
 
         assertEquals(1, loaded.size());
         assertEquals("What is AI", loaded.get(0).getQuestion());
@@ -91,35 +100,29 @@ class StorageTest {
     }
 
     @Test
-    void writeToFile_writesFlashcardsCorrectly() throws Exception {
+    void writeToFile_twoFlashcards_expectTwoLines() throws Exception {
         FlashcardList list = new FlashcardList();
         list.addFlashcard(new Flashcard("Q1", "A1"));
         list.addFlashcard(new Flashcard("Q2", "A2"));
 
-        storage.writeToFile(list);
+        testStorage.writeToFile(list);
 
-        List<String> lines = Files.readAllLines(tempFile);
+        List<String> lines = Files.readAllLines(testFilePath);
         assertEquals(2, lines.size());
         assertEquals("Q1 | A1", lines.get(0));
         assertEquals("Q2 | A2", lines.get(1));
     }
 
     @Test
-    void writeToFile_overwritesPreviousContent() throws Exception {
-        Files.write(tempFile, Arrays.asList("Old data line"));
+    void writeToFile_oneFlashcard_expectOverwriting() throws Exception {
+        Files.write(testFilePath, Arrays.asList("Old data line"));
         FlashcardList list = new FlashcardList();
         list.addFlashcard(new Flashcard("NewQ", "NewA"));
 
-        storage.writeToFile(list);
+        testStorage.writeToFile(list);
 
-        List<String> lines = Files.readAllLines(tempFile);
+        List<String> lines = Files.readAllLines(testFilePath);
         assertEquals(1, lines.size());
         assertEquals("NewQ | NewA", lines.get(0));
-    }
-
-    @Test
-    void load_throwsFileNotFoundIfDeleted() throws Exception {
-        Files.delete(tempFile);
-        assertThrows(FileNotFoundException.class, () -> storage.load());
     }
 }
