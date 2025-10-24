@@ -8,6 +8,7 @@ import quizmos.command.InvalidCommand;
 import quizmos.command.AddFlashcardCommand;
 import quizmos.command.RemoveFlashcardCommand;
 import quizmos.command.SearchFlashcardCommand;
+import quizmos.exception.QuizMosInputException;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -15,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 
 class ParserTest {
     @Test
-    void parseCommand_validCommand_correctCommandType(){
+    void parseCommand_validCommand_correctCommandType() throws QuizMosInputException {
         // help command
         Command helpCommand = Parser.parseCommand("help");
         assertInstanceOf(HelpCommand.class, helpCommand);
@@ -36,13 +37,13 @@ class ParserTest {
     }
 
     @Test
-    void parseCommand_validAddCommand_returnsAddFlashcardCommand() {
+    void parseCommand_validAddCommand_returnsAddFlashcardCommand() throws QuizMosInputException {
         Command command = Parser.parseCommand("add q/What is Java? a/A programming language");
         assertInstanceOf(AddFlashcardCommand.class, command);
     }
 
     @Test
-    void parseCommand_addCommandMissingArgs_returnsAddFlashcardCommand() {
+    void parseCommand_addCommandMissingArgs_returnsAddFlashcardCommand() throws QuizMosInputException {
         // missing both q/ and a/
         Command noArgs = Parser.parseCommand("add something random");
         assertInstanceOf(AddFlashcardCommand.class, noArgs);
@@ -57,13 +58,13 @@ class ParserTest {
     }
 
     @Test
-    void parseCommand_validDeleteCommand_returnsRemoveFlashcardCommand() {
+    void parseCommand_validDeleteCommand_returnsRemoveFlashcardCommand() throws QuizMosInputException {
         Command command = Parser.parseCommand("delete 1");
         assertInstanceOf(RemoveFlashcardCommand.class, command);
     }
 
     @Test
-    void parseCommand_deleteCommandMissingOrInvalidIndex_returnsRemoveFlashcardCommand() {
+    void parseCommand_deleteCommandMissingOrInvalidIndex_returnsRemoveFlashcardCommand() throws QuizMosInputException {
         // missing index
         Command noIndex = Parser.parseCommand("delete");
         assertInstanceOf(InvalidCommand.class, noIndex);
@@ -82,7 +83,7 @@ class ParserTest {
     }
 
     @Test
-    void parseCommand_validSearchCommand_returnsSearchFlashcardCommand() {
+    void parseCommand_validSearchCommand_returnsSearchFlashcardCommand() throws QuizMosInputException {
         Command command = Parser.parseCommand("search java");
         assertInstanceOf(SearchFlashcardCommand.class, command);
 
@@ -91,7 +92,7 @@ class ParserTest {
     }
 
     @Test
-    void parseCommand_searchCommandMissingKeyword_returnsInvalidCommand() {
+    void parseCommand_searchCommandMissingKeyword_returnsInvalidCommand() throws QuizMosInputException {
         // no keyword
         Command noKeyword = Parser.parseCommand("search");
         assertInstanceOf(InvalidCommand.class, noKeyword);
@@ -102,7 +103,7 @@ class ParserTest {
     }
 
     @Test
-    void parseCommand_invalidCommand_invalidCommandInstance(){
+    void parseCommand_invalidCommand_invalidCommandInstance() throws QuizMosInputException {
         // empty string
         Command emptyCommand = Parser.parseCommand("");
         assertInstanceOf(InvalidCommand.class, emptyCommand);

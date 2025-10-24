@@ -22,7 +22,7 @@ public class Messages {
             + "add q/<QUESTION> a/<ANSWER>: add a flashcard with question and answer\n"
             + "delete <INDEX>: delete a flashcard by its index\n"
             + "search <KEYPHRASE>: show all flashcards containing the keyphrase\n"
-            + "review: start a review session\n"
+            + "review m/[FLIP | MQC | TF]: start a review session\n"
             + "exit: exit the program, MUST run this for file saving";
 
     // invalid command
@@ -44,12 +44,4 @@ public class Messages {
     public static String emptyListMessage = "Your task list is empty!";
 
     // review command
-    public static String reviewStartMessage =
-        "Starting flashcard review. Type 'ans' to see the answer, "
-        + "'next' to continue, or 'exit' to stop.";
-    public static String reviewPrompt = "Your input: ";
-    public static String reviewExitMessage = "Review session ended.";
-    public static String reviewCompleteMessage = "You've reviewed all flashcards!";
-    public static String reviewInvalidInputMessage = "Invalid input. Type 'ans', 'next', or 'exit'.";
-
 }

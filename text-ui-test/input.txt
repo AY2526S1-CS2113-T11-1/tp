@@ -1,17 +1,17 @@
 hello
 help
-add q/Question 1 a/Answer 1
-add q/Question 2 a/Answer 2
+add q/1 a/1
+add q/2 a/2
 list
 search 1
 search 3
 review
-ans
-next
-exit
-delete 0
+add q/3 a/3
+review m/flip
+y
+n
+quit
+review m/mcq
 delete 2
 delete 1
-list
-superidol
 exit
