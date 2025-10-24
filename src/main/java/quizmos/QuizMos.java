@@ -31,10 +31,14 @@ public class QuizMos {
         boolean isExit = false;
 
         while (!isExit){
-            String command = Ui.readCommand();
-            Command c = Parser.parseCommand(command);
-            c.execute(flashcards, storage);
-            isExit = c.getIsExit();
+            try {
+                String command = Ui.readCommand();
+                Command c = Parser.parseCommand(command);
+                c.execute(flashcards, storage);
+                isExit = c.getIsExit();
+            } catch (Exception e) {
+                Ui.respondError(e.getMessage());
+            }
         }
         System.exit(0);
     }

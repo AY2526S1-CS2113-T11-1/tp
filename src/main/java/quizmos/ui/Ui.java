@@ -6,6 +6,9 @@ import quizmos.common.Messages;
 import quizmos.flashcard.Flashcard;
 
 public class Ui {
+    private static final String ANSI_RED = "\u001B[31m";
+    private static final String ANSI_RESET = "\u001B[0m";
+
     private static final Scanner in = new Scanner(System.in);
 
     /**
@@ -19,13 +22,39 @@ public class Ui {
 
     /**
      * Announce the message with UI format
-     * @param message
+     * @param message error message
      */
     public static void respond(String message) {
         System.out.println(Messages.separator);
         System.out.println(message);
         System.out.println(Messages.separator);
     }
+
+    /**
+     * Announce error with UI format
+     * @param message error message
+     */
+    public static void respondError(String message) {
+        Ui.printSeparator();
+        Ui.printError(message);
+        Ui.printSeparator();
+    }
+
+     public static void printMessage(String message) {
+        System.out.println(message);
+        System.out.flush();
+     }
+
+     public static void printPrompt(String message) {
+        System.out.print(message);
+        System.out.flush();
+     }
+
+     public static void printError(String message) {
+        String errorMessage = ANSI_RED + "❌ ERROR: " + message + ANSI_RESET;
+        System.out.println(errorMessage);
+        System.out.flush();
+     }
 
     public static void printSeparator() {
         System.out.println(Messages.separator);
@@ -68,5 +97,8 @@ public class Ui {
     // FlashcardList
     public static void emptyListRespond() {
         respond(Messages.emptyListMessage);
-    }   
+    }
+
+    // Review
+    
 }

@@ -1,10 +1,18 @@
 package quizmos.command;
 
-import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-import quizmos.common.Messages;
+import quizmos.common.ReviewMessages;
+import quizmos.exception.QuizMosException;
+import quizmos.exception.QuizMosInputException;
+import quizmos.exception.QuizMosLogicException;
 import quizmos.flashcard.Flashcard;
 import quizmos.flashcardlist.FlashcardList;
+import quizmos.review.IReviewMode;
+import quizmos.review.MultipleChoiceReview;
+import quizmos.review.SimpleFlipReview;
+import quizmos.review.TrueFalseReview;
 import quizmos.storage.Storage;
 import quizmos.ui.Ui;
 
@@ -15,40 +23,97 @@ import quizmos.ui.Ui;
  * The session can be exited early with the "exit" command.
  */
 public class ReviewCommand extends Command {
+    private IReviewMode reviewMode;
+
+    private int count = 0;
+    private int correct = 0;
+    private final String mode;
+
+    /**
+     *
+     * @param command raw user's command
+     * @throws QuizMosInputException if missing review mode
+     */
+    public ReviewCommand(String command) throws QuizMosInputException {
+        String reviewRegex = "(review)\\sm/(.+)";
+
+        Pattern pattern = Pattern.compile(reviewRegex);
+        Matcher matcher = pattern.matcher(command);
+
+        if (matcher.find()) {
+            this.mode =  matcher.group(2).trim().toLowerCase();
+        } else {
+            throw new QuizMosInputException(ReviewMessages.REVIEW_MISSING_MODE);
+        }
+    }
+
+    /**
+     * set review mode as flip/mcq/tf with flashcard list
+     *
+     * @param flashcards list of flashcard
+     * @throws QuizMosException for input error
+     */
+    private void setReviewMode(FlashcardList flashcards) throws QuizMosException {
+        switch (mode) {
+        case "mcq":
+            this.reviewMode = new MultipleChoiceReview(flashcards);
+            break;
+        case "flip":
+            this.reviewMode = new SimpleFlipReview();
+            break;
+        case "tf":
+            this.reviewMode = new TrueFalseReview(flashcards);
+            break;
+        default:
+            throw new QuizMosInputException(ReviewMessages.REVIEW_INVALID_MODE);
+        }
+    }
+
+    /**
+     * quit review session
+     * print goodbye message, total cards reviewed and result (if mcq or tf)
+     */
+    public void quitReview() {
+        Ui.printSeparator();
+        Ui.printMessage(ReviewMessages.endReview(count));
+        if (!(reviewMode instanceof SimpleFlipReview)) {
+            Ui.printMessage(ReviewMessages.reviewResult(count, correct));
+        }
+        Ui.printSeparator();
+    }
+
+    public void reviewLoop(FlashcardList flashcards) {
+        int listSize = flashcards.getSize();
+        while (count < listSize) {
+            Flashcard currentFlashcard = flashcards.getFlashcard(count);
+            reviewMode.displayQuestion(currentFlashcard, count);
+            String input = reviewMode.getPrompt();
+            if (input.equals("quit")) {
+                break;
+            }
+            if (reviewMode.checkAnswer(input, currentFlashcard)) {
+                correct++;
+            }
+            count++;
+        }
+    }
 
     @Override
-    public void execute(FlashcardList flashcards, Storage storage) throws IOException {
+    public void execute(FlashcardList flashcards, Storage storage) throws QuizMosException {
+        assert flashcards != null : "FlashcardList can't be null";
+
         if (flashcards.getSize() == 0) {
-            Ui.emptyListRespond();
-            return;
+            throw new QuizMosLogicException(ReviewMessages.REVIEW_EMPTY_LIST);
         }
 
-        Ui.respond(Messages.reviewStartMessage);
+        // assign reviewMode
+        setReviewMode(flashcards);
 
-        for (int i = 0; i < flashcards.getSize(); i++) {
-            Flashcard card = flashcards.getFlashcard(i);
-            Ui.printSeparator();
-            System.out.println("Flashcard " + (i + 1) + ":");
-            System.out.println("Question: " + card.getQuestion());
-            Ui.printSeparator();
+        // review loop
+        reviewLoop(flashcards);
 
-            boolean answered = false;
-            while (!answered) {
-                System.out.print("Your input: ");
-                String input = Ui.readCommand().trim().toLowerCase();
-
-                switch (input) {
-                case "ans" -> System.out.println("Answer: " + card.getAnswer());
-                case "next" -> answered = true;
-                case "exit" -> {
-                    Ui.respond(Messages.reviewExitMessage);
-                    return;
-                }
-                default -> System.out.println(Messages.reviewInvalidInputMessage);
-                }
-            }       
-        }
-
-        Ui.respond(Messages.reviewCompleteMessage);
+        // quit review
+        quitReview();
     }
+
 }
