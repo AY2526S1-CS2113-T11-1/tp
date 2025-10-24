@@ -25,7 +25,6 @@ public class MultipleChoiceReview implements IReviewMode {
     }
 
     /**
-     *
      * @param size size of flashcard list
      * @param index correct index that need to be included
      * @return list of 4 integers ~ 4 indices for 4 answer (including index)

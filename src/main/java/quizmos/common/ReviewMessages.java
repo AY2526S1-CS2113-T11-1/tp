@@ -3,9 +3,9 @@ package quizmos.common;
 import quizmos.flashcard.Flashcard;
 
 public class ReviewMessages {
-    private ReviewMessages() {}
 
-    public static final String REVIEW_EMPTY_LIST = "List is empty\nTry add some flashcards: add q/<QUESTION> a/<ANSWER>";
+    public static final String REVIEW_EMPTY_LIST = "List is empty\n" +
+            "Try add some flashcards: add q/<QUESTION> a/<ANSWER>";
 
     public static final String REVIEW_MISSING_MODE = "Please pick a review mode: review m/[FLIP | MCQ | TF]";
     public static final String REVIEW_INVALID_MODE = "Invalid review mode: review m/[FLIP | MCQ | TF]";
@@ -26,6 +26,8 @@ public class ReviewMessages {
     public static final String MCQ_NOT_ENOUGH_FLASHCARDS = "Not enough flashcards, " +
             "MCQ mode requires at least 4 flashcards\n" +
             "Please add more flashcard";
+
+    private ReviewMessages() {}
 
     public static String endReview(int count) {
         return "Review session ended!\n" + "Total reviewed: " + count;

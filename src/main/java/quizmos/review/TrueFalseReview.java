@@ -40,7 +40,6 @@ public class TrueFalseReview implements IReviewMode {
     }
 
     /**
-     *
      * @param input user's input (t/f)
      * @param flashcard reviewing
      * @return true if correct, false if not
@@ -74,7 +73,6 @@ public class TrueFalseReview implements IReviewMode {
     }
 
     /**
-     *
      * @return user's input (t/f/quit)
      */
     public String getPrompt() {

@@ -40,21 +40,21 @@ public class Ui {
         Ui.printSeparator();
     }
 
-     public static void printMessage(String message) {
+    public static void printMessage(String message) {
         System.out.println(message);
         System.out.flush();
-     }
+    }
 
-     public static void printPrompt(String message) {
+    public static void printPrompt(String message) {
         System.out.print(message);
         System.out.flush();
-     }
+    }
 
-     public static void printError(String message) {
+    public static void printError(String message) {
         String errorMessage = ANSI_RED + "❌ ERROR: " + message + ANSI_RESET;
         System.out.println(errorMessage);
         System.out.flush();
-     }
+    }
 
     public static void printSeparator() {
         System.out.println(Messages.separator);

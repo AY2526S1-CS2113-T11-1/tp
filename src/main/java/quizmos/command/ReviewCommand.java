@@ -30,7 +30,6 @@ public class ReviewCommand extends Command {
     private final String mode;
 
     /**
-     *
      * @param command raw user's command
      * @throws QuizMosInputException if missing review mode
      */
