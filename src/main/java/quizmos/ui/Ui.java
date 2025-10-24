@@ -6,6 +6,7 @@ import quizmos.common.Messages;
 import quizmos.flashcard.Flashcard;
 
 public class Ui {
+    public static boolean isTestMode = false;
     private static final String ANSI_RED = "\u001B[31m";
     private static final String ANSI_RESET = "\u001B[0m";
 
@@ -34,11 +35,6 @@ public class Ui {
      * Announce error with UI format
      * @param message error message
      */
-    public static void respondError(String message) {
-        Ui.printSeparator();
-        Ui.printError(message);
-        Ui.printSeparator();
-    }
 
     public static void printMessage(String message) {
         System.out.println(message);
@@ -51,9 +47,22 @@ public class Ui {
     }
 
     public static void printError(String message) {
-        String errorMessage = ANSI_RED + "❌ ERROR: " + message + ANSI_RESET;
-        System.out.println(errorMessage);
-        System.out.flush();
+        if (isTestMode) {
+            String errorMessage = "? ERROR: " + message;
+            System.out.println(errorMessage);
+            System.out.flush();
+        } else {
+            String errorMessage = ANSI_RED + "❌ ERROR: " + message + ANSI_RESET;
+            System.out.println(errorMessage);
+            System.out.flush();
+        }
+
+    }
+
+    public static void respondError(String message) {
+        Ui.printSeparator();
+        Ui.printError(message);
+        Ui.printSeparator();
     }
 
     public static void printSeparator() {

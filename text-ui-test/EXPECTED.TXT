@@ -39,7 +39,7 @@ ____________________________________________________________
 No matches found.
 ____________________________________________________________
 ____________________________________________________________
-[31m? ERROR: Please pick a review mode: review m/[FLIP | MCQ | TF][0m
+? ERROR: Please pick a review mode: review m/[FLIP | MCQ | TF]
 ____________________________________________________________
 ____________________________________________________________
 Added this flashcard
@@ -62,8 +62,8 @@ Review session ended!
 Total reviewed: 2
 ____________________________________________________________
 ____________________________________________________________
-[31m? ERROR: Not enough flashcards, MCQ mode requires at least 4 flashcards
-Please add more flashcard[0m
+? ERROR: Not enough flashcards, MCQ mode requires at least 4 flashcards
+Please add more flashcard
 ____________________________________________________________
 ____________________________________________________________
 Removed this flashcard
