@@ -70,6 +70,18 @@ public class FlashcardList {
         return flashcards;
     }
 
+    public void toggleStar(int index) {
+        flashcards.get(index).toggleStar();
+    }
+
+    public ArrayList<Flashcard> getStarredFlashcards() {
+        ArrayList<Flashcard> starred = new ArrayList<>();
+        for (Flashcard f : flashcards) {
+            if (f.isStarred()) starred.add(f);
+        }
+        return starred;
+    }
+
     public void showList() {
         if (this.getSize() == 0) {
             Ui.emptyListRespond();

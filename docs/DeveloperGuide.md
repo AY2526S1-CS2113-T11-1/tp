@@ -10,6 +10,7 @@
 
 
 ## Product scope
+
 ### Target user profile
 
 {Describe the target user profile}
