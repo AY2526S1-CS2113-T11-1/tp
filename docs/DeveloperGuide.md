@@ -50,7 +50,7 @@ The `Storage#load()` method:
 4. Sets `isStarred` to `true` if the third part equals `"Starred"`.
 5. Adds the `Flashcard` to a `FlashcardList`.
 
-![Step 1](../src/main/java/quizmos/sequencediagrams/StarFeature_Step1_Load-Step_1__Loading_Flashcards_from_File.png "Step 1")
+![Step 1](img.png "Step 1")
 
 ---
 
