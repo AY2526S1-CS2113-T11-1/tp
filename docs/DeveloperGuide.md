@@ -8,6 +8,184 @@
 
 {Describe the design and implementation of the product. Use UML diagrams and short code snippets where applicable.}
 
+---
+
+## Adding a Flashcard Feature
+
+### Overview
+
+The Add Flashcard feature allows users to create new flashcards with a question and an answer.
+The user inputs a command in the following format:
+
+```bash
+add q/<QUESTION> a/<ANSWER>
+```
+
+
+For example:
+```bash
+add q/What is Java? a/A programming language.
+```
+
+This feature is made possible by the following components:
+
+- **Storage**: Persists flashcards to a local text file.
+- **Parser**: Parses user input and extracts question/answer text.
+- **AddFlashcardCommand**: Creates a new flashcard and adds it to the FlashcardList.
+- **FlashcardList**: Stores and manages the collection of flashcards.
+- **Ui**: Displays confirmation and feedback messages to the user.
+
+---
+
+## Step 1. Parsing the Add Command
+
+When a user enters an `add` command, the `Parser` class:
+1. Detects `"add"` as the command keyword.
+2. Extracts the `q/` and `a/` arguments.
+3. Creates a new `AddFlashcardCommand` object with the parsed question and answer.
+
+![Step 1](images/AddFlashcardFeature_Step1_Parse.png "Step 1")
+
+---
+
+## Step 2. Executing the Add Command
+
+When executed:
+1. `AddFlashcardCommand` creates a new `Flashcard` with the parsed data.
+2. Adds it to the `FlashcardList`.
+3. Calls `Storage.writeToFile()` to persist the change.
+4. Uses `Ui.showFlashcardAdded()` to confirm the addition.
+
+![Step 2](images/AddFlashcardFeature_Step2_Execute.png "Step 2")
+
+---
+
+### Full Class Diagram for Implementation of Add Feature
+
+![Class Diagram](images/AddFlashcardFeature_ClassDiagram.png "Class Diagram")
+
+---
+
+## Delete Flashcard Feature
+
+### Overview
+
+The **Delete Flashcard** feature allows users to remove flashcards from the list by specifying their 1-based index:
+```bash
+delete INDEX
+```
+
+This command deletes the flashcard at INDEX in the current list (if the index is valid). 
+
+Components involved:
+
+- **Parser** — recognises `delete` and extracts the index argument.
+- **RemoveFlashcardCommand** — validates the index and performs the removal.
+- **FlashcardList** — holds and mutates the collection of flashcards.
+- **Storage** — persists the updated list to disk.
+- **Ui** — informs the user about success or invalid index.
+
+---
+
+## Step 1 — Parsing the Delete Command
+
+When the user types `delete 2`:
+
+1. `Parser` splits the input and identifies the command keyword `delete`.
+2. `Parser` extracts the index argument (here, `"2"`).
+3. `Parser` constructs a `RemoveFlashcardCommand` with the raw argument (string or parsed index depending on design).
+
+![Step 1](images/RemoveFlashcardFeature_Step1_Parse.png "Step 1")
+
+---
+
+## Step 2 — Parsing the Delete Command
+
+When the `RemoveFlashcardCommand` executes:
+
+1. The command attempts to parse/validate the index:
+- convert to integer (one-based), convert to zero-based.
+- if parse fails or index out of range → call `Ui.invalidIndexRespond()` and abort.
+2. If valid:
+- retrieve the flashcard from `FlashcardList`.
+- remove it from `FlashcardList`.
+- call `Storage.writeToFile(flashcards)` to persist the change.
+- call `Ui.showFlashcardRemoved(deletedFlashcard)` to inform the user.
+
+![Step 2](images/RemoveFlashcardFeature_Step2_Execute.png "Step 2")
+
+---
+
+### Full Class Diagram for Remove Feature
+
+![Class Diagram](images/RemoveFlashcardFeature_ClassDiagram.png "Class Diagram")
+
+---
+
+## Search Flashcard Feature
+
+### Overview
+
+The **Search Flashcard** feature finds and lists flashcards whose question or answer contains a given keyphrase.
+
+Command form:
+
+```bash
+search <KEYPHRASE>
+```
+
+Example:
+
+```bash
+search Java
+```
+
+When executed, the program searches through all flashcards and displays only those that contain the keyword in either the question or the answer.
+
+Components Involved
+
+- **Parser** — recognizes the `search` command and extracts the keyphrase.
+- **SearchFlashcardCommand** — performs the actual search logic.
+- **FlashcardList** — provides access to all flashcards.
+- **Ui** — displays search results or a message if no matches are found.
+
+---
+
+## Step 1 — Parsing the Search Command
+
+When the user enters:
+```bash
+search Java
+```
+
+The `Parser` class:
+1. Identifies `search` as the command keyword.
+2. Extracts `"Java"` as the keyphrase argument.
+3. Creates a new `SearchFlashcardCommand("Java")`.
+
+![Step 1](images/SearchFlashcardFeature_Step1_Parse.png "Step 1")
+
+---
+
+## Step 2 — Executing the Search Command
+
+When executed, the `SearchFlashcardCommand` performs the following steps:
+
+1. Creates a new, empty `FlashcardList` called `matches`.
+2. Iterates through all flashcards in the main list.
+3. Checks whether each flashcard’s **question** or **answer** contains the keyphrase.
+4. If a match is found, it is added to `matches`.
+5. After iterating through all flashcards:
+- If `matches` is empty → calls `Ui.noMatchesRespond()`.
+- Otherwise → calls `matches.showList()` to display the results.
+
+![Step 2](images/SearchFlashcardFeature_Step2_Execute.png "Step 2")
+
+---
+
+### Full Class Diagram for Remove Feature
+
+![Class Diagram](images/SearchFlashcardFeature_ClassDiagram.png "Class Diagram")
 
 ---
 
@@ -50,7 +228,7 @@ The `Storage#load()` method:
 4. Sets `isStarred` to `true` if the third part equals `"Starred"`.
 5. Adds the `Flashcard` to a `FlashcardList`.
 
-![Step 1](StarFeature_Step1_Load-Step_1__Loading_Flashcards_from_File.png "Step 1")
+![Step 1](images/StarFeature_Step1_Load-Step_1__Loading_Flashcards_from_File.png "Step 1")
 
 ---
 
@@ -66,7 +244,7 @@ The `Parser` class:
 2. Extracts the index argument (`3`).
 3. Creates a new `StarCommand(index)` instance.
 
-![Step 2](StarFeature_Step2_Parse-Step_2__Parsing_the_Star_Command.png "Step 2")
+![Step 2](images/StarFeature_Step2_Parse-Step_2__Parsing_the_Star_Command.png "Step 2")
 
 ---
 
@@ -78,7 +256,7 @@ When executed, the `StarCommand`:
 2. Calls the flashcard’s `toggleStar()` method to flip its status.
 3. Calls `UI#showStarredFlashcard(flashcard)` to display the confirmation message.
 
-![Step 3](StarFeature_Step3_Execute-Step_3__Executing_the_Star_Command.png "Step 3")
+![Step 3](images/StarFeature_Step3_Execute-Step_3__Executing_the_Star_Command.png "Step 3")
 
 ---
 
@@ -91,13 +269,13 @@ The `Storage#save()` method:
 1. Iterates through each flashcard in the list.
 2. Writes its question, answer, and `"Starred"` (if `isStarred` is true) back to the text file.
 
-![Step 4](StarFeature_Step4_Save-Step_4__Saving_Updated_Flashcards.png "Step 4")
+![Step 4](images/StarFeature_Step4_Save-Step_4__Saving_Updated_Flashcards.png "Step 4")
 
 ---
 
 ### Full Class Diagram for Implementation of Starring Feature
 
-![Class Diagram](StarFeature_ClassDiagram-Starring_Feature_Class_Diagram.png "Class Diagram")
+![Class Diagram](images/StarFeature_ClassDiagram-Starring_Feature_Class_Diagram.png "Class Diagram")
 
 ---
 

@@ -1,0 +1,19 @@
+@startuml
+class SearchFlashcardCommand {
+  - String keyPhrase
+  + execute(flashcards, storage)
+}
+
+class FlashcardList {
+  + getAll()
+  + showList()
+}
+
+class Flashcard {
+  + getQuestion()
+  + getAnswer()
+}
+
+SearchFlashcardCommand --> FlashcardList
+SearchFlashcardCommand --> Flashcard
+@enduml
