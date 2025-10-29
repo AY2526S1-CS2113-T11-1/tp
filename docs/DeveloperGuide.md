@@ -6,15 +6,29 @@
 
 ## Design & implementation
 
-{Describe the design and implementation of the product. Use UML diagrams and short code snippets where applicable.}
+### Overall design
+- class `QuizMos`: run the program loop, implement `FlashcardList` and `Storage`
+- class `Ui`: define printing formats (announcements, errors,...)
+- class `Storage`: store and load flashcards
+- class `Parser`: parse raw user's command to suitable `Command` object
+- package `common`: include `Messages` class (for general messages) and other classes store messages for features
+- package `command`: include different classes for each command to execute
 
-
+### Feature: review
+- If `Parser` detects `review` command, it creates a `ReviewCommand` instance
+- The `ReviewCommand` instance gets the raw command to define its review mode (an `IReviewMode` instance)
+- The `ReviewCommand` instance run the review loop:
+  - display question (`displayQuestion`)
+  - prompt user's answer (`getPrompt()`)
+  - check that answer (`checkAnswer()`)
+- Each IReviewMode instance override the 3 functions to fit its function
 
 ## Product scope
 
 ### Target user profile
 
-{Describe the target user profile}
+- Busy students
+- Students that want to study their materials buy active recall
 
 ### Value proposition
 
