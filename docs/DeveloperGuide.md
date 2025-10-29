@@ -9,99 +9,97 @@
 {Describe the design and implementation of the product. Use UML diagrams and short code snippets where applicable.}
 
 
-Starring Flashcards Feature
-Overview
+---
 
-The starring feature allows users to mark important flashcards as “starred” for easier review. A starred flashcard is indicated by the isStarred attribute in the Flashcard class.
+## Starring Flashcards Feature
+
+### Overview
+
+The starring feature allows users to **mark important flashcards** as “starred” for easier review. A starred flashcard is indicated by the `isStarred` attribute in the `Flashcard` class.
 
 This feature is made possible by the following components:
 
-Storage: Handles reading and writing flashcards (including their isStarred status) from and to a text file.
+- **Storage**: Handles reading and writing flashcards (including their `isStarred` status) from and to a text file.
+- **Flashcard**: Represents a single flashcard, with an additional `isStarred` attribute and `toggleStar()` method.
+- **FlashcardList**: Manages a list of flashcards.
+- **Parser**: Parses user input and creates corresponding `Command` objects.
+- **StarCommand**: Toggles the `isStarred` status of a flashcard at the specified index.
+- **UI**: Displays the result of starring actions to the user.
+- **Message**: Stores user-facing message templates.
 
-Flashcard: Represents a single flashcard, with an additional isStarred attribute and toggleStar() method.
+---
 
-FlashcardList: Manages a list of flashcards.
+### Step 1. Loading Flashcards from File
 
-Parser: Parses user input and creates corresponding Command objects.
-
-StarCommand: Toggles the isStarred status of a flashcard at the specified index.
-
-UI: Displays the result of starring actions to the user.
-
-Message: Stores user-facing message templates.
-
-Step 1. Loading Flashcards from File
-
-When the user starts the application, the Storage class loads flashcards from a text file.
+When the user starts the application, the `Storage` class loads flashcards from a text file.  
 Each line in the file follows the format:
 
-Question | Answer | Starred
+`Question | Answer | Starred`
 
 
 or
 
-Question | Answer |
+`Question | Answer |`
 
 
-The Storage#load() method:
+The `Storage#load()` method:
 
-Reads each line.
+1. Reads each line.
+2. Splits it by `|`.
+3. Creates a new `Flashcard` instance.
+4. Sets `isStarred` to `true` if the third part equals `"Starred"`.
+5. Adds the `Flashcard` to a `FlashcardList`.
 
-Splits it by |.
+![Step 1](../src/main/java/quizmos/command/StarFeature_Step1_Load.puml "Step 1")
 
-Creates a new Flashcard instance.
+---
 
-Sets isStarred to true if the third part equals "Starred".
-
-Adds the Flashcard to a FlashcardList.
-
-<img alt="Step 1" height="793" src="../src/main/java/quizmos/command/StarFeature_Step1_Load.puml" width="683" title="Step 1"/>
-
-Step 2. Parsing the Star Command
+### Step 2. Parsing the Star Command
 
 When a user enters:
 
-star 3
+`star 3`
 
+The `Parser` class:
 
-The Parser class:
+1. Identifies that the command keyword is `"star"`.
+2. Extracts the index argument (`3`).
+3. Creates a new `StarCommand(index)` instance.
 
-Identifies that the command keyword is "star".
+![Step 2](../src/main/java/quizmos/command/StarFeature_Step2_Parse.puml "Step 2")
 
-Extracts the index argument (3).
+---
 
-Creates a new StarCommand(index) instance.
+### Step 3. Executing the Star Command
 
-<img alt="Step 2" height="793" src="../src/main/java/quizmos/command/StarFeature_Step2_Parse.puml" width="683" title="Step 1"/>
+When executed, the `StarCommand`:
 
-Step 3. Executing the Star Command
+1. Retrieves the `Flashcard` from the `FlashcardList` at the specified index.
+2. Calls the flashcard’s `toggleStar()` method to flip its status.
+3. Calls `UI#showStarredFlashcard(flashcard)` to display the confirmation message.
 
-When executed, the StarCommand:
+![Step 3](../src/main/java/quizmos/command/StarFeature_Step3_Execute.puml "Step 3")
 
-Retrieves the Flashcard from the FlashcardList at the specified index.
+---
 
-Calls the flashcard’s toggleStar() method to flip its status.
+### Step 4. Saving Updated Flashcards
 
-Calls UI#showStarredFlashcard(flashcard) to display the confirmation message.
+After the star operation, the application calls `Storage#save()` to persist the updated flashcard states.
 
-<img alt="Step 3" height="793" src="../src/main/java/quizmos/command/StarFeature_Step3_Execute.puml" width="683" title="Step 1"/>
+The `Storage#save()` method:
 
-Step 4. Saving Updated Flashcards
+1. Iterates through each flashcard in the list.
+2. Writes its question, answer, and `"Starred"` (if `isStarred` is true) back to the text file.
 
-After the star operation, the application calls Storage#save() to persist the updated flashcard states.
+![Step 4](../src/main/java/quizmos/command/StarFeature_Step4_Save.puml "Step 4")
 
-The Storage#save() method:
+---
 
-Iterates through each flashcard in the list.
+### Full Class Diagram for Implementation of Starring Feature
 
-Writes its question, answer, and Starred (if isStarred is true) back to the text file.
+![Class Diagram](../src/main/java/quizmos/command/StarFeature_ClassDiagram.puml "Class Diagram")
 
-<img alt="Step 4" height="793" src="../src/main/java/quizmos/command/StarFeature_Step4_Save.puml" width="683" title="Step 1"/>
-
-
-Full Class Diagram for implmentation of Starring Feature: 
-
-<img alt="Step 3" height="793" src="../src/main/java/quizmos/command/StarFeature_Step4_Save.puml" width="683" title="Step 1"/>
+---
 
 
 ## Product scope
