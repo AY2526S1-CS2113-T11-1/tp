@@ -9,7 +9,7 @@ public class ListCommand extends Command {
     /**
      * Executes the list command.
      * Shows all tasks if the task list is not empty.
-     * Throws TwinException if the task list is empty.
+     * Throws Exception if the task list is empty.
      *
      * @param storage    Storage instance (not used for this command)
      * @param flashcards containing all flashcards

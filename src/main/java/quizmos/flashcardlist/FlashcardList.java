@@ -68,20 +68,20 @@ public class FlashcardList implements Iterable<Flashcard> {
         return flashcards;
     }
 
-    /**
-     * List all cards in the flashcard list
-     */
-    public void toggleStar(int index) {
-        flashcards.get(index).toggleStar();
-    }
 
     public ArrayList<Flashcard> getStarredFlashcards() {
         ArrayList<Flashcard> starred = new ArrayList<>();
         for (Flashcard f : flashcards) {
-            if (f.isStarred()) starred.add(f);
+            if (f.isStarred()) {
+                starred.add(f);
+            }
         }
         return starred;
     }
+
+    /**
+     * List all cards in the flashcard list
+     */
 
     public void showList() {
         if (this.getSize() == 0) {

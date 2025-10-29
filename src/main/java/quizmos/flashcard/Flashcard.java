@@ -24,11 +24,12 @@ public class Flashcard {
     }
 
     public void toggleStar() {
-        isStarred = true;
+        this.isStarred = true;
     }
 
     public String toSaveFormat() {
-        return getQuestion() + " | " + getAnswer();
+        String starMarker = isStarred ? "Starred" : "";
+        return getQuestion() + " | " + getAnswer() + " | " + starMarker;
     }
 
     public String toString() {

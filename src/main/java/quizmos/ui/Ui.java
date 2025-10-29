@@ -93,6 +93,9 @@ public class Ui {
         respond(Messages.invalidIndexMessage);
     }
 
+    public static void showStarredFlashcard() {
+        respond(Messages.starredFlashcardMessage); }
+
     public static void showFlashcardAdded(Flashcard flashcard) {
         String response = Messages.addedTaskMessage + flashcard;
         respond(response);

@@ -61,9 +61,19 @@ public class Storage {
                 if (parts.length < 2) {
                     continue; // skip invalid lines
                 }
-
                 String question = parts[0].trim();
                 String answer = parts[1].trim();
+                boolean isStarred = false;
+                if (parts.length >= 3 && parts[2].trim().equalsIgnoreCase("Starred")) {
+                    isStarred = true;
+                }
+
+                Flashcard flashcard = new Flashcard(question, answer);
+                if (isStarred) {
+                    flashcard.toggleStar();
+                }
+
+
 
                 listOfFlashcards.add(new Flashcard(question, answer));
             }

@@ -72,8 +72,8 @@ class StorageTest {
     @Test
     void load_oneSeparator_expectTwoParts() throws Exception {
         List<String> lines = Arrays.asList(
-                "Question 1 | Answer 1",
-                "Question 2 | Answer 2"
+                "Question 1 | Answer 1 | ",
+                "Question 2 | Answer 2 | Starred"
         );
         Files.write(testFilePath, lines);
         List<Flashcard> testFlashCards = testStorage.load();
@@ -87,7 +87,7 @@ class StorageTest {
 
     @Test
     void load_flashcardWithSpaces_expectTrimmedFlashcard() throws Exception {
-        Files.write(testFilePath, Arrays.asList("   What is AI   |   Artificial Intelligence   "));
+        Files.write(testFilePath, Arrays.asList("   What is AI   |   Artificial Intelligence  |    "));
 
         List<Flashcard> loaded = testStorage.load();
 
@@ -106,8 +106,8 @@ class StorageTest {
 
         List<String> lines = Files.readAllLines(testFilePath);
         assertEquals(2, lines.size());
-        assertEquals("Q1 | A1", lines.get(0));
-        assertEquals("Q2 | A2", lines.get(1));
+        assertEquals("Q1 | A1 | ", lines.get(0));
+        assertEquals("Q2 | A2 | ", lines.get(1));
     }
 
     @Test
@@ -120,6 +120,6 @@ class StorageTest {
 
         List<String> lines = Files.readAllLines(testFilePath);
         assertEquals(1, lines.size());
-        assertEquals("NewQ | NewA", lines.get(0));
+        assertEquals("NewQ | NewA | ", lines.get(0));
     }
 }
