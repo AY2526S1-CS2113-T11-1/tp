@@ -37,7 +37,6 @@ QuizMos automatically saves your flashcards to a file, ensuring your collection 
 
 ## Usage
 
-### Receive help by being shown possible commands
 For now, Quizmos only supports creating basic flashcards with text based questions and answers.
 
 Notes about the command format:
@@ -49,29 +48,29 @@ Notes about the command format:
 
 ### View help: `help`
 Shows a list of command
+
 Format: `help`
 
-### List all flashcards
+### List all flashcards: `list`
 Shows a list of flashcards
+
 Format: `list`
 
-### Add a flashcard with a question and answer
+### Add a flashcard: `add`
+Add flashcard with a question and answer
 
-```bash
-add q/QUESTION a/ANSWER
-```
+Format: `add q/QUESTION a/ANSWER`
 
-### Delete a flashcard
+### Delete a flashcard: `delete`
 
-```bash
-delete 3
-```
+Delete a flashcard with its index, can check by `list` command
 
-### Search for flashcards by keyword or keyphrase
+Format: `delete INDEX`
 
-```bash
-search KEYPHRASE
-```
+### Search for flashcards: `search`
+Search flashcards by keyword or keyphrase
+
+Format: `search KEYPHRASE`
 
 ### Review: `review`
 
@@ -109,19 +108,20 @@ Format: `[1 | 2 | 3 | 4 | QUIT]`
 - `3` Answer 3
 - `4` Answer 4
 
-### Star/flag an important flashcard
+### Star/flag flashcard: `star`
+Star/flag a flashcard by its index
 
-```bash
-star 2
-```
-Stars the flashcard at index 2 if it is unstarred.
+Format: `star INDEX`
 
-Example output:
 
-This flashcard is starred!
 
-### Exiting the program: `exit`
-Exits the program.
+Example:
+- `star 2`
+- Output: `This flashcard is starred!`
+
+### Exit the program: `exit`
+Exit the program
+
 Format: `exit`
 ---
 
@@ -141,6 +141,7 @@ Format: `exit`
 | Delete | `delete INDEX`                  |
 | Search | `search KEYPHRASE`              |
 | Review | `review m/[FLIP  \| TF \| MCQ]` |
+| Star   | `star INDEX`                    |
 | List   | `list`                          |
 | Exit   | `exit`                          |
 | Help   | `help`                          |
