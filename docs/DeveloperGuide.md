@@ -7,12 +7,19 @@
 ## Design & implementation
 
 {Describe the design and implementation of the product. Use UML diagrams and short code snippets where applicable.}
+### Overall design
+- class `QuizMos`: run the program loop, implement `FlashcardList` and `Storage`
+- class `Ui`: define printing formats (announcements, errors,...)
+- class `Storage`: store and load flashcards
+- class `Parser`: parse raw user's command to suitable `Command` object
+- package `common`: include `Messages` class (for general messages) and other classes store messages for features
+- package `command`: include different classes for each command to execute
 
 ---
 
-## Adding a Flashcard Feature
+### Adding a Flashcard Feature
 
-### Overview
+#### Overview
 
 The Add Flashcard feature allows users to create new flashcards with a question and an answer.
 The user inputs a command in the following format:
@@ -37,7 +44,7 @@ This feature is made possible by the following components:
 
 ---
 
-## Step 1. Parsing the Add Command
+#### Step 1. Parsing the Add Command
 
 When a user enters an `add` command, the `Parser` class:
 1. Detects `"add"` as the command keyword.
@@ -48,7 +55,7 @@ When a user enters an `add` command, the `Parser` class:
 
 ---
 
-## Step 2. Executing the Add Command
+#### Step 2. Executing the Add Command
 
 When executed:
 1. `AddFlashcardCommand` creates a new `Flashcard` with the parsed data.
@@ -60,15 +67,15 @@ When executed:
 
 ---
 
-### Full Class Diagram for Implementation of Add Feature
+#### Full Class Diagram for Implementation of Add Feature
 
 ![Class Diagram](images/AddFlashcardFeature_ClassDiagram.png "Class Diagram")
 
 ---
 
-## Delete Flashcard Feature
+### Delete Flashcard Feature
 
-### Overview
+#### Overview
 
 The **Delete Flashcard** feature allows users to remove flashcards from the list by specifying their 1-based index:
 ```bash
@@ -87,7 +94,7 @@ Components involved:
 
 ---
 
-## Step 1 — Parsing the Delete Command
+#### Step 1 — Parsing the Delete Command
 
 When the user types `delete 2`:
 
@@ -99,7 +106,7 @@ When the user types `delete 2`:
 
 ---
 
-## Step 2 — Parsing the Delete Command
+#### Step 2 — Parsing the Delete Command
 
 When the `RemoveFlashcardCommand` executes:
 
@@ -116,15 +123,15 @@ When the `RemoveFlashcardCommand` executes:
 
 ---
 
-### Full Class Diagram for Remove Feature
+#### Full Class Diagram for Remove Feature
 
 ![Class Diagram](images/RemoveFlashcardFeature_ClassDiagram.png "Class Diagram")
 
 ---
 
-## Search Flashcard Feature
+### Search Flashcard Feature
 
-### Overview
+#### Overview
 
 The **Search Flashcard** feature finds and lists flashcards whose question or answer contains a given keyphrase.
 
@@ -151,7 +158,7 @@ Components Involved
 
 ---
 
-## Step 1 — Parsing the Search Command
+#### Step 1 — Parsing the Search Command
 
 When the user enters:
 ```bash
@@ -167,7 +174,7 @@ The `Parser` class:
 
 ---
 
-## Step 2 — Executing the Search Command
+#### Step 2 — Executing the Search Command
 
 When executed, the `SearchFlashcardCommand` performs the following steps:
 
@@ -183,15 +190,15 @@ When executed, the `SearchFlashcardCommand` performs the following steps:
 
 ---
 
-### Full Class Diagram for Remove Feature
+#### Full Class Diagram for Remove Feature
 
 ![Class Diagram](images/SearchFlashcardFeature_ClassDiagram.png "Class Diagram")
 
 ---
 
-## Starring Flashcards Feature
+### Starring Flashcards Feature
 
-### Overview
+#### Overview
 
 The starring feature allows users to **mark important flashcards** as “starred” for easier review. A starred flashcard is indicated by the `isStarred` attribute in the `Flashcard` class.
 
@@ -207,7 +214,7 @@ This feature is made possible by the following components:
 
 ---
 
-### Step 1. Loading Flashcards from File
+#### Step 1. Loading Flashcards from File
 
 When the user starts the application, the `Storage` class loads flashcards from a text file.  
 Each line in the file follows the format:
@@ -232,7 +239,7 @@ The `Storage#load()` method:
 
 ---
 
-### Step 2. Parsing the Star Command
+#### Step 2. Parsing the Star Command
 
 When a user enters:
 
@@ -248,7 +255,7 @@ The `Parser` class:
 
 ---
 
-### Step 3. Executing the Star Command
+#### Step 3. Executing the Star Command
 
 When executed, the `StarCommand`:
 
@@ -260,7 +267,7 @@ When executed, the `StarCommand`:
 
 ---
 
-### Step 4. Saving Updated Flashcards
+#### Step 4. Saving Updated Flashcards
 
 After the star operation, the application calls `Storage#save()` to persist the updated flashcard states.
 
@@ -273,19 +280,11 @@ The `Storage#save()` method:
 
 ---
 
-### Full Class Diagram for Implementation of Starring Feature
+#### Full Class Diagram for Implementation of Starring Feature
 
 ![Class Diagram](images/StarFeature_ClassDiagram-Starring_Feature_Class_Diagram.png "Class Diagram")
 
 ---
-
-### Overall design
-- class `QuizMos`: run the program loop, implement `FlashcardList` and `Storage`
-- class `Ui`: define printing formats (announcements, errors,...)
-- class `Storage`: store and load flashcards
-- class `Parser`: parse raw user's command to suitable `Command` object
-- package `common`: include `Messages` class (for general messages) and other classes store messages for features
-- package `command`: include different classes for each command to execute
 
 ### Feature: review
 - If `Parser` detects `review` command, it creates a `ReviewCommand` instance
@@ -296,6 +295,7 @@ The `Storage#save()` method:
   - check that answer (`checkAnswer()`)
 - Each IReviewMode instance override the 3 functions to fit its function
 
+![Sequence Diagram](images/ReviewFeature_Overall.png "Review Flow Sequence Diagram")
 ## Product scope
 
 ### Target user profile
@@ -309,10 +309,22 @@ The `Storage#save()` method:
 
 ## User Stories
 
-|Version| As a ... | I want to ... | So that I can ...|
-|--------|----------|---------------|------------------|
-|v1.0|new user|see usage instructions|refer to them when I forget how to use the application|
-|v2.0|user|find a to-do item by name|locate a to-do without having to go through the entire list|
+| Version | As a... | I want to... | So that I can... |
+| :--- | :--- | :--- | :--- |
+| v1.0 | new user | go through a series of instructions | refer to them when I forget how to use the application |
+| v1.0 | new user | see usage instructions | I know how to use the app |
+| v1.0 | user | view list of flashcards overall | I can see every flashcard created |
+| v1.0 | user | remove flashcards | I can keep my deck organized and make sure unnecessary cards are removed |
+| v1.0 | user | add a flashcard with a question and answer | I can revise the material later |
+| v1.0 | user | save my flashcards locally | I can reuse flashcards |
+| v1.0 | user | do review | I can review my knowledge |
+| v2.0 | user | find a to-do item by name | locate a to-do without having to go through the entire list |
+| v2.0 | user | star/flag flash cards which are important | I can review by categories |
+| v2.0 | new user | add the list of flashcards through a txt file | I start using the app more quickly |
+| v2.0 | user | add multiple choice type questions | I can test my knowledge in different ways |
+| v2.0 | user | add true/false type questions | I can test my knowledge in different ways |
+| v2.0 | user | search for a specific flashcard by keyword | I can quickly find and revise a concept |
+| v2.0 | user | mark my answers as correct or incorrect during quizzes | the app can track my progress |
 
 ## Non-Functional Requirements
 

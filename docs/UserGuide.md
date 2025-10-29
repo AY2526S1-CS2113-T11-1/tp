@@ -47,11 +47,11 @@ Notes about the command format:
 - Extraneous parameters for commands that do not take in parameters (`help`, `list`, `exit`...) will be ignored.
 - If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 
-### Viewing help: `help`
+### View help: `help`
 Shows a list of command
 Format: `help`
 
-### View all flashcards
+### List all flashcards
 Shows a list of flashcards
 Format: `list`
 
@@ -88,17 +88,6 @@ Example:
 - `review m/tf`
 - `review m/mCq`
 
-### Star/flag an important flashcard
-
-```bash
-star 2
-```
-Stars the flashcard at index 2 if it is unstarred.
-
-Example output:
-
-This flashcard is starred!
-
 #### Simple flip mode
 After each question showed, can select whether to show the answer (y/n), or quit the session
 
@@ -119,6 +108,18 @@ Format: `[1 | 2 | 3 | 4 | QUIT]`
 - `2` Answer 2
 - `3` Answer 3
 - `4` Answer 4
+
+### Star/flag an important flashcard
+
+```bash
+star 2
+```
+Stars the flashcard at index 2 if it is unstarred.
+
+Example output:
+
+This flashcard is starred!
+
 ### Exiting the program: `exit`
 Exits the program.
 Format: `exit`
@@ -136,7 +137,7 @@ Format: `exit`
 
 | Action | Format, Examples                | 
 |--------|---------------------------------|
-| Add    | `add q/QUESTION a/ANSWER`                        |
+| Add    | `add q/QUESTION a/ANSWER`       |
 | Delete | `delete INDEX`                  |
 | Search | `search KEYPHRASE`              |
 | Review | `review m/[FLIP  \| TF \| MCQ]` |
