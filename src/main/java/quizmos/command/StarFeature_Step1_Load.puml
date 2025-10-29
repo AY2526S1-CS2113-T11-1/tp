@@ -1,0 +1,23 @@
+@startuml
+title Step 1: Loading Flashcards from File
+
+actor User
+participant "QuizMos" as Q
+participant "Storage" as S
+participant "FlashcardList" as FCL
+participant "Flashcard" as FC
+
+User -> M : start program
+M -> S : load()
+S -> S : read file line by line
+loop for each line
+    S -> FC : new Flashcard(question, answer)
+    alt thirdPart == "Starred"
+        S -> FC : set isStarred = true
+    else
+        S -> FC : set isStarred = false
+    end
+    S -> FCL : add(flashcard)
+end
+
+@enduml
