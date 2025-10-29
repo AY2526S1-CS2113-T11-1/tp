@@ -1,0 +1,20 @@
+@startuml
+title Step 4: Saving Updated Flashcards
+
+participant "StarCommand" as SC
+participant "Storage" as S
+participant "FlashcardList" as FCL
+participant "Flashcard" as FC
+participant "File" as File
+
+SC -> S : save(flashcardList)
+S -> FCL : getAllFlashcards()
+loop for each flashcard
+    S -> FC : getQuestion(), getAnswer(), isStarred()
+    alt isStarred == true
+        S -> File : write "q | a | Starred"
+    else
+        S -> File : write "q | a |"
+    end
+end
+@enduml
