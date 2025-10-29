@@ -6,7 +6,8 @@ public class Messages {
 
 
     // greeting
-    public static String logo = "  ___        _     __  __\n" +
+    public static String logo =
+            "  ___        _     __  __\n" +
             " / _ \\ _   _(_)___|  \\/  | ___  ___\n" +
             "| | | | | | | |_  / |\\/| |/ _ \\/ __|\n" +
             "| |_| | |_| | |/ /| |  | | (_) \\__ \\\n" +
@@ -20,7 +21,8 @@ public class Messages {
             + "list: show all flashcards\n"
             + "add q/<QUESTION> a/<ANSWER>: add a flashcard with question and answer\n"
             + "delete <INDEX>: delete a flashcard by its index\n"
-            + "review: start a review session\n"
+            + "search <KEYPHRASE>: show all flashcards containing the keyphrase\n"
+            + "review m/[FLIP | MQC | TF]: start a review session\n"
             + "exit: exit the program, MUST run this for file saving";
 
     // invalid command
@@ -33,6 +35,8 @@ public class Messages {
 
     public static String addedTaskMessage = "Added this flashcard\n";
 
+    public static String noMatchesMessage = "No matches found.";
+
     // goodbye
     public static String goodbyeMessage = "Bye. Hope to see you again soon!";
 
@@ -40,12 +44,4 @@ public class Messages {
     public static String emptyListMessage = "Your task list is empty!";
 
     // review command
-    public static String reviewStartMessage =
-        "Starting flashcard review. Type 'ans' to see the answer, "
-        + "'next' to continue, or 'exit' to stop.";
-    public static String reviewPrompt = "Your input: ";
-    public static String reviewExitMessage = "Review session ended.";
-    public static String reviewCompleteMessage = "You've reviewed all flashcards!";
-    public static String reviewInvalidInputMessage = "Invalid input. Type 'ans', 'next', or 'exit'.";
-
 }

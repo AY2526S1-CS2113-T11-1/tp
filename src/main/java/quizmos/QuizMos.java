@@ -31,15 +31,22 @@ public class QuizMos {
         boolean isExit = false;
 
         while (!isExit){
-            String command = Ui.readCommand();
-            Command c = Parser.parseCommand(command);
-            c.execute(flashcards, storage);
-            isExit = c.getIsExit();
+            try {
+                String command = Ui.readCommand();
+                Command c = Parser.parseCommand(command);
+                c.execute(flashcards, storage);
+                isExit = c.getIsExit();
+            } catch (Exception e) {
+                Ui.respondError(e.getMessage());
+            }
         }
         System.exit(0);
     }
 
     public static void main(String[] args) throws IOException {
+        if (args.length > 0 && args[0].equals("--test")) {
+            Ui.isTestMode = true;
+        }
         new QuizMos().run();
     }
 }

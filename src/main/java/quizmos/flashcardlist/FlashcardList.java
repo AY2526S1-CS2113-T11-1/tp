@@ -4,13 +4,11 @@ import quizmos.flashcard.Flashcard;
 import quizmos.ui.Ui;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
-public class FlashcardList {
+public class FlashcardList implements Iterable<Flashcard> {
     private final ArrayList<Flashcard> flashcards;
 
-    /**
-     * Constructs an empty FlashcardList.
-     */
     public FlashcardList() {
         this.flashcards = new ArrayList<Flashcard>();
     }
@@ -70,6 +68,9 @@ public class FlashcardList {
         return flashcards;
     }
 
+    /**
+     * List all cards in the flashcard list
+     */
     public void toggleStar(int index) {
         flashcards.get(index).toggleStar();
     }
@@ -95,5 +96,10 @@ public class FlashcardList {
             count++;
         }
         Ui.printSeparator();
+    }
+
+    @Override
+    public Iterator<Flashcard> iterator() {
+        return flashcards.iterator();
     }
 }

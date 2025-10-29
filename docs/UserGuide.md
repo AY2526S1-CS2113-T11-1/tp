@@ -65,22 +65,25 @@ delete 3
 
 To begin the review:
 ```bash
-review
+review m/[TF | FLIP | MCQ]
 ```
 
-To view the answer:
+#### Simple flip mode
+After each question showed, can select whether to show the answer (y/n), or quit the session
 ```bash
-ans
+[Y | N | QUIT]
 ```
-
-To go to the next flashcard:
+#### True/false mode
+After each question showed, type your answer (t/f) or quit the session
 ```bash
-next
+[T | F | QUIT]
 ```
+#### MCQ mode
+This mode requires flashcard list has no less than 4 flashcards
 
-To exit the review session:
+After each question showed, type your answer (1/2/3/4) or quit the session
 ```bash
-exit
+[1 | 2 | 3 | 4 | QUIT]
 ```
 
 ---
