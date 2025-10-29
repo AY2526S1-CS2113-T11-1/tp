@@ -9,6 +9,7 @@ import quizmos.command.ListCommand;
 import quizmos.command.RemoveFlashcardCommand;
 import quizmos.command.ReviewCommand;
 import quizmos.command.SearchFlashcardCommand;
+import quizmos.command.StarCommand;
 import quizmos.exception.QuizMosInputException;
 
 public class Parser {
@@ -32,6 +33,7 @@ public class Parser {
             case "delete" -> new RemoveFlashcardCommand(parts[1].trim());
             case "review" -> new ReviewCommand(command);
             case "search" -> new SearchFlashcardCommand(parts[1].trim());
+            case "star" -> new StarCommand(parts[1].trim());
             default -> new InvalidCommand();
             };
         } catch (ArrayIndexOutOfBoundsException e) {

@@ -23,6 +23,6 @@ class FlashcardTest {
     @Test
     void testToSaveFormat() {
         Flashcard flashcard = new Flashcard("Q1", "A1");
-        assertEquals("Q1 | A1", flashcard.toSaveFormat());
+        assertEquals("Q1 | A1 | ", flashcard.toSaveFormat());
     }
 }
