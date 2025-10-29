@@ -67,6 +67,12 @@ add q/QUESTION a/ANSWER
 delete 3
 ```
 
+### Search for flashcards by keyword or keyphrase
+
+```bash
+search KEYPHRASE
+```
+
 ### Review: `review`
 
 To begin the review:
@@ -130,9 +136,9 @@ Format: `exit`
 
 | Action | Format, Examples                | 
 |--------|---------------------------------|
-| Add    | Row 1 Col 2                     |
-| Delete | Row 2 Col 2                     |
-| Search | Row 2 Col 2                     |
+| Add    | `add q/QUESTION a/ANSWER`                        |
+| Delete | `delete INDEX`                  |
+| Search | `search KEYPHRASE`              |
 | Review | `review m/[FLIP  \| TF \| MCQ]` |
 | List   | `list`                          |
 | Exit   | `exit`                          |
