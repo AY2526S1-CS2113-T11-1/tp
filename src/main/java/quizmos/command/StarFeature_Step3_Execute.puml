@@ -1,0 +1,22 @@
+@startuml
+title Step 3: Executing the Star Command
+
+actor User
+participant "StarCommand" as SC
+participant "FlashcardList" as FCL
+participant "Flashcard" as FC
+participant "UI" as UI
+participant "Message" as MSG
+
+User -> SC : execute()
+SC -> FCL : getFlashcard(index)
+FCL --> SC : flashcard
+SC -> FC : toggleStar()
+FC --> SC : (updated isStarred)
+SC -> UI : showStarredFlashcard(flashcard)
+UI -> MSG : getStarredFlashcardMessage(flashcard)
+MSG --> UI : message text
+UI --> User : print "Flashcard 3 starred!"
+@enduml
+
+

@@ -31,6 +31,13 @@ QuizMos automatically saves your flashcards to a file, ensuring your collection 
 
 ## Features 
 
+- Quizmos supports creating basic flashcards with text based questions and answers.
+- **Marking flashcards as important/starred** for easy review.
+---
+
+## Usage
+
+### Receive help by being shown possible commands
 For now, Quizmos only supports creating basic flashcards with text based questions and answers.
 
 Notes about the command format:
@@ -74,6 +81,17 @@ Example:
 - `review m/FLIP`
 - `review m/tf`
 - `review m/mCq`
+
+### Star/flag an important flashcard
+
+```bash
+star 2
+```
+Stars the flashcard at index 2 if it is unstarred.
+
+Example output:
+
+This flashcard is starred!
 
 #### Simple flip mode
 After each question showed, can select whether to show the answer (y/n), or quit the session

@@ -1,0 +1,55 @@
+@startuml
+title Starring Feature Class Diagram
+
+class Flashcard {
+    - question : String
+    - answer : String
+    - isStarred : boolean
+    + getQuestion() : String
+    + getAnswer() : String
+    + isStarred() : boolean
+    + toggleStar() : void
+}
+
+class FlashcardList {
+    - flashcards : List<Flashcard>
+    + add(flashcard : Flashcard)
+    + getFlashcard(index : int) : Flashcard
+    + getAllFlashcards() : List<Flashcard>
+}
+
+class Storage {
+    - filePath : String
+    + load() : FlashcardList
+    + save(flashcardList : FlashcardList) : void
+}
+
+class Parser {
+    + parse(input : String) : Command
+}
+
+abstract class Command {
+    + execute() : void
+}
+
+class StarCommand {
+    - index : int
+    + execute() : void
+}
+
+class UI {
+    + showStarredFlashcard(flashcard : Flashcard) : void
+}
+
+class Message {
+    + getStarredFlashcardMessage(flashcard : Flashcard) : String
+}
+
+Command <|-- StarCommand
+StarCommand --> FlashcardList
+StarCommand --> Flashcard
+StarCommand --> UI
+UI --> Message
+Storage --> FlashcardList
+FlashcardList --> Flashcard
+@enduml

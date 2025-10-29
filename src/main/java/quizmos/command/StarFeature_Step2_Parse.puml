@@ -1,0 +1,12 @@
+@startuml
+title Step 2: Parsing the Star Command
+
+actor User
+participant "Parser" as P
+participant "StarCommand" as SC
+
+User -> P : "star 3"
+P -> P : parse user input
+P -> SC : new StarCommand(3)
+return SC
+@enduml
