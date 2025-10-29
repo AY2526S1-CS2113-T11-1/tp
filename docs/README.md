@@ -1,4 +1,4 @@
-# Duke
+# QuizMos
 
 {Give product intro here}
 

@@ -33,21 +33,20 @@ QuizMos automatically saves your flashcards to a file, ensuring your collection 
 
 For now, Quizmos only supports creating basic flashcards with text based questions and answers.
 
----
+Notes about the command format:
+- Words in `UPPERCASE` are the parameters to be supplied by the user.
+- Items in square brackets are optional
+- Parameters MUST be in order
+- Extraneous parameters for commands that do not take in parameters (`help`, `list`, `exit`...) will be ignored.
+- If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 
-## Usage
-
-### Receive help by being shown possible commands
-
-```bash
-help
-```
+### Viewing help: `help`
+Shows a list of command
+Format: `help`
 
 ### View all flashcards
-
-```bash
-list
-```
+Shows a list of flashcards
+Format: `list`
 
 ### Add a flashcard with a question and answer
 
@@ -61,31 +60,44 @@ add q/QUESTION a/ANSWER
 delete 3
 ```
 
-### Reviewing flashcards 
+### Review: `review`
 
 To begin the review:
-```bash
-review m/[TF | FLIP | MCQ]
-```
+
+Format: `review m/[FLIP | TF | MCQ]`
+- the mode is case-insensitive
+- `FLIP`: Simple flip mode
+- `TF`: True/False mode
+- `MCQ`: Multi-choices question mode
+
+Example:
+- `review m/FLIP`
+- `review m/tf`
+- `review m/mCq`
 
 #### Simple flip mode
 After each question showed, can select whether to show the answer (y/n), or quit the session
-```bash
-[Y | N | QUIT]
-```
+
+Format: `[Y | N | QUIT]`
 #### True/false mode
 After each question showed, type your answer (t/f) or quit the session
-```bash
-[T | F | QUIT]
-```
+
+Format: `[T | F | QUIT]`
+- `T` True
+- `F` False
 #### MCQ mode
 This mode requires flashcard list has no less than 4 flashcards
 
 After each question showed, type your answer (1/2/3/4) or quit the session
-```bash
-[1 | 2 | 3 | 4 | QUIT]
-```
 
+Format: `[1 | 2 | 3 | 4 | QUIT]`
+- `1` Answer 1
+- `2` Answer 2
+- `3` Answer 3
+- `4` Answer 4
+### Exiting the program: `exit`
+Exits the program.
+Format: `exit`
 ---
 
 ## FAQ {not yet completed}
@@ -98,7 +110,12 @@ After each question showed, type your answer (1/2/3/4) or quit the session
 
 ## Command Summary
 
-* Receive help `help`
-* Add flashcard `add q/QUESTION a/ANSWER`
-* Remove flashcard `delete #`
-* List flashcards `list`
+| Action | Format, Examples                | 
+|--------|---------------------------------|
+| Add    | Row 1 Col 2                     |
+| Delete | Row 2 Col 2                     |
+| Search | Row 2 Col 2                     |
+| Review | `review m/[FLIP  \| TF \| MCQ]` |
+| List   | `list`                          |
+| Exit   | `exit`                          |
+| Help   | `help`                          |
