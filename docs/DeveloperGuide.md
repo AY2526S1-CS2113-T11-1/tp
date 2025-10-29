@@ -50,7 +50,7 @@ The `Storage#load()` method:
 4. Sets `isStarred` to `true` if the third part equals `"Starred"`.
 5. Adds the `Flashcard` to a `FlashcardList`.
 
-![Step 1](/src/main/java/quizmos/sequencediagrams/StarFeature_Step1_Load-Step_1__Loading_Flashcards_from_File.png "Step 1")
+![Step 1](../sequencediagrams/StarFeature_Step1_Load-Step_1__Loading_Flashcards_from_File.png "Step 1")
 
 ---
 
@@ -66,7 +66,7 @@ The `Parser` class:
 2. Extracts the index argument (`3`).
 3. Creates a new `StarCommand(index)` instance.
 
-![Step 2](/src/main/java/quizmos/sequencediagrams/StarFeature_Step2_Parse-Step_2__Parsing_the_Star_Command.png "Step 2")
+![Step 2](../sequencediagrams/StarFeature_Step2_Parse-Step_2__Parsing_the_Star_Command.png "Step 2")
 
 ---
 
@@ -78,7 +78,7 @@ When executed, the `StarCommand`:
 2. Calls the flashcard’s `toggleStar()` method to flip its status.
 3. Calls `UI#showStarredFlashcard(flashcard)` to display the confirmation message.
 
-![Step 3](/src/main/java/quizmos/sequencediagrams/StarFeature_Step3_Execute-Step_3__Executing_the_Star_Command.png "Step 3")
+![Step 3](../sequencediagrams/StarFeature_Step3_Execute-Step_3__Executing_the_Star_Command.png "Step 3")
 
 ---
 
@@ -91,13 +91,13 @@ The `Storage#save()` method:
 1. Iterates through each flashcard in the list.
 2. Writes its question, answer, and `"Starred"` (if `isStarred` is true) back to the text file.
 
-![Step 4](/src/main/java/quizmos/sequencediagrams/StarFeature_Step4_Save-Step_4__Saving_Updated_Flashcards.png "Step 4")
+![Step 4](../sequencediagrams/StarFeature_Step4_Save-Step_4__Saving_Updated_Flashcards.png "Step 4")
 
 ---
 
 ### Full Class Diagram for Implementation of Starring Feature
 
-![Class Diagram](/src/main/java/quizmos/sequencediagrams/StarFeature_ClassDiagram-Starring_Feature_Class_Diagram.png "Class Diagram")
+![Class Diagram](../sequencediagrams/StarFeature_ClassDiagram-Starring_Feature_Class_Diagram.png "Class Diagram")
 
 ---
 
