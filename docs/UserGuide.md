@@ -123,6 +123,7 @@ Example:
 Exit the program
 
 Format: `exit`
+
 ---
 
 ## FAQ {not yet completed}
