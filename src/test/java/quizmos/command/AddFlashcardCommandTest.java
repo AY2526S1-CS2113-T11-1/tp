@@ -5,12 +5,13 @@ import quizmos.flashcardlist.FlashcardList;
 import quizmos.storage.Storage;
 
 import java.io.IOException;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class AddFlashcardCommandTest {
+public class AddFlashcardCommandTest {
 
     @Test
-    void testExecuteAddsFlashcard() throws IOException {
+    void execute_validInput_addsFlashcard() throws IOException {
         FlashcardList flashcards = new FlashcardList();
         Storage storage = new Storage("data/QuizMos.txt") {
             @Override
@@ -26,7 +27,7 @@ class AddFlashcardCommandTest {
     }
 
     @Test
-    void testInvalidFormatMissingAnswer() throws IOException {
+    void constructor_missingAnswer_doesNotAddFlashcard() throws IOException {
         FlashcardList flashcards = new FlashcardList();
         Storage storage = new Storage("data/QuizMos.txt") {
             @Override
@@ -40,7 +41,7 @@ class AddFlashcardCommandTest {
     }
 
     @Test
-    void testInvalidFormatMissingQuestion() throws IOException {
+    void constructor_missingQuestion_doesNotAddFlashcard() throws IOException {
         FlashcardList flashcards = new FlashcardList();
         Storage storage = new Storage("data/QuizMos.txt") {
             @Override
@@ -54,14 +55,14 @@ class AddFlashcardCommandTest {
     }
 
     @Test
-    void testInvalidReversedOrder() throws IOException {
+    void constructor_reversedOrder_doesNotAddFlashcard() throws IOException {
         FlashcardList flashcards = new FlashcardList();
         Storage storage = new Storage("data/QuizMos.txt") {
             @Override
             public void writeToFile(FlashcardList list) { }
         };
 
-        // a/ before q/
+        // a/ appears before q/
         AddFlashcardCommand command = new AddFlashcardCommand(new String[] {"add", "a/A1 q/Q1"});
         command.execute(flashcards, storage);
 

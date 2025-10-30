@@ -1,17 +1,18 @@
 package quizmos.command;
 
 import org.junit.jupiter.api.Test;
-import quizmos.flashcardlist.FlashcardList;
 import quizmos.flashcard.Flashcard;
+import quizmos.flashcardlist.FlashcardList;
 import quizmos.storage.Storage;
 
 import java.io.IOException;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class RemoveFlashcardCommandTest {
+public class RemoveFlashcardCommandTest {
 
     @Test
-    void testExecuteRemovesFlashcard() throws IOException {
+    void execute_validIndex_removesFlashcard() throws IOException {
         FlashcardList flashcards = new FlashcardList();
         flashcards.addFlashcard(new Flashcard("Q1", "A1"));
 
@@ -27,7 +28,7 @@ class RemoveFlashcardCommandTest {
     }
 
     @Test
-    void testInvalidIndexNonInteger() throws IOException {
+    void constructor_nonIntegerIndex_doesNotRemoveFlashcard() throws IOException {
         FlashcardList flashcards = new FlashcardList();
         flashcards.addFlashcard(new Flashcard("Q1", "A1"));
 
@@ -39,12 +40,11 @@ class RemoveFlashcardCommandTest {
         RemoveFlashcardCommand command = new RemoveFlashcardCommand("abc");
         command.execute(flashcards, storage);
 
-        // List should remain unchanged
         assertEquals(1, flashcards.getSize());
     }
 
     @Test
-    void testInvalidNegativeIndex() throws IOException {
+    void execute_negativeIndex_doesNotRemoveFlashcard() throws IOException {
         FlashcardList flashcards = new FlashcardList();
         flashcards.addFlashcard(new Flashcard("Q1", "A1"));
 
@@ -60,7 +60,7 @@ class RemoveFlashcardCommandTest {
     }
 
     @Test
-    void testInvalidIndexTooLarge() throws IOException {
+    void execute_indexOutOfRange_doesNotRemoveFlashcard() throws IOException {
         FlashcardList flashcards = new FlashcardList();
         flashcards.addFlashcard(new Flashcard("Q1", "A1"));
 
