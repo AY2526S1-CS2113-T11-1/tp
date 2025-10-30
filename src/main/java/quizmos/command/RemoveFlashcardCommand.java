@@ -26,6 +26,10 @@ public class RemoveFlashcardCommand extends Command {
             Ui.invalidIndexRespond();
             return;
         }
+
+        assert flashcards != null : "FlashcardList should not be null";
+        assert storage != null : "Storage should not be null";
+
         Flashcard deletedFlashcard = flashcards.getFlashcard(index);
         flashcards.removeFlashcard(index);
         Ui.showFlashcardRemoved(deletedFlashcard);
