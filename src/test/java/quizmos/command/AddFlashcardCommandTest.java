@@ -24,4 +24,47 @@ class AddFlashcardCommandTest {
         assertEquals("Q1", flashcards.getFlashcard(0).getQuestion());
         assertEquals("A1", flashcards.getFlashcard(0).getAnswer());
     }
+
+    @Test
+    void testInvalidFormatMissingAnswer() throws IOException {
+        FlashcardList flashcards = new FlashcardList();
+        Storage storage = new Storage("data/QuizMos.txt") {
+            @Override
+            public void writeToFile(FlashcardList list) { }
+        };
+
+        AddFlashcardCommand command = new AddFlashcardCommand(new String[] {"add", "q/Q1"});
+        command.execute(flashcards, storage);
+
+        assertEquals(0, flashcards.getSize());
+    }
+
+    @Test
+    void testInvalidFormatMissingQuestion() throws IOException {
+        FlashcardList flashcards = new FlashcardList();
+        Storage storage = new Storage("data/QuizMos.txt") {
+            @Override
+            public void writeToFile(FlashcardList list) { }
+        };
+
+        AddFlashcardCommand command = new AddFlashcardCommand(new String[] {"add", "a/A1"});
+        command.execute(flashcards, storage);
+
+        assertEquals(0, flashcards.getSize());
+    }
+
+    @Test
+    void testInvalidReversedOrder() throws IOException {
+        FlashcardList flashcards = new FlashcardList();
+        Storage storage = new Storage("data/QuizMos.txt") {
+            @Override
+            public void writeToFile(FlashcardList list) { }
+        };
+
+        // a/ before q/
+        AddFlashcardCommand command = new AddFlashcardCommand(new String[] {"add", "a/A1 q/Q1"});
+        command.execute(flashcards, storage);
+
+        assertEquals(0, flashcards.getSize());
+    }
 }
