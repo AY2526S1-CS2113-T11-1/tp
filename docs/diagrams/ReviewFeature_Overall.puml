@@ -1,0 +1,52 @@
+@startuml ReviewFeature_Overall
+
+title Overall Review Flow
+
+skinparam sequenceReferenceBackgroundColor #f7807c
+
+participant QuizMos
+participant Parser
+participant ReviewCommand
+' Thêm IReviewMode để thể hiện Strategy Pattern
+participant ":IReviewMode" as IReviewMode
+
+QuizMos -> Parser: parseCommand(command)
+activate Parser
+
+Parser -> ReviewCommand: <<create>> ReviewCommand(command)
+activate ReviewCommand
+
+ReviewCommand --> Parser: return ReviewCommand
+deactivate ReviewCommand
+
+Parser --> QuizMos: return ReviewCommand
+deactivate Parser
+
+QuizMos -> ReviewCommand: execute(flashcards, storage)
+activate ReviewCommand
+
+
+ReviewCommand -> IReviewMode: setReviewMode()
+activate IReviewMode
+
+IReviewMode --> ReviewCommand
+
+loop until (listSize reached OR input == "quit")
+
+    ReviewCommand -> IReviewMode: displayQuestion(flashcard, index)
+    IReviewMode --> ReviewCommand
+
+    ReviewCommand -> IReviewMode: getPrompt()
+    IReviewMode --> ReviewCommand: input
+
+    ReviewCommand -> IReviewMode: checkAnswer(input, flashcard)
+    IReviewMode --> ReviewCommand: return result
+end
+
+ReviewCommand -> ReviewCommand: quitReview()
+
+ReviewCommand --> QuizMos: return
+deactivate ReviewCommand
+destroy ReviewCommand
+
+@enduml
