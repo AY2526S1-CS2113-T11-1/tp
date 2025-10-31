@@ -110,6 +110,7 @@ Format: `[1 | 2 | 3 | 4 | QUIT]`
 
 ### Star/flag flashcard: `star`
 Star/flag a flashcard by its index
+The starred flashcard is depicted in the stored file. 
 
 Format: `star INDEX`
 
