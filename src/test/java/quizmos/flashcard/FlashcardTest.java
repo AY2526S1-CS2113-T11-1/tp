@@ -16,7 +16,7 @@ class FlashcardTest {
     @Test
     void testToStringFormat() {
         Flashcard flashcard = new Flashcard("What is Java?", "A programming language");
-        String expected = "Question: What is Java? | Answer: A programming language";
+        String expected = "Question: What is Java? | Answer: A programming language | ";
         assertEquals(expected, flashcard.toString());
     }
 

@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 import quizmos.common.Messages;
 import quizmos.flashcard.Flashcard;
-import quizmos.flashcardlist.FlashcardList;
 
 public class Ui {
     public static boolean isTestMode = false;
