@@ -28,15 +28,15 @@ public class Flashcard {
 
     public void toggleStar() {
         this.isStarred = true;
-        this.starMarker = "Starred";
+        this.starMarker = " Starred";
     }
 
     public String toSaveFormat() {
-        return getQuestion() + " | " + getAnswer() + " | " + starMarker;
+        return getQuestion() + " | " + getAnswer() + " |" + starMarker;
     }
 
     public String toString() {
-        return "Question: " + getQuestion() + " | " + "Answer: " + getAnswer() + " | " + starMarker;
+        return "Question: " + getQuestion() + " | " + "Answer: " + getAnswer() + " |" + starMarker;
 
     }
 }
