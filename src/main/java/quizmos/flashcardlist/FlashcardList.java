@@ -70,13 +70,13 @@ public class FlashcardList implements Iterable<Flashcard> {
 
 
     public ArrayList<Flashcard> getStarredFlashcards() {
-        ArrayList<Flashcard> starred = new ArrayList<>();
+        ArrayList<Flashcard> starredFlashcards = new ArrayList<>();
         for (Flashcard f : flashcards) {
-            if (f.isStarred()) {
-                starred.add(f);
+            if (f.checkIsStarred()) {
+                starredFlashcards.add(f);
             }
         }
-        return starred;
+        return starredFlashcards;
     }
 
     /**
@@ -86,16 +86,18 @@ public class FlashcardList implements Iterable<Flashcard> {
     public void showList() {
         if (this.getSize() == 0) {
             Ui.emptyListRespond();
-            return;
+        } else {
+            Ui.showFlashcardsList(this.flashcards);
         }
-        int count = 1;
-        Ui.printSeparator();
-        for (Flashcard f : flashcards) {
-            String response = count + "." + f.toString();
-            System.out.println(response);
-            count++;
-        }
-        Ui.printSeparator();
+//        int count = 1;
+//        Ui.printSeparator();
+//        for (Flashcard f : flashcards) {
+//            String response = count + "." + f.toString();
+//            System.out.println(response);
+//            count++;
+//        }
+//        Ui.printSeparator();
+//        return null;
     }
 
     @Override
