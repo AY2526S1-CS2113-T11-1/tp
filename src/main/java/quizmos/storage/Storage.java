@@ -75,7 +75,7 @@ public class Storage {
 
 
 
-                listOfFlashcards.add(new Flashcard(question, answer));
+                listOfFlashcards.add(flashcard);
             }
         }
 
