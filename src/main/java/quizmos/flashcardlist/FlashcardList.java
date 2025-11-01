@@ -89,15 +89,15 @@ public class FlashcardList implements Iterable<Flashcard> {
         } else {
             Ui.showFlashcardsList(this.flashcards);
         }
-//        int count = 1;
-//        Ui.printSeparator();
-//        for (Flashcard f : flashcards) {
-//            String response = count + "." + f.toString();
-//            System.out.println(response);
-//            count++;
-//        }
-//        Ui.printSeparator();
-//        return null;
+        //        int count = 1;
+        //        Ui.printSeparator();
+        //        for (Flashcard f : flashcards) {
+        //            String response = count + "." + f.toString();
+        //            System.out.println(response);
+        //            count++;
+        //        }
+        //        Ui.printSeparator();
+        //        return null;
     }
 
     @Override
