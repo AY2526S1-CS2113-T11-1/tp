@@ -14,6 +14,7 @@ public class Messages {
             " \\__\\_\\\\__,_|_/___|_|  |_|\\___/|___/\n";
     public static String hello = "Hello, I'm QuizMos\n";
     public static String beginInstruction = "Try command `help` for more information";
+    public static String greeting = hello + logo + beginInstruction;
 
     // help
     public static String helpMessage = "Available commands:\n"
@@ -22,7 +23,8 @@ public class Messages {
             + "add q/<QUESTION> a/<ANSWER>: add a flashcard with question and answer\n"
             + "delete <INDEX>: delete a flashcard by its index\n"
             + "search <KEYPHRASE>: show all flashcards containing the keyphrase\n"
-            + "review m/[FLIP | MQC | TF]: start a review session\n"
+            + "star <INDEX>: star/flag a flashcard by its index\n"
+            + "review m/[FLIP | MCQ | TF]: start a review session\n"
             + "exit: exit the program, MUST run this for file saving";
 
     // invalid command
@@ -41,7 +43,7 @@ public class Messages {
     public static String goodbyeMessage = "Bye. Hope to see you again soon!";
 
     // flashcard list
-    public static String emptyListMessage = "Your task list is empty!";
+    public static String emptyListMessage = "Your flashcard list is empty!";
     public static String starredFlashcardMessage = "Starred this flashCard! ";
     public static String starredFlashcardsListMessage = "Starred Flashcards: ";
 

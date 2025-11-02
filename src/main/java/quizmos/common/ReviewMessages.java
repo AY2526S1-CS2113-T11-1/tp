@@ -43,6 +43,9 @@ public class ReviewMessages {
         return "Correct questions: " + correct + " (" + percentage + "%)";
     }
 
+    public static String showStatementTF(String randomAnswer) {
+        return "Statement: " + randomAnswer;
+    }
 
     public static String showCorrectAnswerTF(Flashcard flashcard) {
         return "True answer: " + flashcard.getAnswer();

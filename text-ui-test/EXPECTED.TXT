@@ -17,7 +17,8 @@ list: show all flashcards
 add q/<QUESTION> a/<ANSWER>: add a flashcard with question and answer
 delete <INDEX>: delete a flashcard by its index
 search <KEYPHRASE>: show all flashcards containing the keyphrase
-review m/[FLIP | MQC | TF]: start a review session
+star <INDEX>: star/flag a flashcard by its index
+review m/[FLIP | MCQ | TF]: start a review session
 exit: exit the program, MUST run this for file saving
 ____________________________________________________________
 ____________________________________________________________
@@ -31,11 +32,9 @@ ____________________________________________________________
 ____________________________________________________________
 1.Question: 1 | Answer: 1 |
 2.Question: 2 | Answer: 2 |
-
 ____________________________________________________________
 ____________________________________________________________
 1.Question: 1 | Answer: 1 |
-
 ____________________________________________________________
 ____________________________________________________________
 No matches found.

@@ -81,15 +81,26 @@ public class ReviewCommand extends Command {
         Ui.printSeparator();
     }
 
+    /**
+     * doing 3 steps for each flashcard in the list
+     * 1. display the question
+     * 2. get user's input
+     * 3. resolve the input (for t/f and mcq mode)
+     *
+     * @param flashcards list of flashcards
+     */
     public void reviewLoop(FlashcardList flashcards) {
         int listSize = flashcards.getSize();
         while (count < listSize) {
             Flashcard currentFlashcard = flashcards.getFlashcard(count);
+            // display question
             reviewMode.displayQuestion(currentFlashcard, count);
+            // get user's input
             String input = reviewMode.getPrompt();
             if (input.equals("quit")) {
                 break;
             }
+            // resolve the input
             if (reviewMode.checkAnswer(input, currentFlashcard)) {
                 correct++;
             }
