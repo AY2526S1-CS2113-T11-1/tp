@@ -13,14 +13,12 @@
   - [Storage Component](#storage-component)
   - [Commons Component](#commons-component)
   - [Overall Architecture Diagram](#overall-architecture-diagram)
-  - [Class Diagrams for Each Component](#class-diagrams-for-each-component)
 3. [Features](#features)
   - [Feature 1: Add Flashcard](#feature-1-add-flashcard)
   - [Feature 2: Delete Flashcard](#feature-2-delete-flashcard)
   - [Feature 3: Search Flashcard](#feature-3-search-flashcard)
   - [Feature 4: Review Flashcards](#feature-4-review-flashcards)
   - [Feature 5: Star Flashcards](#feature-5-star-flashcard)
-  - [Design Considerations](#design-considerations)
 4. [Requirements](#requirements)
   - [Use Cases](#use-cases)
   - [Non-Functional Requirements (NFRs)](#non-functional-requirements-nfrs)
@@ -75,6 +73,9 @@ The app follows a **Command-based architecture**, where the user interacts via t
 **Class:**
 - Exception
 - Messages
+
+### Overall Architecture Diagram
+
 
 ---
 
