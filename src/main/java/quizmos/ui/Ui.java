@@ -73,14 +73,6 @@ public class Ui {
         respond(Messages.hello + Messages.logo + Messages.beginInstruction);
     }
 
-    public static void help() {
-        respond(Messages.helpMessage);
-    }
-
-    public static void goodbye() {
-        respond(Messages.goodbyeMessage);
-    }
-
     public static void noMatchesRespond() {
         respond(Messages.noMatchesMessage);
     }
@@ -106,11 +98,4 @@ public class Ui {
         respond(response);
     }
 
-    // FlashcardList
-    public static void emptyListRespond() {
-        respond(Messages.emptyListMessage);
-    }
-
-    // Review
-    
 }

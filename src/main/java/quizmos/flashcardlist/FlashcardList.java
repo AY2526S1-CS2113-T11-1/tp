@@ -1,5 +1,6 @@
 package quizmos.flashcardlist;
 
+import quizmos.common.Messages;
 import quizmos.flashcard.Flashcard;
 import quizmos.ui.Ui;
 
@@ -85,7 +86,7 @@ public class FlashcardList implements Iterable<Flashcard> {
 
     public void showList() {
         if (this.getSize() == 0) {
-            Ui.emptyListRespond();
+            Ui.respond(Messages.emptyListMessage);
             return;
         }
         int count = 1;
