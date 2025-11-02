@@ -14,7 +14,7 @@ import java.util.Random;
 public class MultipleChoiceReview implements IReviewMode {
     private final FlashcardList flashcardList;
     private final List<String> choices = List.of("1", "2", "3", "4", "quit");
-    private int currentAnswer;
+    private List<Integer> currentAnswer = new ArrayList<>();
 
     public MultipleChoiceReview(FlashcardList flashcardList) throws QuizMosLogicException {
         super();
@@ -77,13 +77,17 @@ public class MultipleChoiceReview implements IReviewMode {
         Ui.printMessage(ReviewMessages.flashcardQuestionString(flashcard, index));
         Ui.printMessage(ReviewMessages.ANSWER);
 
+        String correctAnswer = flashcard.getAnswer();
+
         List<Integer> answers = listOfChoices(flashcardList.getSize(), index);
         for (int i = 0; i < 4; i++) {
-            if (answers.get(i) == index) {
-                currentAnswer = i;
+            String randomAnswer = flashcardList.getFlashcard(answers.get(i)).getAnswer();
+            int randomIndex = answers.get(i);
+            if (randomIndex == index || correctAnswer.equals(randomAnswer)) {
+                currentAnswer.add(i);
             }
-            int cardIndex = answers.get(i);
-            Ui.printMessage(ReviewMessages.mcqChoice(flashcardList.getFlashcard(cardIndex), i));
+
+            Ui.printMessage(ReviewMessages.mcqChoice(flashcardList.getFlashcard(randomIndex), i));
         }
     }
 
@@ -100,13 +104,13 @@ public class MultipleChoiceReview implements IReviewMode {
                 input.equals("3") || input.equals("4"): "Input can only be (1/2/3/4)";
 
         int answer = Integer.parseInt(input) - 1;
-        if (answer == currentAnswer) {
+        if (currentAnswer.contains(answer)) {
             Ui.printMessage(ReviewMessages.CORRECT_ANSWER);
             Ui.printSeparator();
             return true;
         } else {
             Ui.printMessage(ReviewMessages.INCORRECT_ANSWER);
-            Ui.printMessage(ReviewMessages.showCorrectAnswerMCQ(currentAnswer, flashcard));
+            Ui.printMessage(ReviewMessages.showCorrectAnswerMCQ(currentAnswer.get(0), flashcard));
             Ui.printSeparator();
             return false;
         }
