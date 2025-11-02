@@ -14,6 +14,7 @@ public class Messages {
             " \\__\\_\\\\__,_|_/___|_|  |_|\\___/|___/\n";
     public static String hello = "Hello, I'm QuizMos\n";
     public static String beginInstruction = "Try command `help` for more information";
+    public static String greeting = hello + logo + beginInstruction;
 
     // help
     public static String helpMessage = "Available commands:\n"

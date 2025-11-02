@@ -32,11 +32,6 @@ public class Ui {
         System.out.println(Messages.separator);
     }
 
-    /**
-     * Announce error with UI format
-     * @param message error message
-     */
-
     public static void printMessage(String message) {
         System.out.println(message);
         System.out.flush();
@@ -69,10 +64,6 @@ public class Ui {
     public static void printSeparator() {
         System.out.println(Messages.separator);
     }
-    
-    public static void greeting() {
-        respond(Messages.hello + Messages.logo + Messages.beginInstruction);
-    }
 
     public static void noMatchesRespond() {
         respond(Messages.noMatchesMessage);
@@ -99,7 +90,6 @@ public class Ui {
         respond(response);
     }
 
-
     public static void showStarredFlashcardsList(ArrayList<Flashcard> starredFlashcards) {
         int count = 1;
         String response = "";
@@ -109,5 +99,4 @@ public class Ui {
         }
         respond(response);
     }
-
 }
