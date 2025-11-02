@@ -1,6 +1,7 @@
 package quizmos;
 
 import quizmos.command.Command;
+import quizmos.common.Messages;
 import quizmos.flashcardlist.FlashcardList;
 import quizmos.storage.Storage;
 import quizmos.parser.Parser;
@@ -27,7 +28,7 @@ public class QuizMos {
      *
      */
     public void run() throws IOException {
-        Ui.greeting();
+        Ui.respond(Messages.greeting);
         boolean isExit = false;
 
         while (!isExit){

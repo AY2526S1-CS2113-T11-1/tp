@@ -36,7 +36,11 @@ public class TrueFalseReview implements IReviewMode {
 
         int size = flashcardList.getSize();
         int random = randomQuestion(0, size - 1);
-        currentAnswer = (random == index);
+        String rightAnswer = flashcard.getAnswer();
+        String randomAnswer = flashcardList.getFlashcard(random).getAnswer();
+
+        currentAnswer = (random == index) || (rightAnswer.equals(randomAnswer));
+        Ui.printMessage(ReviewMessages.showStatementTF(randomAnswer));
     }
 
     /**
