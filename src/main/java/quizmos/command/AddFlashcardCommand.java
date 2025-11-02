@@ -37,7 +37,7 @@ public class AddFlashcardCommand extends Command {
         this.answer = args.substring(aIndex + 2).trim();
     }
     @Override
-    public void execute(FlashcardList flashcards, Storage storage) throws IOException {
+    public void execute(FlashcardList flashcards, Storage storage) throws Exception {
         if (this.question == null || this.answer == null) {
             return;
         }

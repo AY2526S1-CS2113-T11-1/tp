@@ -21,7 +21,7 @@ public class RemoveFlashcardCommand extends Command {
     }
 
     @Override
-    public void execute(FlashcardList flashcards, Storage storage) throws IOException {
+    public void execute(FlashcardList flashcards, Storage storage) throws Exception {
         if (!isValid || index < 0 || index >= flashcards.getSize()) {
             Ui.invalidIndexRespond();
             return;
