@@ -12,6 +12,7 @@ public class AddFlashcardCommand extends Command {
     private static final String FLASHCARD_ANSWER_KEY = "a/";
     String question;
     String answer;
+    private boolean isValid = true;
 
     public AddFlashcardCommand(String[] parts) {
         // return an invalid command if the command is not formatted correctly
@@ -19,6 +20,7 @@ public class AddFlashcardCommand extends Command {
                 || !parts[1].contains(FLASHCARD_QUESTION_KEY)
                 || !parts[1].contains(FLASHCARD_ANSWER_KEY)) {
             Ui.invalidCommandRespond();
+            isValid = false;
             return;
         }
         String args = parts[1];
@@ -30,15 +32,26 @@ public class AddFlashcardCommand extends Command {
             Ui.invalidCommandRespond();
             this.question = null;
             this.answer = null;
+            isValid = false;
             return;
         }
 
         this.question = args.substring(qIndex + 2, aIndex).trim();
         this.answer = args.substring(aIndex + 2).trim();
+
+        // Validate non-empty fields
+        if (this.question.isEmpty()) {
+            Ui.invalidCommandRespond();
+            isValid = false;
+        } else if (this.answer.isEmpty()) {
+            Ui.invalidCommandRespond();
+            isValid = false;
+        }
     }
+
     @Override
     public void execute(FlashcardList flashcards, Storage storage) throws IOException {
-        if (this.question == null || this.answer == null) {
+        if (!isValid) {
             return;
         }
 
