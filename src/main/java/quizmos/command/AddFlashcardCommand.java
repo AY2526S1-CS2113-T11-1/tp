@@ -1,5 +1,6 @@
 package quizmos.command;
 
+import quizmos.exception.QuizMosInputException;
 import quizmos.storage.Storage;
 import quizmos.ui.Ui;
 import quizmos.flashcardlist.FlashcardList;
@@ -37,7 +38,7 @@ public class AddFlashcardCommand extends Command {
         this.answer = args.substring(aIndex + 2).trim();
     }
     @Override
-    public void execute(FlashcardList flashcards, Storage storage) throws IOException {
+    public void execute(FlashcardList flashcards, Storage storage) throws IOException, QuizMosInputException {
         if (this.question == null || this.answer == null) {
             return;
         }

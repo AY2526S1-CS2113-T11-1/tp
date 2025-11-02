@@ -112,7 +112,9 @@ public class Ui {
         int count = 1;
         String response = "";
         for (Flashcard f : starredFlashcards) {
-            response += count + "." + f + "\n";
+            String listNumber =count + ".";
+            String starredFlashcardString = listNumber + f;
+            response += starredFlashcardString + "\n";
             count++;
         }
         respond(response);

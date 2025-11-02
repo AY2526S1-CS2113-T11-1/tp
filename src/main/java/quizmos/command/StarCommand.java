@@ -1,5 +1,6 @@
 package quizmos.command;
 
+import quizmos.exception.QuizMosInputException;
 import quizmos.flashcard.Flashcard;
 import quizmos.flashcardlist.FlashcardList;
 import quizmos.storage.Storage;
@@ -26,7 +27,7 @@ public class StarCommand extends Command{
      * @throws IOException
      */
     @Override
-    public void execute(FlashcardList flashcards, Storage storage) throws IOException {
+    public void execute(FlashcardList flashcards, Storage storage) throws QuizMosInputException {
         Flashcard starredFlashcard = flashcards.getFlashcard(index);
         starredFlashcard.toggleStar();
         Ui.showStarredFlashcard();

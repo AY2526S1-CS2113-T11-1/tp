@@ -1,5 +1,6 @@
 package quizmos.command;
 
+import quizmos.exception.QuizMosInputException;
 import quizmos.flashcard.Flashcard;
 import quizmos.flashcardlist.FlashcardList;
 import quizmos.storage.Storage;
@@ -21,7 +22,7 @@ public class RemoveFlashcardCommand extends Command {
     }
 
     @Override
-    public void execute(FlashcardList flashcards, Storage storage) throws IOException {
+    public void execute(FlashcardList flashcards, Storage storage) throws IOException, QuizMosInputException {
         if (!isValid || index < 0 || index >= flashcards.getSize()) {
             Ui.invalidIndexRespond();
             return;

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class GetStarredCommand extends Command {
     @Override
-    public void execute(FlashcardList flashcards, Storage storage) throws Exception {
+    public void execute(FlashcardList flashcards, Storage storage) {
         ArrayList<Flashcard> starredFlashcards = flashcards.getStarredFlashcards();
         Ui.showStarredFlashcardsList(starredFlashcards);
     }
