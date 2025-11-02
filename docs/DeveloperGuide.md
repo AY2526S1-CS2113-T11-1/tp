@@ -18,7 +18,7 @@
   - [Feature 2: Delete Flashcard](#feature-2-delete-flashcard)
   - [Feature 3: Search Flashcard](#feature-3-search-flashcard)
   - [Feature 4: Review Flashcards](#feature-4-review-flashcards)
-  - [Feature 5: Star Flashcards](#feature-5-star-flashcard)
+  - [Feature 5: Star Flashcard](#feature-5-star-flashcard)
 4. [Requirements](#requirements)
   - [Use Cases](#use-cases)
   - [Non-Functional Requirements (NFRs)](#non-functional-requirements-nfrs)
