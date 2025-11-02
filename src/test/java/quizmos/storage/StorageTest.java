@@ -106,8 +106,8 @@ class StorageTest {
 
         List<String> lines = Files.readAllLines(testFilePath);
         assertEquals(2, lines.size());
-        assertEquals("Q1 | A1 | ", lines.get(0));
-        assertEquals("Q2 | A2 | ", lines.get(1));
+        assertEquals("Q1 | A1 |", lines.get(0));
+        assertEquals("Q2 | A2 |", lines.get(1));
     }
 
     @Test
@@ -120,6 +120,6 @@ class StorageTest {
 
         List<String> lines = Files.readAllLines(testFilePath);
         assertEquals(1, lines.size());
-        assertEquals("NewQ | NewA | ", lines.get(0));
+        assertEquals("NewQ | NewA |", lines.get(0));
     }
 }

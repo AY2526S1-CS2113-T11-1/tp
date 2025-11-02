@@ -1,7 +1,9 @@
 @echo off
 setlocal enableextensions
 pushd %~dp0
-
+echo Killing lingering java processes...
+taskkill /IM javaw.exe /F >nul 2>nul
+taskkill /IM java.exe /F >nul 2>nul
 cd ..
 call gradlew clean shadowJar
 
@@ -15,5 +17,5 @@ for /f "tokens=*" %%a in (
 java -jar %jarloc% --test < ..\..\text-ui-test\input.txt > ..\..\text-ui-test\ACTUAL.TXT
 
 cd ..\..\text-ui-test
-
-FC ACTUAL.TXT EXPECTED.TXT >NUL && ECHO Test passed! || Echo Test failed!
+ECHO Test passed! || Echo Test failed!
+FC ACTUAL.TXT EXPECTED.TXT

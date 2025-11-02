@@ -4,11 +4,14 @@ public class Flashcard {
     private String question;
     private String answer;
     private boolean isStarred;
+    private String starMarker;
 
     public Flashcard(String question, String answer) {
         this.question = question;
         this.answer = answer;
         this.isStarred = false;
+        this.starMarker = "";
+
     }
 
     public String getQuestion() {
@@ -19,20 +22,21 @@ public class Flashcard {
         return answer;
     }
 
-    public boolean isStarred() {
+    public boolean checkIsStarred() {
         return isStarred;
     }
 
     public void toggleStar() {
         this.isStarred = true;
+        this.starMarker = " Starred";
     }
 
     public String toSaveFormat() {
-        String starMarker = isStarred ? "Starred" : "";
-        return getQuestion() + " | " + getAnswer() + " | " + starMarker;
+        return getQuestion() + " | " + getAnswer() + " |" + starMarker;
     }
 
     public String toString() {
-        return "Question: " + getQuestion() + " | " + "Answer: " + getAnswer();
+        return "Question: " + getQuestion() + " | " + "Answer: " + getAnswer() + " |" + starMarker;
+
     }
 }

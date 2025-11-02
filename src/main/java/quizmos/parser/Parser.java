@@ -3,6 +3,7 @@ package quizmos.parser;
 import quizmos.command.AddFlashcardCommand;
 import quizmos.command.Command;
 import quizmos.command.ExitCommand;
+import quizmos.command.GetStarredCommand;
 import quizmos.command.HelpCommand;
 import quizmos.command.InvalidCommand;
 import quizmos.command.ListCommand;
@@ -34,6 +35,7 @@ public class Parser {
             case "review" -> new ReviewCommand(command);
             case "search" -> new SearchFlashcardCommand(parts[1].trim());
             case "star" -> new StarCommand(parts[1].trim());
+            case "getstarred" -> new GetStarredCommand();
             default -> new InvalidCommand();
             };
         } catch (ArrayIndexOutOfBoundsException e) {

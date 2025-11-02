@@ -71,13 +71,13 @@ public class FlashcardList implements Iterable<Flashcard> {
 
 
     public ArrayList<Flashcard> getStarredFlashcards() {
-        ArrayList<Flashcard> starred = new ArrayList<>();
+        ArrayList<Flashcard> starredFlashcards = new ArrayList<>();
         for (Flashcard f : flashcards) {
-            if (f.isStarred()) {
-                starred.add(f);
+            if (f.checkIsStarred()) {
+                starredFlashcards.add(f);
             }
         }
-        return starred;
+        return starredFlashcards;
     }
 
     /**
