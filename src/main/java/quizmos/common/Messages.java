@@ -42,7 +42,7 @@ public class Messages {
     public static String goodbyeMessage = "Bye. Hope to see you again soon!";
 
     // flashcard list
-    public static String emptyListMessage = "Your task list is empty!";
+    public static String emptyListMessage = "Your flashcard list is empty!";
     public static String starredFlashcardMessage = "Starred this flashCard! ";
 
     // review command
