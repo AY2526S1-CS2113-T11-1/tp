@@ -22,7 +22,7 @@ public class Messages {
             + "add q/<QUESTION> a/<ANSWER>: add a flashcard with question and answer\n"
             + "delete <INDEX>: delete a flashcard by its index\n"
             + "search <KEYPHRASE>: show all flashcards containing the keyphrase\n"
-            + "review m/[FLIP | MQC | TF]: start a review session\n"
+            + "review m/[FLIP | MCQ | TF]: start a review session\n"
             + "exit: exit the program, MUST run this for file saving";
 
     // invalid command
