@@ -196,3 +196,9 @@ Nov 02, 2025 9:17:53 PM quizmos.QuizMos run
 INFO: quizmos parsed user's command
 Nov 02, 2025 9:17:53 PM quizmos.QuizMos run
 INFO: quizmos main loop ended
+Nov 02, 2025 10:40:41 PM quizmos.QuizMos setupLogging
+INFO: quizmos.log initialized successfully
+Nov 02, 2025 10:40:41 PM quizmos.QuizMos run
+INFO: quizmos main loop started
+Nov 02, 2025 10:40:50 PM quizmos.QuizMos run
+WARNING: quizmos got exception: No line found
