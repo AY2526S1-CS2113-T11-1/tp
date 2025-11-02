@@ -1,6 +1,8 @@
 package quizmos.command;
 
 import org.junit.jupiter.api.Test;
+import quizmos.exception.QuizMosFileException;
+import quizmos.exception.QuizMosInputException;
 import quizmos.flashcardlist.FlashcardList;
 import quizmos.storage.Storage;
 
@@ -11,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class AddFlashcardCommandTest {
 
     @Test
-    void execute_validInput_addsFlashcard() throws IOException {
+    void execute_validInput_addsFlashcard() throws QuizMosFileException, IOException, QuizMosInputException {
         FlashcardList flashcards = new FlashcardList();
         Storage storage = new Storage("data/QuizMos.txt") {
             @Override
@@ -27,7 +29,7 @@ public class AddFlashcardCommandTest {
     }
 
     @Test
-    void constructor_missingAnswer_doesNotAddFlashcard() throws IOException {
+    void constructor_missingAnswer_doesNotAddFlashcard() throws  QuizMosFileException, QuizMosInputException {
         FlashcardList flashcards = new FlashcardList();
         Storage storage = new Storage("data/QuizMos.txt") {
             @Override
@@ -35,13 +37,17 @@ public class AddFlashcardCommandTest {
         };
 
         AddFlashcardCommand command = new AddFlashcardCommand(new String[] {"add", "q/Q1"});
-        command.execute(flashcards, storage);
+        try {
+            command.execute(flashcards, storage);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         assertEquals(0, flashcards.getSize());
     }
 
     @Test
-    void constructor_missingQuestion_doesNotAddFlashcard() throws IOException {
+    void constructor_missingQuestion_doesNotAddFlashcard() throws QuizMosFileException, QuizMosInputException {
         FlashcardList flashcards = new FlashcardList();
         Storage storage = new Storage("data/QuizMos.txt") {
             @Override
@@ -49,13 +55,17 @@ public class AddFlashcardCommandTest {
         };
 
         AddFlashcardCommand command = new AddFlashcardCommand(new String[] {"add", "a/A1"});
-        command.execute(flashcards, storage);
+        try {
+            command.execute(flashcards, storage);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         assertEquals(0, flashcards.getSize());
     }
 
     @Test
-    void constructor_reversedOrder_doesNotAddFlashcard() throws IOException {
+    void constructor_reversedOrder_doesNotAddFlashcard() throws QuizMosFileException, QuizMosInputException {
         FlashcardList flashcards = new FlashcardList();
         Storage storage = new Storage("data/QuizMos.txt") {
             @Override
@@ -64,7 +74,11 @@ public class AddFlashcardCommandTest {
 
         // a/ appears before q/
         AddFlashcardCommand command = new AddFlashcardCommand(new String[] {"add", "a/A1 q/Q1"});
-        command.execute(flashcards, storage);
+        try {
+            command.execute(flashcards, storage);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         assertEquals(0, flashcards.getSize());
     }

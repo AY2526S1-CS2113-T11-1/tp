@@ -9,18 +9,23 @@ import java.util.Iterator;
 
 public class FlashcardList implements Iterable<Flashcard> {
     private final ArrayList<Flashcard> flashcards;
+    private ArrayList<Flashcard> starredFlashcards;
+
 
     public FlashcardList() {
         this.flashcards = new ArrayList<Flashcard>();
+        this.starredFlashcards = new ArrayList<>();
     }
 
     /**
      * Constructs a FlashcardList with an existing list of flashcards.
      *
      * @param flashcards The list of flashcards to initialize this FlashcardList with.
-     * */
+     *
+     */
     public FlashcardList(ArrayList<Flashcard> flashcards) {
         this.flashcards = flashcards;
+        this.starredFlashcards = new ArrayList<>();
     }
 
     /**
@@ -69,15 +74,20 @@ public class FlashcardList implements Iterable<Flashcard> {
         return flashcards;
     }
 
+    public void setStarredFlashcards(ArrayList<Flashcard> starredFlashcards) {
+        this.starredFlashcards = starredFlashcards;
+    }
 
-    public ArrayList<Flashcard> getStarredFlashcards() {
-        ArrayList<Flashcard> starredFlashcards = new ArrayList<>();
-        for (Flashcard f : flashcards) {
-            if (f.checkIsStarred()) {
-                starredFlashcards.add(f);
-            }
+    public void getStarredFlashcards() {
+        int count = 1;
+        for (Flashcard flashcard : starredFlashcards) {
+            String fullStarredFlashcardString = "";
+            String listNumber = count + ".";
+            String starredFlashcardString = listNumber + flashcard;
+            fullStarredFlashcardString += starredFlashcardString + "\n";
+            count++;
+            Ui.showStarredFlashcardsList(fullStarredFlashcardString);
         }
-        return starredFlashcards;
     }
 
     /**
@@ -90,17 +100,22 @@ public class FlashcardList implements Iterable<Flashcard> {
             return;
         }
         int count = 1;
-        Ui.printSeparator();
         for (Flashcard f : flashcards) {
             String response = count + "." + f.toString();
-            System.out.println(response);
+            Ui.respond(response);
             count++;
         }
-        Ui.printSeparator();
     }
 
     @Override
     public Iterator<Flashcard> iterator() {
         return flashcards.iterator();
     }
+
+    public void addStarredFlashcard(Flashcard starredFlashcard) {
+        starredFlashcards.add(starredFlashcard);
+    }
+
+
 }
+

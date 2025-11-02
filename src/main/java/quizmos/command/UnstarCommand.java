@@ -8,17 +8,14 @@ import quizmos.ui.Ui;
 
 import java.io.IOException;
 
-/**
- *
- */
-public class StarCommand extends Command{
+public class UnstarCommand extends Command {
     private final int index;
 
     /**
      * @param index
      */
-    public StarCommand(String index) {
-        this.index = Integer.parseInt(index)-1;
+    public UnstarCommand(String index) {
+        this.index = Integer.parseInt(index) - 1;
     }
 
     /**
@@ -28,11 +25,11 @@ public class StarCommand extends Command{
      */
     @Override
     public void execute(FlashcardList flashcards, Storage storage) throws QuizMosInputException {
-        Flashcard starredFlashcard = flashcards.getFlashcard(index);
-        starredFlashcard.toggleStar();
-        flashcards.addStarredFlashcard(starredFlashcard);
-        Ui.showStarredFlashcard(starredFlashcard);
+        Flashcard unstarredFlashcard = flashcards.getFlashcard(index);
+        unstarredFlashcard.toggleStar();
+        Ui.showUnstarredFlashcard(unstarredFlashcard);
         storage.writeToFile(flashcards);
 
     }
 }
+

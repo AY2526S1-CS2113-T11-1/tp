@@ -35,7 +35,7 @@ public class Storage {
                 file.createNewFile(); // create the file if it doesn't exist
             }
         } catch (IOException e) {
-                throw new QuizMosFileException("Error loading tasks from file: " + e.getMessage());
+            throw new QuizMosFileException("Error loading tasks from file: " + e.getMessage());
         }
     }
 

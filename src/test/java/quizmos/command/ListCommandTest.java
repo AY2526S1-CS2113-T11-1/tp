@@ -3,6 +3,7 @@ package quizmos.command;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import quizmos.exception.QuizMosFileException;
 import quizmos.flashcard.Flashcard;
 import quizmos.flashcardlist.FlashcardList;
 import quizmos.storage.Storage;
@@ -26,7 +27,7 @@ class ListCommandTest {
     private PrintStream originalOut;
 
     @BeforeEach
-    void setUp() throws IOException {
+    void setUp() throws IOException, QuizMosFileException {
         listCommand = new ListCommand();
         flashcardList = new FlashcardList();
         Path tempFile = Files.createTempFile("dummy", ".txt");

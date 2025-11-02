@@ -15,11 +15,15 @@ public class QuizMos {
 
     public QuizMos() {
         this.flashcards = new FlashcardList();
-        this.storage = new Storage("data/QuizMos.txt");
+        try {
+            this.storage = new Storage("data/QuizMos.txt");
+        } catch (Exception e) {
+            Ui.respondError(e.getMessage());
+        }
         try {
             flashcards = new FlashcardList(storage.load());
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            Ui.respondError(e.getMessage());
             flashcards = new FlashcardList();
         }
     }

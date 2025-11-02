@@ -44,8 +44,8 @@ public class Messages {
 
     // flashcard list
     public static String emptyListMessage = "Your flashcard list is empty!";
-    public static String starredFlashcardMessage = "Starred this flashCard! ";
-    public static String starredFlashcardsListMessage = "Starred Flashcards: ";
+    public static String starredFlashcardMessage = "Starred this flashcard:  ";
+    public static String unstarredFlashcardMessage = "Unstarred this flashcard: ";
 
     // review command
 }
