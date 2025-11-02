@@ -1,0 +1,42 @@
+Nov 02, 2025 2:07:08 PM quizmos.QuizMos setupLogging
+INFO: quizmos.log initialized successfully
+Nov 02, 2025 2:07:08 PM quizmos.QuizMos run
+INFO: quizmos main loop started
+Nov 02, 2025 2:07:19 PM quizmos.QuizMos run
+INFO: quizmos got user's command: help
+Nov 02, 2025 2:07:19 PM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 02, 2025 2:07:22 PM quizmos.QuizMos run
+INFO: quizmos got user's command: list
+Nov 02, 2025 2:07:22 PM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 02, 2025 2:07:24 PM quizmos.QuizMos run
+INFO: quizmos got user's command: exit
+Nov 02, 2025 2:07:24 PM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 02, 2025 2:07:24 PM quizmos.QuizMos run
+INFO: quizmos main loop ended
+Nov 02, 2025 2:12:05 PM quizmos.QuizMos setupLogging
+INFO: quizmos.log initialized successfully
+Nov 02, 2025 2:12:05 PM quizmos.QuizMos run
+INFO: quizmos main loop started
+Nov 02, 2025 2:12:20 PM quizmos.QuizMos run
+INFO: quizmos got user's command: help
+Nov 02, 2025 2:12:20 PM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: help
+Nov 02, 2025 2:12:20 PM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 02, 2025 2:12:22 PM quizmos.QuizMos run
+INFO: quizmos got user's command: list
+Nov 02, 2025 2:12:22 PM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: list
+Nov 02, 2025 2:12:22 PM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 02, 2025 2:12:24 PM quizmos.QuizMos run
+INFO: quizmos got user's command: exit
+Nov 02, 2025 2:12:24 PM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: exit
+Nov 02, 2025 2:12:24 PM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 02, 2025 2:12:24 PM quizmos.QuizMos run
+INFO: quizmos main loop ended
