@@ -3,8 +3,6 @@ package quizmos.command;
 import quizmos.flashcardlist.FlashcardList;
 import quizmos.storage.Storage;
 
-import java.io.IOException;
-
 public class ListCommand extends Command {
     /**
      * Executes the list command.

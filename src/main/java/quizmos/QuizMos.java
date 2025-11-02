@@ -14,11 +14,24 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 public class QuizMos {
+    private static final String APP_LOGGER_NAME = "quizmos";
+    private static final Logger logger = Logger.getLogger(QuizMos.class.getName());
+
     private FlashcardList flashcards;
     private Storage storage;
 
-    private static final String APP_LOGGER_NAME = "quizmos";
-    private final static Logger logger = Logger.getLogger(QuizMos.class.getName());
+
+
+    public QuizMos() {
+        this.flashcards = new FlashcardList();
+        this.storage = new Storage("data/QuizMos.txt");
+        try {
+            flashcards = new FlashcardList(storage.load());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            flashcards = new FlashcardList();
+        }
+    }
 
     private void setupLogging() {
         Logger appLogger = Logger.getLogger(APP_LOGGER_NAME);
@@ -34,21 +47,10 @@ public class QuizMos {
         }
     }
 
-    public QuizMos() {
-        this.flashcards = new FlashcardList();
-        this.storage = new Storage("data/QuizMos.txt");
-        try {
-            flashcards = new FlashcardList(storage.load());
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            flashcards = new FlashcardList();
-        }
-    }
-
     /**
      *
      */
-    public void run() throws IOException {
+    public void run() {
         setupLogging();
         Ui.respond(Messages.greeting);
         boolean isExit = false;
@@ -71,7 +73,7 @@ public class QuizMos {
         System.exit(0);
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         if (args.length > 0 && args[0].equals("--test")) {
             Ui.isTestMode = true;
         }

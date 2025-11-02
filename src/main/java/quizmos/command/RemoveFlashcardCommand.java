@@ -5,8 +5,6 @@ import quizmos.flashcardlist.FlashcardList;
 import quizmos.storage.Storage;
 import quizmos.ui.Ui;
 
-import java.io.IOException;
-
 public class RemoveFlashcardCommand extends Command {
     int index = -1; // default index is false
     private boolean isValid = true;

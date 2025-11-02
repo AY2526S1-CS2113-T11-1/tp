@@ -17,7 +17,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Parser {
-    private final static Logger logger = Logger.getLogger(Parser.class.getName());
+    private static final Logger logger = Logger.getLogger(Parser.class.getName());
 
     /**
      * Parse user's raw command and return the Command object

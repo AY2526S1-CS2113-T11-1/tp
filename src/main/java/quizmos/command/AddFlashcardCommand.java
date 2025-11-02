@@ -5,8 +5,6 @@ import quizmos.ui.Ui;
 import quizmos.flashcardlist.FlashcardList;
 import quizmos.flashcard.Flashcard;
 
-import java.io.IOException;
-
 public class AddFlashcardCommand extends Command {
     private static final String FLASHCARD_QUESTION_KEY = "q/";
     private static final String FLASHCARD_ANSWER_KEY = "a/";
