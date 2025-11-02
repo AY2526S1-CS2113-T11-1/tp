@@ -528,3 +528,264 @@ Nov 03, 2025 12:33:10 AM quizmos.QuizMos run
 INFO: quizmos parsed user's command
 Nov 03, 2025 12:39:05 AM quizmos.QuizMos run
 WARNING: quizmos got exception: No line found
+Nov 03, 2025 1:31:04 AM quizmos.QuizMos setupLogging
+INFO: quizmos.log initialized successfully
+Nov 03, 2025 1:31:04 AM quizmos.QuizMos run
+INFO: quizmos main loop started
+Nov 03, 2025 1:31:09 AM quizmos.QuizMos run
+INFO: quizmos got user's command: list
+Nov 03, 2025 1:31:09 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: list
+Nov 03, 2025 1:31:09 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 1:31:12 AM quizmos.QuizMos run
+INFO: quizmos got user's command: getstar
+Nov 03, 2025 1:31:12 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: getstar
+Nov 03, 2025 1:31:12 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 1:31:12 AM quizmos.command.GetStarCommand execute
+INFO: Executing GetStarCommand
+Nov 03, 2025 1:31:12 AM quizmos.command.GetStarCommand execute
+INFO: Displayed starred flashcards to user: Your flashcard list is empty!
+Nov 03, 2025 1:43:59 AM quizmos.QuizMos run
+WARNING: quizmos got exception: No line found
+Nov 03, 2025 1:44:01 AM quizmos.QuizMos setupLogging
+INFO: quizmos.log initialized successfully
+Nov 03, 2025 1:44:01 AM quizmos.QuizMos run
+INFO: quizmos main loop started
+Nov 03, 2025 1:44:06 AM quizmos.QuizMos run
+INFO: quizmos got user's command: list
+Nov 03, 2025 1:44:06 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: list
+Nov 03, 2025 1:44:06 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 1:44:10 AM quizmos.QuizMos run
+INFO: quizmos got user's command: getStar
+Nov 03, 2025 1:44:10 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: getstar
+Nov 03, 2025 1:44:10 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 1:44:10 AM quizmos.QuizMos run
+WARNING: quizmos got exception: null
+Nov 03, 2025 1:44:37 AM quizmos.QuizMos setupLogging
+INFO: quizmos.log initialized successfully
+Nov 03, 2025 1:44:37 AM quizmos.QuizMos run
+INFO: quizmos main loop started
+Nov 03, 2025 1:44:59 AM quizmos.QuizMos run
+INFO: quizmos got user's command: list
+Nov 03, 2025 1:44:59 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: list
+Nov 03, 2025 1:44:59 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 1:45:03 AM quizmos.QuizMos run
+INFO: quizmos got user's command: getstar
+Nov 03, 2025 1:45:03 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: getstar
+Nov 03, 2025 1:45:03 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 1:45:03 AM quizmos.QuizMos run
+WARNING: quizmos got exception: null
+Nov 03, 2025 1:45:42 AM quizmos.QuizMos run
+WARNING: quizmos got exception: No line found
+Nov 03, 2025 1:45:42 AM quizmos.QuizMos run
+WARNING: quizmos got exception: No line found
+Nov 03, 2025 1:45:42 AM quizmos.QuizMos run
+WARNING: quizmos got exception: No line found
+Nov 03, 2025 1:50:39 AM quizmos.QuizMos setupLogging
+INFO: quizmos.log initialized successfully
+Nov 03, 2025 1:50:39 AM quizmos.QuizMos run
+INFO: quizmos main loop started
+Nov 03, 2025 1:50:40 AM quizmos.QuizMos run
+WARNING: quizmos got exception: No line found
+Nov 03, 2025 1:50:47 AM quizmos.QuizMos setupLogging
+INFO: quizmos.log initialized successfully
+Nov 03, 2025 1:50:47 AM quizmos.QuizMos run
+INFO: quizmos main loop started
+Nov 03, 2025 1:50:54 AM quizmos.QuizMos run
+INFO: quizmos got user's command: list
+Nov 03, 2025 1:50:54 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: list
+Nov 03, 2025 1:50:54 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 1:51:38 AM quizmos.QuizMos run
+INFO: quizmos got user's command: star 1
+Nov 03, 2025 1:51:38 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: star
+Nov 03, 2025 1:51:38 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 1:51:41 AM quizmos.QuizMos run
+INFO: quizmos got user's command: list
+Nov 03, 2025 1:51:41 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: list
+Nov 03, 2025 1:51:41 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 1:51:43 AM quizmos.QuizMos run
+INFO: quizmos got user's command: get star
+Nov 03, 2025 1:51:43 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: get
+Nov 03, 2025 1:51:43 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 1:51:46 AM quizmos.QuizMos run
+INFO: quizmos got user's command: getstar
+Nov 03, 2025 1:51:46 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: getstar
+Nov 03, 2025 1:51:46 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 1:51:46 AM quizmos.QuizMos run
+WARNING: quizmos got exception: null
+Nov 03, 2025 1:56:47 AM quizmos.QuizMos run
+WARNING: quizmos got exception: No line found
+Nov 03, 2025 1:56:47 AM quizmos.QuizMos run
+WARNING: quizmos got exception: No line found
+Nov 03, 2025 1:56:47 AM quizmos.QuizMos run
+WARNING: quizmos got exception: No line found
+Nov 03, 2025 1:56:48 AM quizmos.QuizMos setupLogging
+INFO: quizmos.log initialized successfully
+Nov 03, 2025 1:56:48 AM quizmos.QuizMos run
+INFO: quizmos main loop started
+Nov 03, 2025 1:56:54 AM quizmos.QuizMos run
+INFO: quizmos got user's command: list
+Nov 03, 2025 1:56:54 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: list
+Nov 03, 2025 1:56:54 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 1:56:58 AM quizmos.QuizMos run
+INFO: quizmos got user's command: getstar
+Nov 03, 2025 1:56:58 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: getstar
+Nov 03, 2025 1:56:58 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 1:56:58 AM quizmos.QuizMos run
+WARNING: quizmos got exception: null
+Nov 03, 2025 1:57:16 AM quizmos.QuizMos run
+WARNING: quizmos got exception: No line found
+Nov 03, 2025 1:57:16 AM quizmos.QuizMos run
+WARNING: quizmos got exception: No line found
+Nov 03, 2025 1:57:16 AM quizmos.QuizMos run
+WARNING: quizmos got exception: No line found
+Nov 03, 2025 2:00:55 AM quizmos.QuizMos setupLogging
+INFO: quizmos.log initialized successfully
+Nov 03, 2025 2:00:55 AM quizmos.QuizMos run
+INFO: quizmos main loop started
+Nov 03, 2025 2:01:21 AM quizmos.QuizMos run
+WARNING: quizmos got exception: No line found
+Nov 03, 2025 2:01:21 AM quizmos.QuizMos run
+WARNING: quizmos got exception: No line found
+Nov 03, 2025 2:03:53 AM quizmos.QuizMos setupLogging
+INFO: quizmos.log initialized successfully
+Nov 03, 2025 2:03:53 AM quizmos.QuizMos run
+INFO: quizmos main loop started
+Nov 03, 2025 2:04:00 AM quizmos.QuizMos run
+INFO: quizmos got user's command: list
+Nov 03, 2025 2:04:00 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: list
+Nov 03, 2025 2:04:00 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 2:04:02 AM quizmos.QuizMos run
+INFO: quizmos got user's command: getstar
+Nov 03, 2025 2:04:02 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: getstar
+Nov 03, 2025 2:04:02 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 2:04:25 AM quizmos.QuizMos run
+INFO: quizmos got user's command: unstar 1
+Nov 03, 2025 2:04:25 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: unstar
+Nov 03, 2025 2:04:25 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 2:04:33 AM quizmos.QuizMos run
+WARNING: quizmos got exception: No line found
+Nov 03, 2025 2:11:46 AM quizmos.QuizMos setupLogging
+INFO: quizmos.log initialized successfully
+Nov 03, 2025 2:11:46 AM quizmos.QuizMos run
+INFO: quizmos main loop started
+Nov 03, 2025 2:11:51 AM quizmos.QuizMos run
+INFO: quizmos got user's command: list
+Nov 03, 2025 2:11:51 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: list
+Nov 03, 2025 2:11:51 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 2:11:54 AM quizmos.QuizMos run
+INFO: quizmos got user's command: getstar
+Nov 03, 2025 2:11:54 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: getstar
+Nov 03, 2025 2:11:54 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 2:12:28 AM quizmos.QuizMos run
+WARNING: quizmos got exception: No line found
+Nov 03, 2025 2:12:29 AM quizmos.QuizMos setupLogging
+INFO: quizmos.log initialized successfully
+Nov 03, 2025 2:12:29 AM quizmos.QuizMos run
+INFO: quizmos main loop started
+Nov 03, 2025 2:12:32 AM quizmos.QuizMos run
+INFO: quizmos got user's command: list
+Nov 03, 2025 2:12:32 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: list
+Nov 03, 2025 2:12:32 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 2:12:37 AM quizmos.QuizMos run
+INFO: quizmos got user's command: getstar
+Nov 03, 2025 2:12:37 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: getstar
+Nov 03, 2025 2:12:37 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 2:13:00 AM quizmos.QuizMos run
+INFO: quizmos got user's command: star 1
+Nov 03, 2025 2:13:00 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: star
+Nov 03, 2025 2:13:00 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 2:13:08 AM quizmos.QuizMos run
+INFO: quizmos got user's command: getstar
+Nov 03, 2025 2:13:08 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: getstar
+Nov 03, 2025 2:13:08 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 2:13:23 AM quizmos.QuizMos run
+WARNING: quizmos got exception: No line found
+Nov 03, 2025 2:14:33 AM quizmos.QuizMos setupLogging
+INFO: quizmos.log initialized successfully
+Nov 03, 2025 2:14:33 AM quizmos.QuizMos run
+INFO: quizmos main loop started
+Nov 03, 2025 2:14:37 AM quizmos.QuizMos run
+INFO: quizmos got user's command: list
+Nov 03, 2025 2:14:37 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: list
+Nov 03, 2025 2:14:37 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 2:14:41 AM quizmos.QuizMos run
+INFO: quizmos got user's command: getstar
+Nov 03, 2025 2:14:41 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: getstar
+Nov 03, 2025 2:14:41 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 2:14:41 AM quizmos.command.GetStarCommand execute
+INFO: Executing GetStarCommand
+Nov 03, 2025 2:14:41 AM quizmos.command.GetStarCommand execute
+INFO: Displayed starred flashcards to user: 1. Question: 1 | Answer: 1 | Starred
+2. Question: 2 | Answer: 2 | Starred
+Nov 03, 2025 2:14:48 AM quizmos.QuizMos run
+INFO: quizmos got user's command: unstar 1
+Nov 03, 2025 2:14:48 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: unstar
+Nov 03, 2025 2:14:48 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 2:14:52 AM quizmos.QuizMos run
+INFO: quizmos got user's command: list
+Nov 03, 2025 2:14:52 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: list
+Nov 03, 2025 2:14:52 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 2:14:54 AM quizmos.QuizMos run
+INFO: quizmos got user's command: getstar
+Nov 03, 2025 2:14:54 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: getstar
+Nov 03, 2025 2:14:54 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 2:14:54 AM quizmos.command.GetStarCommand execute
+INFO: Executing GetStarCommand
+Nov 03, 2025 2:14:54 AM quizmos.command.GetStarCommand execute
+INFO: Displayed starred flashcards to user: 1. Question: 2 | Answer: 2 | Starred
+Nov 03, 2025 2:21:19 AM quizmos.QuizMos run
+WARNING: quizmos got exception: No line found
