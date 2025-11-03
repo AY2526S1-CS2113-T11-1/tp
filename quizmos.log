@@ -2237,3 +2237,145 @@ Nov 03, 2025 3:02:57 PM quizmos.QuizMos run
 INFO: quizmos parsed user's command
 Nov 03, 2025 3:02:57 PM quizmos.QuizMos run
 INFO: quizmos main loop ended
+Nov 03, 2025 3:33:32 PM quizmos.QuizMos setupLogging
+INFO: quizmos.log initialized successfully
+Nov 03, 2025 3:33:32 PM quizmos.storage.Storage <init>
+INFO: Initializing storage for file path: data/QuizMos.txt
+Nov 03, 2025 3:33:32 PM quizmos.storage.Storage load
+INFO: Loading flashcards from file: data/QuizMos.txt
+Nov 03, 2025 3:33:32 PM quizmos.storage.Storage load
+INFO: Successfully loaded 1 flashcards
+Nov 03, 2025 3:33:32 PM quizmos.QuizMos run
+INFO: quizmos main loop started
+Nov 03, 2025 3:34:18 PM quizmos.QuizMos run
+INFO: quizmos got user's command: list
+Nov 03, 2025 3:34:18 PM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: list
+Nov 03, 2025 3:34:18 PM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 3:34:39 PM quizmos.QuizMos run
+INFO: quizmos got user's command: getstar
+Nov 03, 2025 3:34:39 PM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: getstar
+Nov 03, 2025 3:34:39 PM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 3:34:39 PM quizmos.command.GetStarCommand execute
+INFO: Executing GetStarCommand
+Nov 03, 2025 3:34:39 PM quizmos.command.GetStarCommand execute
+INFO: Displayed starred flashcards to user: 1. Question: 1 | Answer: 1 | Starred
+Nov 03, 2025 3:34:48 PM quizmos.QuizMos run
+INFO: quizmos got user's command: add q/he3hfir4 a/ncorc
+Nov 03, 2025 3:34:48 PM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: add
+Nov 03, 2025 3:34:48 PM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 3:34:48 PM quizmos.storage.Storage writeToFile
+INFO: Writing flashcards to file: data/QuizMos.txt
+Nov 03, 2025 3:34:48 PM quizmos.storage.Storage writeToFile
+INFO: Successfully wrote 2 flashcards to file
+Nov 03, 2025 3:34:55 PM quizmos.QuizMos run
+INFO: quizmos got user's command: add q/vbrihf a/fhrifh
+Nov 03, 2025 3:34:55 PM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: add
+Nov 03, 2025 3:34:55 PM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 3:34:55 PM quizmos.storage.Storage writeToFile
+INFO: Writing flashcards to file: data/QuizMos.txt
+Nov 03, 2025 3:34:55 PM quizmos.storage.Storage writeToFile
+INFO: Successfully wrote 3 flashcards to file
+Nov 03, 2025 3:34:57 PM quizmos.QuizMos run
+INFO: quizmos got user's command: list
+Nov 03, 2025 3:34:57 PM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: list
+Nov 03, 2025 3:34:57 PM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 3:35:00 PM quizmos.QuizMos run
+INFO: quizmos got user's command: star 3
+Nov 03, 2025 3:35:00 PM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: star
+Nov 03, 2025 3:35:00 PM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 3:35:00 PM quizmos.command.StarCommand execute
+INFO: Executing StarCommand with index: 2
+Nov 03, 2025 3:35:00 PM quizmos.command.StarCommand execute
+INFO: Starred flashcard: Question: vbrihf | Answer: fhrifh | Starred
+Nov 03, 2025 3:35:00 PM quizmos.storage.Storage writeToFile
+INFO: Writing flashcards to file: data/QuizMos.txt
+Nov 03, 2025 3:35:00 PM quizmos.storage.Storage writeToFile
+INFO: Successfully wrote 3 flashcards to file
+Nov 03, 2025 3:35:00 PM quizmos.command.StarCommand execute
+INFO: Updated storage after starring flashcard.
+Nov 03, 2025 3:35:03 PM quizmos.QuizMos run
+INFO: quizmos got user's command: getstar
+Nov 03, 2025 3:35:03 PM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: getstar
+Nov 03, 2025 3:35:03 PM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 3:35:03 PM quizmos.command.GetStarCommand execute
+INFO: Executing GetStarCommand
+Nov 03, 2025 3:35:03 PM quizmos.command.GetStarCommand execute
+INFO: Displayed starred flashcards to user: 1. Question: 1 | Answer: 1 | Starred
+2. Question: he3hfir4 | Answer: ncorc |
+3. Question: vbrihf | Answer: fhrifh | Starred
+Nov 03, 2025 3:35:58 PM quizmos.QuizMos run
+WARNING: quizmos got exception: No line found
+Nov 03, 2025 3:36:00 PM quizmos.QuizMos setupLogging
+INFO: quizmos.log initialized successfully
+Nov 03, 2025 3:36:00 PM quizmos.storage.Storage <init>
+INFO: Initializing storage for file path: data/QuizMos.txt
+Nov 03, 2025 3:36:00 PM quizmos.storage.Storage load
+INFO: Loading flashcards from file: data/QuizMos.txt
+Nov 03, 2025 3:36:00 PM quizmos.storage.Storage load
+INFO: Successfully loaded 3 flashcards
+Nov 03, 2025 3:36:00 PM quizmos.QuizMos run
+INFO: quizmos main loop started
+Nov 03, 2025 3:36:09 PM quizmos.QuizMos run
+INFO: quizmos got user's command: list
+Nov 03, 2025 3:36:09 PM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: list
+Nov 03, 2025 3:36:09 PM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 3:36:12 PM quizmos.QuizMos run
+INFO: quizmos got user's command: getstar
+Nov 03, 2025 3:36:12 PM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: getstar
+Nov 03, 2025 3:36:12 PM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 3:36:12 PM quizmos.command.GetStarCommand execute
+INFO: Executing GetStarCommand
+Nov 03, 2025 3:36:12 PM quizmos.command.GetStarCommand execute
+INFO: Displayed starred flashcards to user: 1. Question: 1 | Answer: 1 | Starred
+2. Question: vbrihf | Answer: fhrifh | Starred
+
+Nov 03, 2025 3:36:59 PM quizmos.QuizMos run
+WARNING: quizmos got exception: No line found
+Nov 03, 2025 3:37:00 PM quizmos.QuizMos setupLogging
+INFO: quizmos.log initialized successfully
+Nov 03, 2025 3:37:00 PM quizmos.storage.Storage <init>
+INFO: Initializing storage for file path: data/QuizMos.txt
+Nov 03, 2025 3:37:00 PM quizmos.storage.Storage load
+INFO: Loading flashcards from file: data/QuizMos.txt
+Nov 03, 2025 3:37:00 PM quizmos.storage.Storage load
+INFO: Successfully loaded 3 flashcards
+Nov 03, 2025 3:37:00 PM quizmos.QuizMos run
+INFO: quizmos main loop started
+Nov 03, 2025 3:37:06 PM quizmos.QuizMos run
+INFO: quizmos got user's command: list
+Nov 03, 2025 3:37:06 PM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: list
+Nov 03, 2025 3:37:06 PM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 3:37:09 PM quizmos.QuizMos run
+INFO: quizmos got user's command: getstar
+Nov 03, 2025 3:37:09 PM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: getstar
+Nov 03, 2025 3:37:09 PM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 3:37:09 PM quizmos.command.GetStarCommand execute
+INFO: Executing GetStarCommand
+Nov 03, 2025 3:37:09 PM quizmos.command.GetStarCommand execute
+INFO: Displayed starred flashcards to user: 1. Question: 1 | Answer: 1 | Starred
+2. Question: vbrihf | Answer: fhrifh | Starred
+
+Nov 03, 2025 3:37:23 PM quizmos.QuizMos run
+WARNING: quizmos got exception: No line found
