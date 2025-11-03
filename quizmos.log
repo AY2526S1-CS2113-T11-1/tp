@@ -298,6 +298,306 @@ Nov 02, 2025 11:37:45 PM quizmos.QuizMos run
 INFO: quizmos parsed user's command
 Nov 02, 2025 11:37:51 PM quizmos.QuizMos run
 WARNING: quizmos got exception: No line found
+Nov 03, 2025 6:20:03 AM quizmos.QuizMos setupLogging
+INFO: quizmos.log initialized successfully
+Nov 03, 2025 6:20:03 AM quizmos.QuizMos run
+INFO: quizmos main loop started
+Nov 03, 2025 6:20:26 AM quizmos.QuizMos run
+INFO: quizmos got user's command: help
+Nov 03, 2025 6:20:26 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: help
+Nov 03, 2025 6:20:26 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 6:20:40 AM quizmos.QuizMos run
+INFO: quizmos got user's command: lít
+Nov 03, 2025 6:20:40 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: lít
+Nov 03, 2025 6:20:40 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 6:20:42 AM quizmos.QuizMos run
+INFO: quizmos got user's command: list
+Nov 03, 2025 6:20:42 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: list
+Nov 03, 2025 6:20:42 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 6:20:46 AM quizmos.QuizMos run
+INFO: quizmos got user's command: help
+Nov 03, 2025 6:20:46 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: help
+Nov 03, 2025 6:20:46 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 6:20:49 AM quizmos.QuizMos run
+INFO: quizmos got user's command: star 2
+Nov 03, 2025 6:20:49 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: star
+Nov 03, 2025 6:20:49 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 6:20:52 AM quizmos.QuizMos run
+INFO: quizmos got user's command: unstar 2
+Nov 03, 2025 6:20:52 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: unstar
+Nov 03, 2025 6:20:52 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 6:20:52 AM quizmos.QuizMos run
+WARNING: quizmos got exception: Index 1 out of bounds for length 1
+Nov 03, 2025 6:21:03 AM quizmos.QuizMos run
+INFO: quizmos got user's command: list
+Nov 03, 2025 6:21:03 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: list
+Nov 03, 2025 6:21:03 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 6:21:07 AM quizmos.QuizMos run
+INFO: quizmos got user's command: star 2
+Nov 03, 2025 6:21:07 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: star
+Nov 03, 2025 6:21:07 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 6:21:11 AM quizmos.QuizMos run
+INFO: quizmos got user's command: list
+Nov 03, 2025 6:21:11 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: list
+Nov 03, 2025 6:21:11 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 6:21:14 AM quizmos.QuizMos run
+INFO: quizmos got user's command: unstar 2
+Nov 03, 2025 6:21:14 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: unstar
+Nov 03, 2025 6:21:14 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 6:22:47 AM quizmos.QuizMos run
+INFO: quizmos got user's command: exit
+Nov 03, 2025 6:22:47 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: exit
+Nov 03, 2025 6:22:47 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 6:22:47 AM quizmos.QuizMos run
+INFO: quizmos main loop ended
+Nov 03, 2025 6:36:19 AM quizmos.QuizMos setupLogging
+INFO: quizmos.log initialized successfully
+Nov 03, 2025 6:36:19 AM quizmos.QuizMos run
+INFO: quizmos main loop started
+Nov 03, 2025 6:36:25 AM quizmos.QuizMos run
+INFO: quizmos got user's command: help
+Nov 03, 2025 6:36:25 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: help
+Nov 03, 2025 6:36:25 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 6:36:27 AM quizmos.QuizMos run
+INFO: quizmos got user's command: abc
+Nov 03, 2025 6:36:27 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: abc
+Nov 03, 2025 6:36:27 AM quizmos.QuizMos run
+WARNING: quizmos got exception: Invalid command! Try `help` for more information
+Nov 03, 2025 6:36:29 AM quizmos.QuizMos run
+INFO: quizmos got user's command:
+Nov 03, 2025 6:36:29 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword:
+Nov 03, 2025 6:36:29 AM quizmos.QuizMos run
+WARNING: quizmos got exception: Invalid command! Try `help` for more information
+Nov 03, 2025 6:36:33 AM quizmos.QuizMos run
+INFO: quizmos got user's command: lis
+Nov 03, 2025 6:36:33 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: lis
+Nov 03, 2025 6:36:33 AM quizmos.QuizMos run
+WARNING: quizmos got exception: Invalid command! Try `help` for more information
+Nov 03, 2025 6:36:38 AM quizmos.QuizMos run
+INFO: quizmos got user's command: add
+Nov 03, 2025 6:36:38 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: add
+Nov 03, 2025 6:36:38 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 6:39:36 AM quizmos.QuizMos setupLogging
+INFO: quizmos.log initialized successfully
+Nov 03, 2025 6:39:36 AM quizmos.QuizMos run
+INFO: quizmos main loop started
+Nov 03, 2025 6:39:42 AM quizmos.QuizMos run
+INFO: quizmos got user's command: add
+Nov 03, 2025 6:39:42 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: add
+Nov 03, 2025 6:39:42 AM quizmos.QuizMos run
+WARNING: quizmos got exception: Invalid command! Try `help` for more information
+Nov 03, 2025 6:39:45 AM quizmos.QuizMos run
+INFO: quizmos got user's command: add q/
+Nov 03, 2025 6:39:45 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: add
+Nov 03, 2025 6:39:45 AM quizmos.QuizMos run
+WARNING: quizmos got exception: Invalid command! Try `help` for more information
+Nov 03, 2025 6:39:55 AM quizmos.QuizMos run
+INFO: quizmos got user's command: add q/a q/b
+Nov 03, 2025 6:39:55 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: add
+Nov 03, 2025 6:39:55 AM quizmos.QuizMos run
+WARNING: quizmos got exception: Invalid command! Try `help` for more information
+Nov 03, 2025 6:39:58 AM quizmos.QuizMos run
+WARNING: quizmos got exception: No line found
+Nov 03, 2025 6:39:58 AM quizmos.QuizMos run
+WARNING: quizmos got exception: No line found
+Nov 03, 2025 6:39:58 AM quizmos.QuizMos run
+WARNING: quizmos got exception: No line found
+Nov 03, 2025 6:39:58 AM quizmos.QuizMos run
+WARNING: quizmos got exception: No line found
+Nov 03, 2025 6:39:58 AM quizmos.QuizMos run
+WARNING: quizmos got exception: No line found
+Nov 03, 2025 6:53:35 AM quizmos.QuizMos setupLogging
+INFO: quizmos.log initialized successfully
+Nov 03, 2025 6:53:35 AM quizmos.QuizMos run
+INFO: quizmos main loop started
+Nov 03, 2025 6:53:41 AM quizmos.QuizMos run
+INFO: quizmos got user's command: add
+Nov 03, 2025 6:53:41 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: add
+Nov 03, 2025 6:53:41 AM quizmos.QuizMos run
+WARNING: quizmos got exception: Invalid command! Try add q/<QUESTION> a/<ANSWER>
+Nov 03, 2025 6:53:43 AM quizmos.QuizMos run
+INFO: quizmos got user's command: list
+Nov 03, 2025 6:53:43 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: list
+Nov 03, 2025 6:53:43 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 6:53:45 AM quizmos.QuizMos run
+INFO: quizmos got user's command: help
+Nov 03, 2025 6:53:45 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: help
+Nov 03, 2025 6:53:45 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 6:53:47 AM quizmos.QuizMos run
+INFO: quizmos got user's command: hel
+Nov 03, 2025 6:53:47 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: hel
+Nov 03, 2025 6:53:47 AM quizmos.QuizMos run
+WARNING: quizmos got exception: Invalid command! Try `help` for more information
+Nov 03, 2025 6:53:49 AM quizmos.QuizMos run
+INFO: quizmos got user's command: hell
+Nov 03, 2025 6:53:49 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: hell
+Nov 03, 2025 6:53:49 AM quizmos.QuizMos run
+WARNING: quizmos got exception: Invalid command! Try `help` for more information
+Nov 03, 2025 6:53:52 AM quizmos.QuizMos run
+INFO: quizmos got user's command: review
+Nov 03, 2025 6:53:52 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: review
+Nov 03, 2025 6:53:52 AM quizmos.QuizMos run
+WARNING: quizmos got exception: Please pick a review mode: review m/[FLIP | MCQ | TF]
+Nov 03, 2025 6:53:55 AM quizmos.QuizMos run
+INFO: quizmos got user's command: review m/
+Nov 03, 2025 6:53:55 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: review
+Nov 03, 2025 6:53:55 AM quizmos.QuizMos run
+WARNING: quizmos got exception: Please pick a review mode: review m/[FLIP | MCQ | TF]
+Nov 03, 2025 6:53:59 AM quizmos.QuizMos run
+INFO: quizmos got user's command: review m/malaysia
+Nov 03, 2025 6:53:59 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: review
+Nov 03, 2025 6:53:59 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 6:53:59 AM quizmos.QuizMos run
+WARNING: quizmos got exception: Invalid review mode: review m/[FLIP | MCQ | TF]
+Nov 03, 2025 6:54:02 AM quizmos.QuizMos run
+INFO: quizmos got user's command: add
+Nov 03, 2025 6:54:02 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: add
+Nov 03, 2025 6:54:02 AM quizmos.QuizMos run
+WARNING: quizmos got exception: Invalid command! Try add q/<QUESTION> a/<ANSWER>
+Nov 03, 2025 6:54:05 AM quizmos.QuizMos run
+INFO: quizmos got user's command: delete
+Nov 03, 2025 6:54:05 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: delete
+Nov 03, 2025 6:54:05 AM quizmos.parser.Parser parseCommand
+WARNING: parser got exception: Index 1 out of bounds for length 1
+Nov 03, 2025 6:54:05 AM quizmos.QuizMos run
+WARNING: quizmos got exception: Invalid command! Try `help` for more information
+Nov 03, 2025 6:54:16 AM quizmos.QuizMos run
+INFO: quizmos got user's command: ex
+Nov 03, 2025 6:54:16 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: ex
+Nov 03, 2025 6:54:16 AM quizmos.QuizMos run
+WARNING: quizmos got exception: Invalid command! Try `help` for more information
+Nov 03, 2025 6:54:28 AM quizmos.QuizMos run
+INFO: quizmos got user's command: delete a
+Nov 03, 2025 6:54:28 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: delete
+Nov 03, 2025 6:54:28 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 6:54:28 AM quizmos.QuizMos run
+WARNING: quizmos got exception: Invalid index! Use a correct integer flashcard index!
+Try `list` to see a list of valid flashcards
+Nov 03, 2025 6:54:44 AM quizmos.QuizMos run
+INFO: quizmos got user's command: star 2
+Nov 03, 2025 6:54:44 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: star
+Nov 03, 2025 6:54:44 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 6:54:47 AM quizmos.QuizMos run
+INFO: quizmos got user's command: list
+Nov 03, 2025 6:54:47 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: list
+Nov 03, 2025 6:54:47 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 6:54:53 AM quizmos.QuizMos run
+INFO: quizmos got user's command: star
+Nov 03, 2025 6:54:53 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: star
+Nov 03, 2025 6:54:53 AM quizmos.parser.Parser parseCommand
+WARNING: parser got exception: Index 1 out of bounds for length 1
+Nov 03, 2025 6:54:53 AM quizmos.QuizMos run
+WARNING: quizmos got exception: Invalid command! Try `help` for more information
+Nov 03, 2025 6:54:59 AM quizmos.QuizMos run
+INFO: quizmos got user's command: getstarred
+Nov 03, 2025 6:54:59 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: getstarred
+Nov 03, 2025 6:54:59 AM quizmos.QuizMos run
+WARNING: quizmos got exception: Invalid command! Try `help` for more information
+Nov 03, 2025 6:55:04 AM quizmos.QuizMos run
+INFO: quizmos got user's command: exit
+Nov 03, 2025 6:55:04 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: exit
+Nov 03, 2025 6:55:04 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 6:55:04 AM quizmos.QuizMos run
+INFO: quizmos main loop ended
+Nov 03, 2025 6:58:11 AM quizmos.QuizMos setupLogging
+INFO: quizmos.log initialized successfully
+Nov 03, 2025 6:58:11 AM quizmos.QuizMos run
+INFO: quizmos main loop started
+Nov 03, 2025 6:58:16 AM quizmos.QuizMos run
+INFO: quizmos got user's command: add
+Nov 03, 2025 6:58:16 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: add
+Nov 03, 2025 6:58:16 AM quizmos.QuizMos run
+WARNING: quizmos got exception: Invalid command! Try add q/<QUESTION> a/<ANSWER>
+Nov 03, 2025 6:58:18 AM quizmos.QuizMos run
+INFO: quizmos got user's command: list
+Nov 03, 2025 6:58:18 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: list
+Nov 03, 2025 6:58:18 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 6:58:25 AM quizmos.QuizMos run
+INFO: quizmos got user's command: delete
+Nov 03, 2025 6:58:25 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: delete
+Nov 03, 2025 6:58:25 AM quizmos.parser.Parser parseCommand
+WARNING: parser got exception: Index 1 out of bounds for length 1
+Nov 03, 2025 6:58:25 AM quizmos.QuizMos run
+WARNING: quizmos got exception: Invalid command! Try `help` for more information
+Nov 03, 2025 6:58:42 AM quizmos.QuizMos run
+INFO: quizmos got user's command: delete a
+Nov 03, 2025 6:58:42 AM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: delete
+Nov 03, 2025 6:58:42 AM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 6:58:42 AM quizmos.QuizMos run
+WARNING: quizmos got exception: Invalid index! Use a correct integer flashcard index!
+Try `list` to see a list of valid flashcards
+Nov 03, 2025 6:58:58 AM quizmos.QuizMos run
+WARNING: quizmos got exception: No line found
+Nov 03, 2025 6:58:58 AM quizmos.QuizMos run
+WARNING: quizmos got exception: No line found
+Nov 03, 2025 6:58:58 AM quizmos.QuizMos run
+WARNING: quizmos got exception: No line found
+Nov 03, 2025 6:58:58 AM quizmos.QuizMos run
+WARNING: quizmos got exception: No line found
+Nov 03, 2025 6:58:58 AM quizmos.QuizMos run
+WARNING: quizmos got exception: No line found
 Nov 02, 2025 11:59:37 PM quizmos.QuizMos setupLogging
 INFO: quizmos.log initialized successfully
 Nov 02, 2025 11:59:37 PM quizmos.QuizMos run
