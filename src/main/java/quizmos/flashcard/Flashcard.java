@@ -37,13 +37,19 @@ public class Flashcard {
         }
     }
 
-
     public String toSaveFormat() {
         return getQuestion() + " | " + getAnswer() + " |" + starMarker;
     }
 
     public String toString() {
         return "Question: " + getQuestion() + " | " + "Answer: " + getAnswer() + " |" + starMarker;
+    }
 
+    public void setQuestion(String question) {
+        this.question = question;
+    }
+    
+    public void setAnswer(String answer) {
+        this.answer = answer;
     }
 }

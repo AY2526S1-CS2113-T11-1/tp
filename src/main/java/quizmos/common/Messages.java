@@ -22,6 +22,7 @@ public class Messages {
             + "list: show all flashcards\n"
             + "add q/<QUESTION> a/<ANSWER>: add a flashcard with question and answer\n"
             + "delete <INDEX>: delete a flashcard by its index\n"
+            + "edit <INDEX>: edit a flashcard's question and answer\n"
             + "search <KEYPHRASE>: show all flashcards containing the keyphrase\n"
             + "star <INDEX>: star/flag a flashcard by its index\n"
             + "unstar <INDEX>: unstar/unflag a flashcard by its index\n"
