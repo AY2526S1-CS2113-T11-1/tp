@@ -2237,3 +2237,91 @@ Nov 03, 2025 3:02:57 PM quizmos.QuizMos run
 INFO: quizmos parsed user's command
 Nov 03, 2025 3:02:57 PM quizmos.QuizMos run
 INFO: quizmos main loop ended
+Nov 03, 2025 7:11:24 PM quizmos.QuizMos setupLogging
+INFO: quizmos.log initialized successfully
+Nov 03, 2025 7:11:24 PM quizmos.storage.Storage <init>
+INFO: Initializing storage for file path: data/QuizMos.txt
+Nov 03, 2025 7:11:24 PM quizmos.storage.Storage load
+INFO: Loading flashcards from file: data/QuizMos.txt
+Nov 03, 2025 7:11:24 PM quizmos.storage.Storage load
+INFO: Successfully loaded 1 flashcards
+Nov 03, 2025 7:11:24 PM quizmos.QuizMos run
+INFO: quizmos main loop started
+Nov 03, 2025 7:11:31 PM quizmos.QuizMos run
+INFO: quizmos got user's command: delete haha
+Nov 03, 2025 7:11:31 PM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: delete
+Nov 03, 2025 7:11:31 PM quizmos.QuizMos run
+WARNING: quizmos got exception: Invalid index! Use a correct integer flashcard index!
+Try `list` to see a list of valid flashcards
+Nov 03, 2025 7:11:44 PM quizmos.QuizMos run
+INFO: quizmos got user's command: delete 1ha
+Nov 03, 2025 7:11:44 PM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: delete
+Nov 03, 2025 7:11:44 PM quizmos.QuizMos run
+WARNING: quizmos got exception: Invalid index! Use a correct integer flashcard index!
+Try `list` to see a list of valid flashcards
+Nov 03, 2025 7:11:55 PM quizmos.QuizMos run
+INFO: quizmos got user's command: delete 0
+Nov 03, 2025 7:11:55 PM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: delete
+Nov 03, 2025 7:11:55 PM quizmos.QuizMos run
+WARNING: quizmos got exception: Invalid index! Use a correct integer flashcard index!
+Try `list` to see a list of valid flashcards
+Nov 03, 2025 7:12:19 PM quizmos.QuizMos run
+INFO: quizmos got user's command: add q/Question a/Answer
+Nov 03, 2025 7:12:19 PM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: add
+Nov 03, 2025 7:12:19 PM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 7:12:19 PM quizmos.storage.Storage writeToFile
+INFO: Writing flashcards to file: data/QuizMos.txt
+Nov 03, 2025 7:12:19 PM quizmos.storage.Storage writeToFile
+INFO: Successfully wrote 2 flashcards to file
+Nov 03, 2025 7:12:24 PM quizmos.QuizMos run
+INFO: quizmos got user's command: delete 1 ha
+Nov 03, 2025 7:12:24 PM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: delete
+Nov 03, 2025 7:12:24 PM quizmos.QuizMos run
+WARNING: quizmos got exception: Invalid index! Use a correct integer flashcard index!
+Try `list` to see a list of valid flashcards
+Nov 03, 2025 7:12:36 PM quizmos.QuizMos run
+INFO: quizmos got user's command: delete 1
+Nov 03, 2025 7:12:36 PM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: delete
+Nov 03, 2025 7:12:36 PM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 7:12:36 PM quizmos.storage.Storage writeToFile
+INFO: Writing flashcards to file: data/QuizMos.txt
+Nov 03, 2025 7:12:36 PM quizmos.storage.Storage writeToFile
+INFO: Successfully wrote 1 flashcards to file
+Nov 03, 2025 7:12:40 PM quizmos.QuizMos run
+INFO: quizmos got user's command: list
+Nov 03, 2025 7:12:40 PM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: list
+Nov 03, 2025 7:12:40 PM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 7:12:50 PM quizmos.QuizMos run
+INFO: quizmos got user's command: delete 1
+Nov 03, 2025 7:12:50 PM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: delete
+Nov 03, 2025 7:12:50 PM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 7:12:50 PM quizmos.storage.Storage writeToFile
+INFO: Writing flashcards to file: data/QuizMos.txt
+Nov 03, 2025 7:12:50 PM quizmos.storage.Storage writeToFile
+INFO: Successfully wrote 0 flashcards to file
+Nov 03, 2025 7:12:53 PM quizmos.QuizMos run
+INFO: quizmos got user's command: list
+Nov 03, 2025 7:12:53 PM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: list
+Nov 03, 2025 7:12:53 PM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 7:12:57 PM quizmos.QuizMos run
+INFO: quizmos got user's command: exit
+Nov 03, 2025 7:12:57 PM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: exit
+Nov 03, 2025 7:12:57 PM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 03, 2025 7:12:57 PM quizmos.QuizMos run
+INFO: quizmos main loop ended
