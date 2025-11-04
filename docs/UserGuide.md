@@ -8,6 +8,28 @@
 \__\_\\__,_|_/___|_|  |_|\___/|___/
 ```
 
+## Table of Contents
+
+1. [Introduction](#introduction)
+2. [Quick Start](#quick-start)
+3. [Features](#features)
+4. [Usage](#usage)
+    - [View help: `help`](#view-help-help)
+    - [List all flashcards: `list`](#list-all-flashcards-list)
+    - [Add a flashcard: `add`](#add-a-flashcard-add)
+    - [Delete a flashcard: `delete`](#delete-a-flashcard-delete)
+    - [Search for flashcards: `search`](#search-for-flashcards-search)
+    - [Review: `review`](#review-review)
+        - [Simple flip mode](#simple-flip-mode)
+        - [Truefalse mode](#truefalse-mode)
+        - [MCQ mode](#mcq-mode)
+    - [Star/flag flashcard: `star`](#starflag-flashcard-star)
+    - [Unstar flashcard: `unstar`](#unstar-flashcard-unstar)
+    - [Retrieve all starred flashcards: `getstar`](#retrieve-all-starred-flashcards-getstar)
+    - [Exit the program: `exit`](#exit-the-program-exit)
+5. [Command Summary](#command-summary)
+
+
 ---
 
 ## Introduction
@@ -20,7 +42,7 @@ QuizMos automatically saves your flashcards to a file, ensuring your collection 
 
 ---
 
-## Quick Start 
+## Quick Start
 
 1. Ensure you have Java `17` or above installed in your Computer.<br>
    **Mac users:** Ensure you have the precise JDK version prescribed [here](https://se-education.org/guides/tutorials/javaInstallationMac.html).
@@ -48,7 +70,7 @@ QuizMos automatically saves your flashcards to a file, ensuring your collection 
 
 ---
 
-## Features 
+## Features
 
 Quizmos supports:
 - Creating basic flashcards with text-based questions and answers.
@@ -193,14 +215,6 @@ ____________________________________________________________
 Exit the program
 
 Format: `exit`
-
----
-
-## FAQ {not yet completed}
-
-**Q**: {question} 
-
-**A**: {your answer here}
 
 ---
 
