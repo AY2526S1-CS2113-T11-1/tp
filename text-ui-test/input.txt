@@ -29,10 +29,8 @@ delete 1000
 delete abcabc
 delete
 edit 1
-new question 1
-new answer 1
-edit 2
-new question 2
+new question 3
+new answer 3
 list
 edit -1
 edit 100

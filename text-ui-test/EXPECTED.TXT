@@ -127,19 +127,10 @@ Answer: 3
 Press Enter when done editing:
 ____________________________________________________________
 Edited this flashcard
-Question: new question 1 | Answer: new answer 1 |
+Question: new question 3 | Answer: new answer 3 |
 ____________________________________________________________
 ____________________________________________________________
-Question: new question 1
-Press Enter when done editing:
-Answer: new answer 1
-Press Enter when done editing:
-____________________________________________________________
-Edited this flashcard
-Question: new question 2 | Answer: new answer 1 |
-____________________________________________________________
-____________________________________________________________
-1. Question: new question 2 | Answer: new answer 1 |
+1. Question: new question 3 | Answer: new answer 3 |
 ____________________________________________________________
 ____________________________________________________________
 ? ERROR: Invalid index! Use a correct integer flashcard index!
