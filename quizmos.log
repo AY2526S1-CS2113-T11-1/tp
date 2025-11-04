@@ -1,0 +1,98 @@
+Nov 04, 2025 12:56:43 PM quizmos.QuizMos setupLogging
+INFO: quizmos.log initialized successfully
+Nov 04, 2025 12:56:43 PM quizmos.flashcardlist.FlashcardList <init>
+INFO: Initialized empty FlashcardList.
+Nov 04, 2025 12:56:43 PM quizmos.flashcardlist.FlashcardList initialiseStarredFlashcards
+INFO: Initialized starred flashcards list with 0 entries.
+Nov 04, 2025 12:56:43 PM quizmos.storage.Storage <init>
+INFO: Initializing storage for file path: data/QuizMos.txt
+Nov 04, 2025 12:56:43 PM quizmos.storage.Storage load
+INFO: Loading flashcards from file: data/QuizMos.txt
+Nov 04, 2025 12:56:43 PM quizmos.flashcard.Flashcard <init>
+INFO: Created new flashcard with question: "1"
+Nov 04, 2025 12:56:43 PM quizmos.storage.Storage load
+INFO: Successfully loaded 1 flashcards
+Nov 04, 2025 12:56:43 PM quizmos.flashcardlist.FlashcardList <init>
+INFO: Initialized FlashcardList with 1 flashcards.
+Nov 04, 2025 12:56:43 PM quizmos.flashcardlist.FlashcardList initialiseStarredFlashcards
+INFO: Initialized starred flashcards list with 0 entries.
+Nov 04, 2025 12:56:43 PM quizmos.QuizMos run
+INFO: quizmos main loop started
+Nov 04, 2025 12:56:53 PM quizmos.QuizMos run
+INFO: quizmos got user's command: help
+Nov 04, 2025 12:56:53 PM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: help
+Nov 04, 2025 12:56:53 PM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 04, 2025 12:56:55 PM quizmos.QuizMos run
+INFO: quizmos got user's command: unstar -1
+Nov 04, 2025 12:56:55 PM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: unstar
+Nov 04, 2025 12:56:55 PM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 04, 2025 12:57:09 PM quizmos.QuizMos setupLogging
+INFO: quizmos.log initialized successfully
+Nov 04, 2025 12:57:09 PM quizmos.flashcardlist.FlashcardList <init>
+INFO: Initialized empty FlashcardList.
+Nov 04, 2025 12:57:09 PM quizmos.flashcardlist.FlashcardList initialiseStarredFlashcards
+INFO: Initialized starred flashcards list with 0 entries.
+Nov 04, 2025 12:57:09 PM quizmos.storage.Storage <init>
+INFO: Initializing storage for file path: data/QuizMos.txt
+Nov 04, 2025 12:57:09 PM quizmos.storage.Storage load
+INFO: Loading flashcards from file: data/QuizMos.txt
+Nov 04, 2025 12:57:09 PM quizmos.flashcard.Flashcard <init>
+INFO: Created new flashcard with question: "1"
+Nov 04, 2025 12:57:09 PM quizmos.storage.Storage load
+INFO: Successfully loaded 1 flashcards
+Nov 04, 2025 12:57:09 PM quizmos.flashcardlist.FlashcardList <init>
+INFO: Initialized FlashcardList with 1 flashcards.
+Nov 04, 2025 12:57:09 PM quizmos.flashcardlist.FlashcardList initialiseStarredFlashcards
+INFO: Initialized starred flashcards list with 0 entries.
+Nov 04, 2025 12:57:09 PM quizmos.QuizMos run
+INFO: quizmos main loop started
+Nov 04, 2025 12:57:17 PM quizmos.QuizMos run
+INFO: quizmos got user's command: delete -1
+Nov 04, 2025 12:57:17 PM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: delete
+Nov 04, 2025 12:57:17 PM quizmos.QuizMos run
+WARNING: quizmos got exception: Invalid index! Use a correct integer flashcard index!
+Try `list` to see a list of valid flashcards
+Nov 04, 2025 12:57:21 PM quizmos.QuizMos run
+INFO: quizmos got user's command: unstar -1
+Nov 04, 2025 12:57:21 PM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: unstar
+Nov 04, 2025 12:57:21 PM quizmos.QuizMos run
+INFO: quizmos parsed user's command
+Nov 04, 2025 12:59:57 PM quizmos.QuizMos setupLogging
+INFO: quizmos.log initialized successfully
+Nov 04, 2025 12:59:57 PM quizmos.flashcardlist.FlashcardList <init>
+INFO: Initialized empty FlashcardList.
+Nov 04, 2025 12:59:57 PM quizmos.flashcardlist.FlashcardList initialiseStarredFlashcards
+INFO: Initialized starred flashcards list with 0 entries.
+Nov 04, 2025 12:59:57 PM quizmos.storage.Storage <init>
+INFO: Initializing storage for file path: data/QuizMos.txt
+Nov 04, 2025 12:59:57 PM quizmos.storage.Storage load
+INFO: Loading flashcards from file: data/QuizMos.txt
+Nov 04, 2025 12:59:57 PM quizmos.flashcard.Flashcard <init>
+INFO: Created new flashcard with question: "1"
+Nov 04, 2025 12:59:57 PM quizmos.storage.Storage load
+INFO: Successfully loaded 1 flashcards
+Nov 04, 2025 12:59:57 PM quizmos.flashcardlist.FlashcardList <init>
+INFO: Initialized FlashcardList with 1 flashcards.
+Nov 04, 2025 12:59:57 PM quizmos.flashcardlist.FlashcardList initialiseStarredFlashcards
+INFO: Initialized starred flashcards list with 0 entries.
+Nov 04, 2025 12:59:57 PM quizmos.QuizMos run
+INFO: quizmos main loop started
+Nov 04, 2025 1:00:10 PM quizmos.QuizMos run
+INFO: quizmos got user's command: delete -1
+Nov 04, 2025 1:00:10 PM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: delete
+Nov 04, 2025 1:00:10 PM quizmos.QuizMos run
+WARNING: quizmos got exception: Invalid index! Use a correct integer flashcard index!
+Try `list` to see a list of valid flashcards
+Nov 04, 2025 1:00:26 PM quizmos.QuizMos run
+INFO: quizmos got user's command: unstar -1
+Nov 04, 2025 1:00:26 PM quizmos.parser.Parser parseCommand
+INFO: parsed keyword: unstar
+Nov 04, 2025 1:00:26 PM quizmos.QuizMos run
+INFO: quizmos parsed user's command
