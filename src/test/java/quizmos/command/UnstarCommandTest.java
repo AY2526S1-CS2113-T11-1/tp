@@ -1,17 +1,17 @@
 package quizmos.command;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import quizmos.exception.QuizMosFileException;
 import quizmos.exception.QuizMosInputException;
 import quizmos.flashcard.Flashcard;
 import quizmos.flashcardlist.FlashcardList;
 import quizmos.storage.Storage;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 
 
 
@@ -23,7 +23,7 @@ class UnstarCommandTest {
 
     // Minimal Storage stub
     static class StorageStub extends Storage {
-        boolean Iswritten = false;
+        boolean isWritten = false;
 
         StorageStub() throws QuizMosFileException {
             super("test.txt");
@@ -31,7 +31,7 @@ class UnstarCommandTest {
 
         @Override
         public void writeToFile(FlashcardList l) {
-            Iswritten = true;
+            isWritten = true;
         }
     }
 
@@ -52,7 +52,7 @@ class UnstarCommandTest {
 
         assertFalse(f.checkIsStarred());
         assertEquals(0, list.getStarredFlashcards().size());
-        assertTrue(storage.Iswritten, "Storage should be written");
+        assertTrue(storage.isWritten, "Storage should be written");
     }
 
     @Test
@@ -60,7 +60,7 @@ class UnstarCommandTest {
         list.addFlashcard(new Flashcard("Q1", "A1"));
         UnstarCommand command = new UnstarCommand("5");
         assertThrows(QuizMosInputException.class, () -> command.execute(list, storage));
-        assertFalse(storage.Iswritten, "Storage should not be written on invalid index");
+        assertFalse(storage.isWritten, "Storage should not be written on invalid index");
     }
 
     @Test
@@ -70,7 +70,7 @@ class UnstarCommandTest {
 
         UnstarCommand command = new UnstarCommand("1");
         assertThrows(QuizMosInputException.class, () -> command.execute(list, storage));
-        assertFalse(storage.Iswritten, "Storage should not be written if already unstarred");
+        assertFalse(storage.isWritten, "Storage should not be written if already unstarred");
     }
 
     @Test

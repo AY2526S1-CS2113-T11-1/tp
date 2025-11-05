@@ -28,4 +28,12 @@ delete -1000
 delete 1000
 delete abcabc
 delete
+edit 1
+new question 3
+new answer 3
+list
+edit -1
+edit 100
+edit abc
+edit
 exit

@@ -16,6 +16,7 @@ help: show all commands
 list: show all flashcards
 add q/<QUESTION> a/<ANSWER>: add a flashcard with question and answer
 delete <INDEX>: delete a flashcard by its index
+edit <INDEX>: edit a flashcard's question and answer
 search <KEYPHRASE>: show all flashcards containing the keyphrase
 star <INDEX>: star/flag a flashcard by its index
 unstar <INDEX>: unstar/unflag a flashcard by its index
@@ -103,6 +104,33 @@ ____________________________________________________________
 ____________________________________________________________
 Removed this flashcard
 Question: 1 | Answer: 1 |
+____________________________________________________________
+____________________________________________________________
+? ERROR: Invalid index! Use a correct integer flashcard index!
+Try `list` to see a list of valid flashcards
+____________________________________________________________
+____________________________________________________________
+? ERROR: Invalid index! Use a correct integer flashcard index!
+Try `list` to see a list of valid flashcards
+____________________________________________________________
+____________________________________________________________
+? ERROR: Invalid index! Use a correct integer flashcard index!
+Try `list` to see a list of valid flashcards
+____________________________________________________________
+____________________________________________________________
+? ERROR: Invalid command! Try `help` for more information
+____________________________________________________________
+____________________________________________________________
+Question: 3
+Press Enter when done editing:
+Answer: 3
+Press Enter when done editing:
+____________________________________________________________
+Edited this flashcard
+Question: new question 3 | Answer: new answer 3 |
+____________________________________________________________
+____________________________________________________________
+1. Question: new question 3 | Answer: new answer 3 |
 ____________________________________________________________
 ____________________________________________________________
 ? ERROR: Invalid index! Use a correct integer flashcard index!

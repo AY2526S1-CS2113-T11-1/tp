@@ -1,7 +1,11 @@
 package quizmos.parser;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import quizmos.command.AddFlashcardCommand;
 import quizmos.command.Command;
+import quizmos.command.EditFlashcardCommand;
 import quizmos.command.ExitCommand;
 import quizmos.command.GetStarCommand;
 import quizmos.command.HelpCommand;
@@ -14,8 +18,6 @@ import quizmos.command.UnstarCommand;
 import quizmos.common.Messages;
 import quizmos.exception.QuizMosInputException;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Parser {
     private static final Logger logger = Logger.getLogger(Parser.class.getName());
@@ -45,6 +47,7 @@ public class Parser {
             case "star" -> new StarCommand(parts[1].trim());
             case "getstar" -> new GetStarCommand();
             case "unstar" -> new UnstarCommand(parts[1].trim());
+            case "edit" -> new EditFlashcardCommand(parts[1].trim());
             default -> throw new QuizMosInputException(Messages.invalidCommandMessage);
             };
         } catch (ArrayIndexOutOfBoundsException e) {
