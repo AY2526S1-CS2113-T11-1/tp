@@ -24,6 +24,7 @@
    - [Feature 5: Star Flashcard](#feature-5-star-flashcard)
    - [Feature 6: Unstar Flashcard](#feature-6-unstar-flashcard)
    - [Feature 7: Get Starred Flashcards](#feature-7-get-starred-flashcards)
+   - [Feature 8: Edit Flashcards](#feature-7-get-starred-flashcards)
 4. [Requirements](#requirements)
    - [User Stories](#user-stories)
    - [Use Cases](#use-cases)
@@ -39,6 +40,7 @@
    - [Star Command](#star-command)
    - [Unstar Command](#unstar-command)
    - [GetStar Command](#getstar-command)
+   - [ِEdit Command](#getstar-command)
    - [Help Command](#help-command)
    - [Exit Command](#exit-command)
    - [General Edge Cases](#general-edge-cases)
@@ -294,6 +296,35 @@ This section describes some noteworthy details on how certain features are imple
 - `Storage` (reference only, no writes)
 
 ![OverallGetStarFlow](images/GetStarFeature_Overall.png "GetStar Command Feature Overall Flow")
+
+### Feature 8: Edit Flashcards
+**Command:** `edit <index>`
+
+**Responsibilities / Explanation:**
+- The `Parser` identifies the `edit` command and creates a new `EditFlashcardCommand` object.
+- The `EditFlashcardCommand` parses and validates the provided index.
+- Retrieves the target flashcard from the `FlashcardList` using `getFlashcard(index)`.
+- Uses the Ui component to:
+  - Display the current question and prompt for a new one.
+  - Display the current answer and prompt for a new one.
+- Compares the new input with the existing flashcard content.
+- If changes are detected:
+  - Updates the flashcard’s question and/or answer. 
+  - Saves the updated list to disk via `Storage.writeToFile()`. 
+  - Displays a confirmation message using `Ui.respond()`.
+- If no changes are made:
+  - Displays a message indicating no updates were applied.
+- Performs internal assertions to ensure FlashcardList and Storage are not null.
+
+
+**Classes:**
+- `EditFlashcardCommand`
+- `FlashcardList`
+- `Flashcard`
+- `Ui`
+- `Storage`
+
+![OverallEditFlashcard](images/EditFlashcardFeature_Overall.png "Edit Flashcard Command Feature Overall Flow")
 
 ---
 
@@ -631,6 +662,20 @@ java -jar quizmos.jar
 
 **Edge Cases**
 - `getstar` (no starred flashcards)
+
+### **Edit Command**
+
+**Correct Cases**
+- `edit 1` (edits the first flashcard)
+- `edit 2` (edits the second flashcard)
+
+**Edge Cases**
+- `edit 0` (invalid index: out of bounds)
+- `edit 9999` (invalid index: out of bounds)
+- `edit abc` (invalid input: not a number)
+- `edit` (missing index)
+- `edit -1` (negative index)
+- Provide empty input when prompted for new question/answer (should show “No changes made”)
 
 ### **Help Command**
 

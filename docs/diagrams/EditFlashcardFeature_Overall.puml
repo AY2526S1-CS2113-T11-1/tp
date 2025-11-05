@@ -1,0 +1,81 @@
+@startuml EditFlashcardFeature_Overall
+
+title Overall Edit Flashcard Flow
+
+skinparam sequenceReferenceBackgroundColor #7cb9e8
+
+participant ":QuizMos"
+participant "<<class>>\nParser"
+participant ":EditFlashcardCommand"
+participant "<<class>>\nUi"
+participant ":FlashcardList"
+participant ":Storage"
+
+":QuizMos" -> "<<class>>\nParser": parseCommand(command)
+activate "<<class>>\nParser"
+
+"<<class>>\nParser" -> ":EditFlashcardCommand": <<create>> EditFlashcardCommand(parts)
+activate ":EditFlashcardCommand"
+
+":EditFlashcardCommand" -> "<<class>>\nUi": invalidCommandRespond() [if index invalid]
+activate "<<class>>\nUi"
+"<<class>>\nUi" --> ":EditFlashcardCommand"
+deactivate "<<class>>\nUi"
+
+":EditFlashcardCommand" --> "<<class>>\nParser": return EditFlashcardCommand
+deactivate ":EditFlashcardCommand"
+
+"<<class>>\nParser" --> ":QuizMos": return EditFlashcardCommand
+deactivate "<<class>>\nParser"
+
+":QuizMos" -> ":EditFlashcardCommand": execute(flashcards, storage)
+activate ":EditFlashcardCommand"
+
+alt Index invalid
+    ":EditFlashcardCommand" -> "<<class>>\nUi": invalidCommandRespond()
+    activate "<<class>>\nUi"
+    "<<class>>\nUi" --> ":EditFlashcardCommand"
+    deactivate "<<class>>\nUi"
+else Index valid
+    ":EditFlashcardCommand" -> ":FlashcardList": getFlashcard(index)
+    activate ":FlashcardList"
+    ":FlashcardList" --> ":EditFlashcardCommand": return Flashcard
+    deactivate ":FlashcardList"
+
+    ":EditFlashcardCommand" -> "<<class>>\nUi": showCurrentQuestion(flashcard)
+    activate "<<class>>\nUi"
+    "<<class>>\nUi" --> ":EditFlashcardCommand": newQuestion
+    deactivate "<<class>>\nUi"
+
+    ":EditFlashcardCommand" -> "<<class>>\nUi": showCurrentAnswer(flashcard)
+    activate "<<class>>\nUi"
+    "<<class>>\nUi" --> ":EditFlashcardCommand": newAnswer
+    deactivate "<<class>>\nUi"
+
+    alt Changes made
+        ":EditFlashcardCommand" -> ":FlashcardList": setQuestion / setAnswer
+        activate ":FlashcardList"
+        ":FlashcardList" --> ":EditFlashcardCommand"
+        deactivate ":FlashcardList"
+
+        ":EditFlashcardCommand" -> ":Storage": writeToFile(flashcards)
+        activate ":Storage"
+        ":Storage" --> ":EditFlashcardCommand": save successful
+        deactivate ":Storage"
+
+        ":EditFlashcardCommand" -> "<<class>>\nUi": showFlashcardEdited(flashcard)
+        activate "<<class>>\nUi"
+        "<<class>>\nUi" --> ":EditFlashcardCommand"
+        deactivate "<<class>>\nUi"
+    else No changes
+        ":EditFlashcardCommand" -> "<<class>>\nUi": respond(NO_CHANGES_MADE)
+        activate "<<class>>\nUi"
+        "<<class>>\nUi" --> ":EditFlashcardCommand"
+        deactivate "<<class>>\nUi"
+    end
+
+":EditFlashcardCommand" --> ":QuizMos"
+deactivate ":EditFlashcardCommand"
+destroy ":EditFlashcardCommand"
+
+@enduml

@@ -26,6 +26,7 @@
     - [Star/flag flashcard: `star`](#starflag-flashcard-star)
     - [Unstar flashcard: `unstar`](#unstar-flashcard-unstar)
     - [Retrieve all starred flashcards: `getstar`](#retrieve-all-starred-flashcards-getstar)
+    - [Edit flashcards: `edit`](#edit-a-flashcard-edit)
     - [Exit the program: `exit`](#exit-the-program-exit)
 5. [Command Summary](#command-summary)
 
@@ -211,6 +212,27 @@ These are your starred flashcards:
 ____________________________________________________________
 ```
 
+### Edit a FLashcard `edit`
+Edit a flashcard’s question and/or answer by specifying its index.
+QuizMos will display the current question and answer, then prompt you to enter new values.
+Press Enter to keep the existing content. If no changes are made, QuizMos will notify you.
+
+**Format:** `edit INDEX`  
+**Example:**
+
+- `edit 1`
+- **Output:**
+```bash
+____________________________________________________________
+Question: What is 2+2?
+Press Enter when done editing:
+Answer: 4
+Press Enter when done editing:
+Edited this flashcard
+Question: What is 2+2? | Answer: Four |
+____________________________________________________________
+```
+
 ### Exit the program: `exit`
 Exit the program
 
@@ -232,4 +254,4 @@ Format: `exit`
 | Help    | `help`                          |
 | Unstar  | `unstar INDEX`                  |
 | Getstar | `getstar`                       |
-
+| Edit    | `edit INDEX`                    |
